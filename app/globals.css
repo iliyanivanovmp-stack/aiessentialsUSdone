@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-inter);
+}
+
+.font-headline {
+  font-family: var(--font-space-grotesk);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00ffff 0%, #8b5cf6 50%, #ffd700 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, #00ffff 0%, #8b5cf6 50%, #ffd700 100%);
+  padding: 1px;
+  border-radius: 12px;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .gradient-text {
+    animation: none;
+  }
+}
+
+/* Hide grid in process section */
+#process .cursor-grid-overlay,
+#process,
+#process::before,
+#process::after {
+  background-image: none !important;
+}
+
+#process .cursor-grid-overlay {
+  display: none;
+}
+
+/* Additional specificity to override grid in process section */
+section#process {
+  background-image: none !important;
+}
+
+section#process .cursor-grid-overlay {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Hide the cursor grid overlay specifically in the process section */
+#process ~ .cursor-grid-overlay {
+  display: none !important;
+}
+
+/* Target the grid overlay when cursor is over process section */
+body:has(#process:hover) .cursor-grid-overlay {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10.2%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10.2%;
+    --muted-foreground: 0 0% 70.2%;
+    --accent: 0 0% 10.2%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 10.2%;
+    --input: 0 0% 10.2%;
+    --ring: 0 0% 100%;
+    --radius: 0.5rem;
+  }
+}
