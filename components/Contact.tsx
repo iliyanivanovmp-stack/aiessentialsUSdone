@@ -14,8 +14,8 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    // Redirect to Calendly
+    window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials?month=2025-11', '_blank');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,11 +27,11 @@ const Contact = () => {
   };
 
   const openBookingModal = () => {
-    window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials', '_blank');
+    window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials?month=2025-11', '_blank');
   };
 
   const openROIModal = () => {
-    window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials', '_blank');
+    window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials?month=2025-11', '_blank');
   };
 
   return (

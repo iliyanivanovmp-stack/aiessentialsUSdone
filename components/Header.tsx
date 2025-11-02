@@ -119,22 +119,6 @@ const Header = () => {
         >
           <div className="px-6 py-6">
             <div className="flex flex-col space-y-4">
-              {/* Mobile Book Strategy Call Button */}
-              <motion.button
-                onClick={() => {
-                  openBookingModal();
-                  setIsMenuOpen(false);
-                }}
-                className="md:hidden w-full px-6 py-3 bg-white text-black text-sm uppercase tracking-wider font-medium hover:bg-gray-100 transition-all duration-200 relative overflow-hidden group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-purple-500/10 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                />
-                <span className="relative z-10">BOOK STRATEGY CALL</span>
-              </motion.button>
-              
               {/* Menu Items */}
               {menuItems.map((item, index) => (
                 <motion.button
