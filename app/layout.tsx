@@ -19,6 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'AIessentials — AI Automation & Consulting',
   description: 'We design, deploy, and maintain automated AI systems that grow pipeline and remove busywork.',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'AIessentials — AI Automation & Consulting',
     description: 'We design, deploy, and maintain automated AI systems that grow pipeline and remove busywork.',
