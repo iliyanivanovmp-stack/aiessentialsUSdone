@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -40,19 +41,24 @@ const Header = () => {
     window.open('https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials', '_blank');
   };
 
-  const menuItems = [
+  const menuItems: { name: string; id: string; href?: string }[] = [
     { name: 'Home', id: 'home' },
     { name: 'Services', id: 'services' },
     { name: 'Process', id: 'process' },
     { name: 'Case Studies', id: 'case-studies' },
     { name: 'ROI Calculator', id: 'roi-calculator' },
     { name: 'Pricing', id: 'pricing' },
+    { name: 'Blog', id: 'blog', href: '/blog' },
     { name: 'FAQ', id: 'faq' },
     { name: 'Contact', id: 'contact' }
   ];
 
-  const handleMenuItemClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+  const handleMenuItemClick = (item: { name: string; id: string; href?: string }) => {
+    if (item.href) {
+      window.location.href = item.href;
+    } else {
+      scrollToSection(item.id);
+    }
     setIsMenuOpen(false);
   };
 
@@ -121,17 +127,35 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               {/* Menu Items */}
               {menuItems.map((item, index) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => handleMenuItemClick(item.id)}
-                  className="text-left text-white hover:text-cyan-400 text-sm uppercase tracking-wider font-medium transition-colors duration-200 py-2 focus:outline-none"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2, delay: index * 0.05 }}
-                  whileHover={{ x: 4 }}
-                >
-                  {item.name}
-                </motion.button>
+                item.href ? (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2, delay: index * 0.05 }}
+                    whileHover={{ x: 4 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="block text-left text-white hover:text-cyan-400 text-sm uppercase tracking-wider font-medium transition-colors duration-200 py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleMenuItemClick(item)}
+                    className="text-left text-white hover:text-cyan-400 text-sm uppercase tracking-wider font-medium transition-colors duration-200 py-2 focus:outline-none"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2, delay: index * 0.05 }}
+                    whileHover={{ x: 4 }}
+                  >
+                    {item.name}
+                  </motion.button>
+                )
               ))}
             </div>
           </div>
