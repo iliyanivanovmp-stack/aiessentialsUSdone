@@ -45,10 +45,12 @@ The slug should be the title in lowercase with hyphens (e.g., "how-ai-automation
 ### Step 4: Update seo-strategy.md
 Mark the completed topic as done by changing `- [ ]` to `- [x]`
 
-### Step 5: Commit and Push
-Create a git commit with message: "Add blog post: [title]" and push to the current branch.
+### Step 5: Generate SEO Files
+Run the command: `npm run generate-seo`
+This will automatically update sitemap.xml and llms.txt in the public folder.
 
-**Note:** The sitemap.xml and llms.txt files are automatically generated from blog posts - no manual updates needed!
+### Step 6: Commit and Push
+Add all changes (blog post, seo-strategy.md, sitemap.xml, llms.txt) and create a git commit with message: "Add blog post: [title]" and push to the current branch.
 
 ## Output
 After completing all steps, provide:

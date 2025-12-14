@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-seo-files.js",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-seo": "node scripts/generate-seo-files.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
