@@ -5,7 +5,7 @@
 **Friendly but professional** - Write like you're explaining something to a smart colleague over coffee. Be approachable without being casual to the point of unprofessionalism.
 
 **Human, not robotic** - Avoid stiff, formulaic language. Write the way real people actually talk and think.
-
+**5th-6th grade reading level**
 ## What to Do
 
 - Use contractions naturally (we're, you'll, it's, don't)
@@ -13,8 +13,9 @@
 - Ask rhetorical questions to engage readers
 - Use specific examples instead of vague statements
 - Vary sentence length - mix short punchy sentences with longer explanatory ones
-- Include occasional mild humor or wit where appropriate
+- Include occasional mild humor or wit only where appropriate
 - Acknowledge complexity and nuance - real topics aren't black and white
+ -Use analogies and examples
 - Use "you" and "we" to create connection
 
 ## What to Avoid
@@ -32,8 +33,6 @@
 
 - "In this article, we will..."
 - "Have you ever wondered..."
-- "Let's dive in..."
-- "Without further ado..."
 - "It goes without saying..."
 
 ## Good Examples
