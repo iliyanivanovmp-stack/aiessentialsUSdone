@@ -328,6 +328,27 @@ async function main() {
   fs.writeFileSync(outputPath, content, 'utf8');
 
   console.log(`\nQueue file saved to: ${outputPath}`);
+
+  // Auto-commit and push to git
+  console.log('\n' + '='.repeat(60));
+  console.log('Committing and pushing to GitHub...');
+  console.log('='.repeat(60));
+
+  const { execSync } = require('child_process');
+
+  try {
+    execSync('git add content/q.md', { stdio: 'inherit' });
+    execSync(`git commit -m "Generate SEO queue with ${allItems.length} blog post topics"`, { stdio: 'inherit' });
+    execSync('git push', { stdio: 'inherit' });
+    console.log('\n✅ Successfully pushed to GitHub!');
+  } catch (gitError) {
+    console.log('\n⚠️  Git push failed or no changes to commit.');
+    console.log('You may need to manually run:');
+    console.log('  git add content/q.md');
+    console.log('  git commit -m "Generate SEO queue"');
+    console.log('  git push');
+  }
+
   console.log('\nDone!');
 }
 
