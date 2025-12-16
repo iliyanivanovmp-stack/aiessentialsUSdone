@@ -47,12 +47,22 @@ After the script completes, read and summarize the generated queue:
 head -100 content/q.md
 ```
 
-### Step 5: Report Results
+### Step 5: Commit and Push
+After the queue is generated, commit and push to the repository:
+
+```bash
+git add content/q.md
+git commit -m "Generate SEO queue with 100 blog post topics"
+git push
+```
+
+### Step 6: Report Results
 Provide a summary including:
 - Total blog posts generated
 - List of keywords processed
 - Sample of 3-5 blog post titles
 - Any errors encountered
+- Git commit confirmation
 
 ## Seed Keywords
 
