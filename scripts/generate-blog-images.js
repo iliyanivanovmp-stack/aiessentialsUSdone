@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Generate Blog Images using Google Gemini 2.0 Flash
+ * Generate Blog Images using Google Gemini 2.5 Flash
  *
  * This script generates contextual images for blog posts based on
  * the content of each section using Gemini's native image generation.
@@ -66,9 +66,9 @@ async function generateImageWithGemini(prompt, outputPath) {
   console.log(`  Generating image with Gemini...`);
   console.log(`  Prompt: "${prompt.substring(0, 80)}..."`);
 
-  // Use Gemini 2.0 Flash with image generation
+  // Use Gemini 2.5 Flash with image generation
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${GEMINI_API_KEY}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
