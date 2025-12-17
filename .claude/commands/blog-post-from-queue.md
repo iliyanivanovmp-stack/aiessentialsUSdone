@@ -1,10 +1,10 @@
 # Write Blog Post from Queue (with AI-Generated Images)
 
-Write the next SEO-optimized blog post from the publishing queue (`content/q.md`) with 4 contextual AI-generated images.
+Write the next SEO-optimized blog post from the publishing queue (`content/q.md`) with 4 contextual AI-generated images. This is a fully automated command - one execution produces a complete blog post with images.
 
 ## Your Task
 
-Read the queue file, find the next "queued" item, write a comprehensive blog post with image placeholders, generate contextual images using Imagen 3, then update all related files.
+Read the queue file, find the next "queued" item, write a comprehensive blog post, automatically generate 4 contextual images, and commit everything.
 
 ## Instructions
 
@@ -15,7 +15,7 @@ Read these files to understand what to write and how:
 1. **content/q.md** - Find the first item with `status: "queued"` - this is your topic
 2. **content/tone-of-voice.md** - Follow these writing guidelines exactly
 3. **content/llms.txt** - Understand company context, services, and value propositions
-4. **content/seo-strategy.md** - Reference for SEO best practices, target audience, and content standards
+4. **content/seo-strategy.md** - Reference for SEO best practices, target audience, content standards, and **image placement rules**
 
 ### Step 2: Extract Post Details from Queue
 
@@ -26,7 +26,7 @@ From the queue item, you will have:
 - `slug` - URL slug for the file
 - `faq_questions` - 10 questions for the FAQ section at the end
 
-### Step 3: Write the Blog Post (Pass 1 - Content with Placeholders)
+### Step 3: Write the Blog Post
 
 Create a comprehensive, SEO-optimized blog post with this EXACT structure:
 
@@ -49,32 +49,41 @@ image: "/images/blog/[slug]-hero.png"
 
 [Direct answer - 2-3 sentences that directly answer the question. Be concise and clear. This is for featured snippets.]
 
-![{slug}-hero](/images/blog/{slug}-hero.png)
+![Hero image for {title}](/images/blog/{slug}-hero.png)
 
 [2-3 paragraphs expanding on the answer with more detail, context, and examples. This section should be 200-300 words total.]
+
+## Table of Contents
+- [Section 2 Title](#section-2-anchor)
+- [Section 3 Title](#section-3-anchor)
+- [Section 4 Title](#section-4-anchor)
+- [FAQ](#faq)
 
 ## [Section 2 Title - First Major Topic] (400-500 words)
 
 [Comprehensive content addressing a key aspect of the topic]
 [Use H3 subsections as needed]
 [Include specific examples and data]
+[End with "How AI Essentials helps here:" tie-back]
 
-![{slug}-1](/images/blog/{slug}-1.png)
+![Section 2 illustration](/images/blog/{slug}-1.png)
 
 ## [Section 3 Title - Second Major Topic] (400-500 words)
 
 [Continue building on the topic]
 [Add practical, actionable advice]
 [Use bullet points for scannability]
+[End with "How AI Essentials helps here:" tie-back]
 
-![{slug}-2](/images/blog/{slug}-2.png)
+![Section 3 illustration](/images/blog/{slug}-2.png)
 
 ## [Section 4 Title - Third Major Topic] (300-400 words)
 
 [Tie everything together]
 [Include case study or real-world example if applicable]
+[End with "How AI Essentials helps here:" tie-back]
 
-![{slug}-3](/images/blog/{slug}-3.png)
+![Section 4 illustration](/images/blog/{slug}-3.png)
 
 ## Frequently Asked Questions
 
@@ -89,11 +98,11 @@ image: "/images/blog/[slug]-hero.png"
 ## Conclusion (100-150 words)
 
 [Summarize 2-3 key takeaways]
-[Clear CTA: "Ready to [benefit]? Book a free 30-minute strategy call to see how AI automation can [specific outcome] for your business."]
-[Link to booking: https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials]
+
+Ready to [benefit]? [Book a free 30-minute strategy call](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials) to see how AI automation can [specific outcome] for your business.
 ```
 
-**Image Placement Rules:**
+**Image Placement Rules (from seo-strategy.md):**
 1. **Hero Image** (`{slug}-hero.png`): Immediately after the direct answer, before the expansion paragraphs
 2. **Image 1** (`{slug}-1.png`): At the end of Section 2, reflecting that section's content
 3. **Image 2** (`{slug}-2.png`): At the end of Section 3, reflecting that section's content
@@ -117,33 +126,43 @@ image: "/images/blog/[slug]-hero.png"
 
 Save to: `content/blog-posts/[slug].md`
 
-### Step 5: Generate Images (Pass 2 - AI Image Generation)
+### Step 5: Generate Images Automatically
 
-After saving the blog post, generate 4 contextual images using the Imagen 3 API.
+**IMPORTANT: Generate images immediately after saving the blog post. Do not skip this step.**
 
-**For each image, extract the relevant content section:**
+After saving the blog post, you MUST automatically generate 4 contextual images:
 
-1. **Hero Image**: Extract the direct answer text (the 2-3 sentences right after the H2 question)
-2. **Image 1**: Extract the full content of Section 2
-3. **Image 2**: Extract the full content of Section 3
-4. **Image 3**: Extract the full content of Section 4
+1. **Extract the content for each image:**
+   - **Hero**: The direct answer (2-3 sentences after the H2 question)
+   - **Image 1**: Full content of Section 2
+   - **Image 2**: Full content of Section 3
+   - **Image 3**: Full content of Section 4
 
-**Run the image generation script:**
+2. **Create a JSON file with the section content:**
+   Save to `scripts/temp-sections.json`:
+   ```json
+   [
+     {"imageNumber": 1, "blogTitle": "[title]", "content": "[direct answer text - 2-3 sentences]"},
+     {"imageNumber": 2, "blogTitle": "[title]", "content": "[section 2 full content]"},
+     {"imageNumber": 3, "blogTitle": "[title]", "content": "[section 3 full content]"},
+     {"imageNumber": 4, "blogTitle": "[title]", "content": "[section 4 full content]"}
+   ]
+   ```
 
-```bash
-# Load environment variables and run the script
-cd /home/user/aiessentialsUSdone
+3. **Run the image generation script using Bash:**
+   ```bash
+   cd /home/user/aiessentialsUSdone && node scripts/generate-blog-images.js "[slug]" "$(cat scripts/temp-sections.json)"
+   ```
 
-# The script needs slug and a JSON array of sections
-node scripts/generate-blog-images.js "[slug]" '[
-  {"imageNumber": 1, "blogTitle": "[title]", "content": "[direct answer text]"},
-  {"imageNumber": 2, "blogTitle": "[title]", "content": "[section 2 content]"},
-  {"imageNumber": 3, "blogTitle": "[title]", "content": "[section 3 content]"},
-  {"imageNumber": 4, "blogTitle": "[title]", "content": "[section 4 content]"}
-]'
-```
+4. **Verify images were created:**
+   ```bash
+   ls -la public/images/blog/[slug]*.png
+   ```
 
-**Important:** The JSON must be properly escaped. Use single quotes for the outer string and double quotes inside the JSON.
+5. **Clean up temp file:**
+   ```bash
+   rm scripts/temp-sections.json
+   ```
 
 ### Step 6: Update the Queue (q.md)
 
@@ -171,7 +190,7 @@ Create a git commit and push:
 
 ```bash
 git add content/blog-posts/[slug].md content/q.md content/llms.txt public/images/blog/
-git commit -m "Add blog post: [title]"
+git commit -m "Add blog post: [title] (with images)"
 git push
 ```
 
@@ -182,35 +201,21 @@ After completing all steps, provide:
 2. ✅ Word count (target: 1,800-2,500)
 3. ✅ Primary keyword used
 4. ✅ Number of FAQ questions included (should be 10)
-5. ✅ 4 images generated and paths listed
+5. ✅ 4 images generated with paths:
+   - `/images/blog/[slug]-hero.png`
+   - `/images/blog/[slug]-1.png`
+   - `/images/blog/[slug]-2.png`
+   - `/images/blog/[slug]-3.png`
 6. ✅ Confirmation that q.md status was updated to "published"
 7. ✅ Confirmation that llms.txt was updated
 8. ✅ Git commit confirmation
-
-## Example Image Generation Flow
-
-For a blog post about "AI automation costs":
-
-1. **Hero Image** - Based on: "AI automation typically costs between $500-$5,000/month for small businesses, depending on complexity and tools used."
-   → Generates: Professional illustration of cost/pricing concept with AI elements
-
-2. **Image 1** - Based on: Section about "Factors That Affect AI Automation Costs" discussing tools, complexity, customization
-   → Generates: Visual showing different automation tools and pricing tiers
-
-3. **Image 2** - Based on: Section about "ROI and Cost Savings" with specific metrics
-   → Generates: Chart/graph style illustration showing ROI growth
-
-4. **Image 3** - Based on: Section about "Getting Started with AI Automation" with practical steps
-   → Generates: Step-by-step visual or workflow illustration
 
 ## Troubleshooting
 
 **If image generation fails:**
 - Check that GEMINI_API_KEY is set in .env file
-- Verify the script path: `scripts/generate-blog-images.js`
-- Check JSON escaping in the sections parameter
-- If API quota exceeded, wait and retry or proceed without images
+- The script is at: `scripts/generate-blog-images.js`
+- Images save to: `public/images/blog/`
+- If API fails, the blog post is still valid - images can be regenerated later
 
-**If running locally:**
-- Make sure to run from the project root directory
-- Ensure .env file exists with valid API keys
+**The command should complete fully automatically with no manual intervention required.**
