@@ -3,6 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog-posts');
 
@@ -83,7 +85,9 @@ export async function getPostContent(slug: string): Promise<string> {
   if (!post) return '';
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkGfm)
+    .use(remarkSlug)
+    .use(html, { sanitize: false })
     .process(post.content);
 
   return processedContent.toString();
