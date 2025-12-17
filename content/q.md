@@ -31,10 +31,10 @@ items:
       - "What types of customer service tasks can be automated using AI to improve customer satisfaction and sales?"
       - "How can I use AI automation to personalize marketing campaigns and increase conversion rates?"
       - "What are some realistic examples of businesses similar to mine that have successfully used AI automation to increase profits?"
-    status: "published"
-    postPath: "content/blog-posts/how-to-use-ai-automation-to-make-money.md"
-    updatedAt: "2025-12-17T00:00:00Z"
-    publishedAt: "2025-12-17T00:00:00Z"
+    status: "queued"
+    postPath: null
+    updatedAt: null
+    publishedAt: null
     error: null
 
   - id: "kw01-q02"
