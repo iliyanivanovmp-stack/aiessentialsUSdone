@@ -150,9 +150,10 @@ If jargon is required (e.g., “RPA”, “INP”), define it in plain English t
 - **URL slug:** short, readable, topic-focused
 
 ### B) Opening block (required)
-1) **Direct Answer** (1–3 sentences)  
-2) **Click Deeper** (2–3 short paragraphs: context, definitions, method)  
-3) **Table of Contents** (clickable)
+1) **Direct Answer** (1–3 sentences)
+2) **Hero Image** — AI-generated image reflecting the direct answer (placed immediately after the answer)
+3) **Click Deeper** (2–3 short paragraphs: context, definitions, method)
+4) **Table of Contents** (clickable)
 
 ### C) Body structure (driven by the main question)
 - The structure must be built to **fully answer the main question**, not the fan-outs.
@@ -164,10 +165,21 @@ If jargon is required (e.g., “RPA”, “INP”), define it in plain English t
   - mistakes + fixes
   - decision framework (DIY vs done-for-you, etc.)
 - Each H2 section should include:
-  - 1-sentence “standalone context”
+  - 1-sentence "standalone context"
   - clear explanation
   - a table/checklist/example
-  - a “How AI Essentials helps here:” tie-back line at the end
+  - a "How AI Essentials helps here:" tie-back line at the end
+  - **Section Image** (at end of section) — AI-generated image reflecting that section's content
+
+### C.1) Image Placement (4 images per post)
+| Image | Position | Content Basis |
+|-------|----------|---------------|
+| Hero (`{slug}-hero.png`) | After direct answer, before "Click Deeper" | Reflects the direct answer |
+| Image 1 (`{slug}-1.png`) | End of first major H2 section | Reflects Section 2 content |
+| Image 2 (`{slug}-2.png`) | End of second major H2 section | Reflects Section 3 content |
+| Image 3 (`{slug}-3.png`) | End of third major H2 section | Reflects Section 4 content |
+
+Images are generated via Imagen 3 API with contextual prompts based on the preceding content. Store in `/public/images/blog/`.
 
 ### D) Original data block (required)
 Include a small section like:
@@ -205,9 +217,12 @@ Add **3–5 internal links**:
 Add **2–4 authoritative links** when you reference stats, regulations, or standards.
 
 
-Also:
-- descriptive alt text
-- avoid heavy files
+### Images (required — 4 per post)
+- Include all 4 AI-generated images as specified in Section 6 C.1
+- Use descriptive alt text that describes the image content
+- Image format: PNG, stored in `/public/images/blog/`
+- Naming convention: `{slug}-hero.png`, `{slug}-1.png`, `{slug}-2.png`, `{slug}-3.png`
+- Add `image` field to frontmatter pointing to hero image
 
 ---
 
@@ -255,8 +270,8 @@ Important:
 
 
 
-**Document Version:** 2.2 (Fan-outs used for FAQ only)  
-**Last Updated:** December 15, 2025  
+**Document Version:** 2.3 (Added AI-generated image requirements)
+**Last Updated:** December 17, 2025
 **Prepared for:** AI Essentials (https://aiessentials.us/)
 
 
