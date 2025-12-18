@@ -1,5 +1,5 @@
 1:HL["/_next/static/css/c00d87d20f28db51.css","style"]
-0:["Nvq3dMnKf_ZGU7Stnf0mS",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c00d87d20f28db51.css","precedence":"next"}]],"$L3"]]]]
+0:["e8w0xxNj_dWriIXqVihET",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c00d87d20f28db51.css","precedence":"next"}]],"$L3"]]]]
 4:I{"id":4075,"chunks":["185:static/chunks/app/layout-e55334eeaba1f49c.js"],"name":"GridCursor","async":false}
 5:I{"id":89,"chunks":["185:static/chunks/app/layout-e55334eeaba1f49c.js"],"name":"SpotlightCursor","async":false}
 6:I{"id":1443,"chunks":["272:static/chunks/webpack-5d3ce90ba53625fd.js","971:static/chunks/fd9d1056-3d7963eb58015c58.js","864:static/chunks/864-d7fd62aadcaf89ee.js"],"name":"","async":false}
