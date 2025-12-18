@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * Generate Blog Images using Google Gemini 2.5 Flash
+ * Generate Blog Images using Google Imagen 3 via Vertex AI
  *
  * This script generates contextual images for blog posts based on
- * the content of each section using Gemini's native image generation.
+ * the content of each section using Imagen 3 (highest quality).
+ *
+ * Prerequisites:
+ * 1. Google Cloud project with billing enabled
+ * 2. Run: gcloud auth application-default login
+ * 3. Set GOOGLE_CLOUD_PROJECT in .env
  *
  * Usage: node scripts/generate-blog-images.js <slug> <image-prompts-json>
  */
@@ -12,9 +17,24 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GOOGLE_CLOUD_PROJECT = process.env.GOOGLE_CLOUD_PROJECT;
 const IMAGES_DIR = path.join(process.cwd(), 'public/images/blog');
+
+// Get access token from gcloud
+function getAccessToken() {
+  try {
+    const token = execSync('gcloud auth application-default print-access-token', {
+      encoding: 'utf-8',
+      stdio: ['pipe', 'pipe', 'pipe']
+    }).trim();
+    return token;
+  } catch (error) {
+    throw new Error('Failed to get access token. Run: gcloud auth application-default login');
+  }
+}
 
 async function generateImagePrompt(sectionContent, imageNumber, blogTitle) {
   // Use Gemini to create an optimal image prompt based on section content
@@ -62,48 +82,45 @@ Respond with ONLY the image prompt, nothing else. Keep it under 150 words.`
   return data.candidates[0].content.parts[0].text.trim();
 }
 
-async function generateImageWithGemini(prompt, outputPath) {
-  console.log(`  Generating image with Gemini...`);
+async function generateImageWithImagen3(prompt, outputPath, accessToken) {
+  console.log(`  Generating image with Imagen 3...`);
   console.log(`  Prompt: "${prompt.substring(0, 80)}..."`);
 
-  // Use Gemini 2.5 Flash with image generation
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${GEMINI_API_KEY}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{
-            text: `Generate an image: ${prompt}`
-          }]
-        }],
-        generationConfig: {
-          responseModalities: ["image", "text"],
-          responseMimeType: "image/png"
-        }
-      })
-    }
-  );
+  const location = 'us-central1';
+  const endpoint = `https://${location}-aiplatform.googleapis.com/v1/projects/${GOOGLE_CLOUD_PROJECT}/locations/${location}/publishers/google/models/imagen-3.0-generate-001:predict`;
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      instances: [{
+        prompt: prompt
+      }],
+      parameters: {
+        sampleCount: 1,
+        aspectRatio: '16:9',
+        safetyFilterLevel: 'block_few',
+        personGeneration: 'dont_allow'
+      }
+    })
+  });
 
   const data = await response.json();
 
   if (data.error) {
-    throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
+    throw new Error(`Imagen 3 API error: ${JSON.stringify(data.error)}`);
   }
 
-  // Find the image part in the response
-  const parts = data.candidates?.[0]?.content?.parts || [];
-  const imagePart = parts.find(part => part.inlineData?.mimeType?.startsWith('image/'));
-
-  if (!imagePart?.inlineData?.data) {
-    // Log the full response for debugging
-    console.log('  Full response:', JSON.stringify(data, null, 2).substring(0, 500));
+  if (!data.predictions?.[0]?.bytesBase64Encoded) {
+    console.log('  Response:', JSON.stringify(data, null, 2).substring(0, 500));
     throw new Error('No image data in response');
   }
 
   // Save the image
-  const imageBuffer = Buffer.from(imagePart.inlineData.data, 'base64');
+  const imageBuffer = Buffer.from(data.predictions[0].bytesBase64Encoded, 'base64');
   fs.writeFileSync(outputPath, imageBuffer);
   console.log(`  ✅ Saved: ${outputPath}`);
 
@@ -135,6 +152,17 @@ async function main() {
     process.exit(1);
   }
 
+  if (!GOOGLE_CLOUD_PROJECT) {
+    console.error('Error: GOOGLE_CLOUD_PROJECT not found in environment');
+    console.error('Add GOOGLE_CLOUD_PROJECT=your-project-id to your .env file');
+    process.exit(1);
+  }
+
+  // Get access token for Vertex AI
+  console.log('🔐 Getting Google Cloud access token...');
+  const accessToken = getAccessToken();
+  console.log('✅ Access token obtained\n');
+
   // Ensure images directory exists
   if (!fs.existsSync(IMAGES_DIR)) {
     fs.mkdirSync(IMAGES_DIR, { recursive: true });
@@ -143,7 +171,7 @@ async function main() {
   const blogTitle = sections[0]?.blogTitle || slug.replace(/-/g, ' ');
   const generatedImages = [];
 
-  console.log(`\n🎨 Generating ${sections.length} images for: ${slug}\n`);
+  console.log(`🎨 Generating ${sections.length} images for: ${slug}\n`);
 
   for (const section of sections) {
     const imageNum = section.imageNumber;
@@ -153,11 +181,11 @@ async function main() {
     console.log(`\n📸 Image ${imageNum}/4:`);
 
     try {
-      // Generate contextual prompt
+      // Generate contextual prompt using Gemini
       const imagePrompt = await generateImagePrompt(section.content, imageNum, blogTitle);
 
-      // Generate image with Gemini
-      await generateImageWithGemini(imagePrompt, outputPath);
+      // Generate image with Imagen 3
+      await generateImageWithImagen3(imagePrompt, outputPath, accessToken);
 
       generatedImages.push({
         imageNumber: imageNum,
@@ -167,7 +195,7 @@ async function main() {
 
       // Small delay between requests to avoid rate limiting
       if (imageNum < sections.length) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
     } catch (error) {
       console.error(`  ❌ Error generating image ${imageNum}: ${error.message}`);
