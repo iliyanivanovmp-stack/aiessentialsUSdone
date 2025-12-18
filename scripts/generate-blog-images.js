@@ -23,6 +23,9 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GOOGLE_CLOUD_PROJECT = process.env.GOOGLE_CLOUD_PROJECT;
 const IMAGES_DIR = path.join(process.cwd(), 'public/images/blog');
 
+// No-text suffix appended to every prompt sent to Imagen 3
+const NO_TEXT_SUFFIX = ' The image must not contain any text, words, letters, numbers, labels, captions, watermarks, signatures, or any form of writing whatsoever.';
+
 // Get access token from gcloud
 function getAccessToken() {
   try {
@@ -60,10 +63,10 @@ Requirements:
 - The image should visually represent the key concepts in the section
 - Use clean, minimal design with tech/business aesthetic
 - Include specific visual elements that relate to the content
-- Avoid text in the image
+- CRITICAL: The image must be purely visual with NO TEXT whatsoever. Do not include any words, letters, numbers, labels, captions, titles, or any written content. Use only shapes, icons, symbols, and visual metaphors to convey meaning.
 - Style: modern digital illustration, clean lines, professional color palette (blues, purples, teals)
 
-Respond with ONLY the image prompt, nothing else. Keep it under 200 words.`
+Respond with ONLY the image prompt, nothing else. Keep it under 200 words. Remember: absolutely no text elements in the image.`
           }]
         }],
         generationConfig: {
@@ -82,6 +85,9 @@ Respond with ONLY the image prompt, nothing else. Keep it under 200 words.`
 }
 
 async function generateImageWithImagen3(prompt, outputPath, accessToken) {
+  // Append no-text suffix to ensure no text in generated images
+  const finalPrompt = prompt + NO_TEXT_SUFFIX;
+  
   console.log(`  Generating image with Imagen 3...`);
   console.log(`  Prompt: "${prompt.substring(0, 80)}..."`);
 
@@ -96,7 +102,7 @@ async function generateImageWithImagen3(prompt, outputPath, accessToken) {
     },
     body: JSON.stringify({
       instances: [{
-        prompt: prompt
+        prompt: finalPrompt
       }],
       parameters: {
         sampleCount: 1,
