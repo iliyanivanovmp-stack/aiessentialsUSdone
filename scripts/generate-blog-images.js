@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * Generate Blog Images using Google Imagen 3 via Gemini API
+ * Generate Blog Images using Google Imagen 3 via Vertex AI
  *
  * This script generates contextual images for blog posts based on
- * the content of each section.
+ * the content of each section using Imagen 3 (highest quality).
+ *
+ * Prerequisites:
+ * 1. Google Cloud project with billing enabled
+ * 2. Run: gcloud auth application-default login
+ * 3. Set GOOGLE_CLOUD_PROJECT in .env
  *
  * Usage: node scripts/generate-blog-images.js <slug> <image-prompts-json>
  */
@@ -12,9 +17,24 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GOOGLE_CLOUD_PROJECT = process.env.GOOGLE_CLOUD_PROJECT;
 const IMAGES_DIR = path.join(process.cwd(), 'public/images/blog');
+
+// Get access token from gcloud
+function getAccessToken() {
+  try {
+    const token = execSync('gcloud auth application-default print-access-token', {
+      encoding: 'utf-8',
+      stdio: ['pipe', 'pipe', 'pipe']
+    }).trim();
+    return token;
+  } catch (error) {
+    throw new Error('Failed to get access token. Run: gcloud auth application-default login');
+  }
+}
 
 async function generateImagePrompt(sectionContent, imageNumber, blogTitle) {
   // Use Gemini to create an optimal image prompt based on section content
@@ -61,29 +81,45 @@ Respond with ONLY the image prompt, nothing else. Keep it under 200 words.`
   return data.candidates[0].content.parts[0].text.trim();
 }
 
-async function generateImage(prompt, outputPath) {
-  console.log(`  Generating image with prompt: "${prompt.substring(0, 100)}..."`);
+async function generateImageWithImagen3(prompt, outputPath, accessToken) {
+  console.log(`  Generating image with Imagen 3...`);
+  console.log(`  Prompt: "${prompt.substring(0, 80)}..."`);
 
-  // Use Pollinations.ai - free image generation, no API key needed
-  const encodedPrompt = encodeURIComponent(prompt);
-  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1792&height=1024&nologo=true&model=flux`;
+  const location = 'us-central1';
+  const endpoint = `https://${location}-aiplatform.googleapis.com/v1/projects/${GOOGLE_CLOUD_PROJECT}/locations/${location}/publishers/google/models/imagen-3.0-generate-001:predict`;
 
-  console.log(`  Fetching from Pollinations.ai...`);
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      instances: [{
+        prompt: prompt
+      }],
+      parameters: {
+        sampleCount: 1,
+        aspectRatio: '16:9',
+        safetyFilterLevel: 'block_few',
+        personGeneration: 'dont_allow'
+      }
+    })
+  });
 
-  const response = await fetch(imageUrl);
+  const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(`Pollinations API error: ${response.status} ${response.statusText}`);
+  if (data.error) {
+    throw new Error(`Imagen 3 API error: ${JSON.stringify(data.error)}`);
   }
 
-  const arrayBuffer = await response.arrayBuffer();
-  const imageBuffer = Buffer.from(arrayBuffer);
-
-  if (imageBuffer.length < 1000) {
-    throw new Error('Image too small, generation may have failed');
+  if (!data.predictions?.[0]?.bytesBase64Encoded) {
+    console.log('  Response:', JSON.stringify(data, null, 2).substring(0, 500));
+    throw new Error('No image data in response');
   }
 
   // Save the image
+  const imageBuffer = Buffer.from(data.predictions[0].bytesBase64Encoded, 'base64');
   fs.writeFileSync(outputPath, imageBuffer);
   console.log(`  Saved: ${outputPath} (${Math.round(imageBuffer.length / 1024)}KB)`);
 
@@ -115,6 +151,17 @@ async function main() {
     process.exit(1);
   }
 
+  if (!GOOGLE_CLOUD_PROJECT) {
+    console.error('Error: GOOGLE_CLOUD_PROJECT not found in environment');
+    console.error('Add GOOGLE_CLOUD_PROJECT=your-project-id to your .env file');
+    process.exit(1);
+  }
+
+  // Get access token for Vertex AI
+  console.log('🔐 Getting Google Cloud access token...');
+  const accessToken = getAccessToken();
+  console.log('✅ Access token obtained\n');
+
   // Ensure images directory exists
   if (!fs.existsSync(IMAGES_DIR)) {
     fs.mkdirSync(IMAGES_DIR, { recursive: true });
@@ -123,7 +170,7 @@ async function main() {
   const blogTitle = sections[0]?.blogTitle || slug.replace(/-/g, ' ');
   const generatedImages = [];
 
-  console.log(`\nGenerating ${sections.length} images for: ${slug}\n`);
+  console.log(`🎨 Generating ${sections.length} images for: ${slug}\n`);
 
   for (const section of sections) {
     const imageNum = section.imageNumber;
@@ -133,18 +180,23 @@ async function main() {
     console.log(`\nImage ${imageNum}/4:`);
 
     try {
-      // Generate contextual prompt
+      // Generate contextual prompt using Gemini
       const imagePrompt = await generateImagePrompt(section.content, imageNum, blogTitle);
       console.log(`  Prompt: ${imagePrompt.substring(0, 100)}...`);
 
-      // Generate image
-      await generateImage(imagePrompt, outputPath);
+      // Generate image with Imagen 3
+      await generateImageWithImagen3(imagePrompt, outputPath, accessToken);
 
       generatedImages.push({
         imageNumber: imageNum,
         path: `/images/blog/${slug}-${suffix}.png`,
         prompt: imagePrompt
       });
+
+      // Small delay between requests to avoid rate limiting
+      if (imageNum < sections.length) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
     } catch (error) {
       console.error(`  Error generating image ${imageNum}: ${error.message}`);
       // Continue with other images
