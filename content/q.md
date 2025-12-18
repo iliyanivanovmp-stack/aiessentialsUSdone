@@ -53,10 +53,10 @@ items:
       - "How do I integrate AI automation tools with my existing business systems?"
       - "What are the potential risks and challenges of using AI automation?"
       - "How can I measure the ROI of AI automation in my business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-do-i-get-into-ai-automation.md"
+    updatedAt: "2025-12-17T15:30:00Z"
+    publishedAt: "2025-12-17T15:30:00Z"
     error: null
 
   - id: "kw01-q03"

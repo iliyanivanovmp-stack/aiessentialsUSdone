@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Generate Blog Images using Google Imagen 3 via Gemini API
+ * Generate Blog Images using Google Gemini 2.5 Flash
  *
  * This script generates contextual images for blog posts based on
- * the content of each section.
+ * the content of each section using Gemini's native image generation.
  *
  * Usage: node scripts/generate-blog-images.js <slug> <image-prompts-json>
  */
@@ -42,13 +42,14 @@ Requirements:
 - Include specific visual elements that relate to the content
 - Avoid text in the image
 - Style: modern digital illustration, clean lines, professional color palette (blues, purples, teals)
+- DO NOT include any people or faces in the image
 
-Respond with ONLY the image prompt, nothing else. Keep it under 200 words.`
+Respond with ONLY the image prompt, nothing else. Keep it under 150 words.`
           }]
         }],
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 300
+          maxOutputTokens: 200
         }
       })
     }
@@ -61,22 +62,25 @@ Respond with ONLY the image prompt, nothing else. Keep it under 200 words.`
   return data.candidates[0].content.parts[0].text.trim();
 }
 
-async function generateImage(prompt, outputPath) {
-  console.log(`  Generating image with prompt: "${prompt.substring(0, 100)}..."`);
+async function generateImageWithGemini(prompt, outputPath) {
+  console.log(`  Generating image with Gemini...`);
+  console.log(`  Prompt: "${prompt.substring(0, 80)}..."`);
 
-  // Use Imagen 3 via Gemini API
+  // Use Gemini 2.5 Flash with image generation
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${GEMINI_API_KEY}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        instances: [{ prompt }],
-        parameters: {
-          sampleCount: 1,
-          aspectRatio: '16:9',
-          safetyFilterLevel: 'block_few',
-          personGeneration: 'dont_allow'
+        contents: [{
+          parts: [{
+            text: `Generate an image: ${prompt}`
+          }]
+        }],
+        generationConfig: {
+          responseModalities: ["image", "text"],
+          responseMimeType: "image/png"
         }
       })
     }
@@ -85,17 +89,23 @@ async function generateImage(prompt, outputPath) {
   const data = await response.json();
 
   if (data.error) {
-    throw new Error(`Imagen API error: ${JSON.stringify(data.error)}`);
+    throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
   }
 
-  if (!data.predictions?.[0]?.bytesBase64Encoded) {
-    throw new Error('No image data in response: ' + JSON.stringify(data));
+  // Find the image part in the response
+  const parts = data.candidates?.[0]?.content?.parts || [];
+  const imagePart = parts.find(part => part.inlineData?.mimeType?.startsWith('image/'));
+
+  if (!imagePart?.inlineData?.data) {
+    // Log the full response for debugging
+    console.log('  Full response:', JSON.stringify(data, null, 2).substring(0, 500));
+    throw new Error('No image data in response');
   }
 
   // Save the image
-  const imageBuffer = Buffer.from(data.predictions[0].bytesBase64Encoded, 'base64');
+  const imageBuffer = Buffer.from(imagePart.inlineData.data, 'base64');
   fs.writeFileSync(outputPath, imageBuffer);
-  console.log(`  Saved: ${outputPath}`);
+  console.log(`  ✅ Saved: ${outputPath}`);
 
   return outputPath;
 }
@@ -133,36 +143,41 @@ async function main() {
   const blogTitle = sections[0]?.blogTitle || slug.replace(/-/g, ' ');
   const generatedImages = [];
 
-  console.log(`\nGenerating ${sections.length} images for: ${slug}\n`);
+  console.log(`\n🎨 Generating ${sections.length} images for: ${slug}\n`);
 
   for (const section of sections) {
     const imageNum = section.imageNumber;
     const suffix = imageNum === 1 ? 'hero' : String(imageNum - 1);
     const outputPath = path.join(IMAGES_DIR, `${slug}-${suffix}.png`);
 
-    console.log(`\nImage ${imageNum}/4:`);
+    console.log(`\n📸 Image ${imageNum}/4:`);
 
     try {
       // Generate contextual prompt
       const imagePrompt = await generateImagePrompt(section.content, imageNum, blogTitle);
-      console.log(`  Prompt: ${imagePrompt.substring(0, 100)}...`);
 
-      // Generate image
-      await generateImage(imagePrompt, outputPath);
+      // Generate image with Gemini
+      await generateImageWithGemini(imagePrompt, outputPath);
 
       generatedImages.push({
         imageNumber: imageNum,
         path: `/images/blog/${slug}-${suffix}.png`,
         prompt: imagePrompt
       });
+
+      // Small delay between requests to avoid rate limiting
+      if (imageNum < sections.length) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
     } catch (error) {
-      console.error(`  Error generating image ${imageNum}: ${error.message}`);
+      console.error(`  ❌ Error generating image ${imageNum}: ${error.message}`);
       // Continue with other images
     }
   }
 
   console.log('\n--- Generated Images ---');
   console.log(JSON.stringify(generatedImages, null, 2));
+  console.log(`\n✅ Successfully generated ${generatedImages.length}/${sections.length} images`);
 
   return generatedImages;
 }
