@@ -52,7 +52,7 @@ async function createKieTask(prompt) {
   const response = await fetch(`${KIE_API_BASE}/api/v1/jobs/createTask`, {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${KIE_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: KIE_MODEL, prompt: prompt + NO_TEXT_SUFFIX, aspect_ratio: '16:9', resolution: '2K', output_format: 'png' })
+    body: JSON.stringify({ model: KIE_MODEL, input: { prompt: prompt + NO_TEXT_SUFFIX, image_input: [], aspect_ratio: '16:9', resolution: '2K', output_format: 'png' } })
   });
   const data = await response.json();
   if (data.code !== 200) throw new Error('KIE API error: ' + JSON.stringify(data));
@@ -68,13 +68,13 @@ async function pollKieTask(taskId, maxAttempts = 60) {
     });
     const data = await response.json();
     if (data.code !== 200) throw new Error('Polling error: ' + JSON.stringify(data));
-    const status = data.data?.status;
-    if (status === 'completed' || status === 'success') {
-      const url = data.data?.output?.image_url || data.data?.result?.image_url || data.data?.imageUrl || data.data?.output?.[0];
+    const state = data.data?.state;
+    if (state === 'success') {
+      const resultJson = JSON.parse(data.data?.resultJson || '{}'); const url = resultJson.resultUrls?.[0];
       if (!url) throw new Error('No image URL in response');
       return url;
     }
-    if (status === 'failed' || status === 'error') throw new Error('Task failed');
+    if (state === 'failed' || state === 'error') throw new Error('Task failed: ' + data.data?.failMsg);
     if (i % 5 === 0) console.log('  Processing... attempt', i+1);
   }
   throw new Error('Timeout');
