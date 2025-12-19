@@ -1,6 +1,7 @@
 import { getAllPosts } from '@/lib/blog';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogHeader from '@/components/BlogHeader';
 
 export const metadata: Metadata = {
   title: 'Blog | AI Essentials - AI Automation Insights',
@@ -16,19 +17,11 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-4xl mx-auto px-4 py-24">
-        <Link
-          href="/"
-          className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-8 transition-colors"
-        >
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Home
-        </Link>
-
-        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">
+    <>
+      <BlogHeader />
+      <main className="min-h-screen bg-black text-white pt-16">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">
           AI Automation Insights
         </h1>
         <p className="text-gray-400 text-lg mb-12">
@@ -77,7 +70,8 @@ export default function BlogPage() {
             ))}
           </div>
         )}
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
