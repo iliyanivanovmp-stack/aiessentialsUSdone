@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import BlogHeader from '@/components/BlogHeader';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Blog | AI Essentials - AI Automation Insights',
@@ -144,6 +145,7 @@ export default function BlogPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

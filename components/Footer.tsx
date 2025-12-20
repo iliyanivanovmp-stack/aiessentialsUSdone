@@ -8,6 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [showTerms, setShowTerms] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <>
@@ -46,6 +47,12 @@ const Footer = () => {
             >
               Home
             </a>
+            <button
+              onClick={() => setShowContact(true)}
+              className="hover:text-white transition-colors duration-200"
+            >
+              Contact
+            </button>
           </div>
         </motion.div>
       </footer>
@@ -243,6 +250,51 @@ const Footer = () => {
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">Changes</h4>
                 <p>We'll post updates here with a new effective date.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {showContact && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            className="bg-gray-900 border border-gray-800 rounded-lg max-w-md w-full overflow-hidden"
+          >
+            <div className="flex justify-between items-center p-6 border-b border-gray-800">
+              <h2 className="text-2xl font-bold text-white">Contact Us</h2>
+              <button
+                onClick={() => setShowContact(false)}
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="p-6 text-gray-300 space-y-4">
+              <p className="text-lg font-semibold text-white">Reach us out on:</p>
+              <div className="space-y-3">
+                <a
+                  href="mailto:iliyan.ivanov.mp@gmail.com"
+                  className="flex items-center gap-3 text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  iliyan.ivanov.mp@gmail.com
+                </a>
+                <a
+                  href="tel:+12133971263"
+                  className="flex items-center gap-3 text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  +1 (213) 397-1263
+                </a>
               </div>
             </div>
           </motion.div>
