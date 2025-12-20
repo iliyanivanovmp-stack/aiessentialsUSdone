@@ -11,7 +11,7 @@ const BlogHeader = () => {
           {/* Logo - Left */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/Gemini_Generated_Image_hcb1jjhcb1jjhcb1-removebg-preview.png"
+              src="/Gemini_Generated_Image_hcb1jjhc312321b1jjhcb1-removebg-preview.png"
               alt="AI Essentials"
               width={80}
               height={80}
