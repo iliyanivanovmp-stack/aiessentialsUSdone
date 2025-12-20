@@ -18,6 +18,7 @@ export interface BlogPost {
   tags: string[];
   content: string;
   readingTime: string;
+  coverImage?: string;
 }
 
 export interface BlogPostMeta {
@@ -28,6 +29,7 @@ export interface BlogPostMeta {
   author: string;
   tags: string[];
   readingTime: string;
+  coverImage?: string;
 }
 
 function calculateReadingTime(content: string): string {
@@ -75,6 +77,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       tags: data.tags || [],
       content,
       readingTime: calculateReadingTime(content),
+      coverImage: data.coverImage || undefined,
     };
   } catch {
     return null;
