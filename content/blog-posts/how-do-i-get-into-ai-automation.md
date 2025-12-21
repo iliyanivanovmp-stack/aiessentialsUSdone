@@ -19,14 +19,6 @@ That said, jumping in without a plan usually leads to frustration. You'll automa
 
 This guide walks you through everything you need to know: where to start, what skills actually matter, how much you should budget, and the specific steps to implement your first automation. Whether you're a solopreneur or running a team of 50, the fundamentals are the same.
 
-## Table of Contents
-- [Identifying AI Automation Opportunities](#identifying-ai-automation-opportunities-in-your-business)
-- [Essential Skills You Actually Need](#essential-skills-you-actually-need)
-- [Beginner-Friendly Tools and Platforms](#beginner-friendly-tools-and-platforms)
-- [Costs and ROI Expectations](#costs-and-roi-expectations)
-- [FAQ](#frequently-asked-questions)
-
-## Identifying AI Automation Opportunities in Your Business
 
 Before you touch any tool, you need to know what's worth automating. Not every task is a good candidate, and automating the wrong thing wastes time and money.
 

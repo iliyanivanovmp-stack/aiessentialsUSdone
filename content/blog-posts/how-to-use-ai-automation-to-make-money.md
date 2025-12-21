@@ -14,21 +14,6 @@ AI automation isn't about replacing your team. It's about removing the boring, r
 
 **How AI Essentials helps here:** We build custom AI automation systems in 14–30 days that pay for themselves within 60 days—or you don't pay.
 
----
-
-**Table of Contents**
-- [7 Ways AI Automation Makes Money](#7-ways-ai-automation-makes-money)
-- [Lead Generation on Autopilot](#lead-generation-on-autopilot)
-- [Customer Service That Never Sleeps](#customer-service-that-never-sleeps)
-- [Marketing That Writes Itself](#marketing-that-writes-itself)
-- [Sales Follow-Ups That Actually Happen](#sales-follow-ups-that-actually-happen)
-- [Admin Tasks You'll Never Miss](#admin-tasks-youll-never-miss)
-- [Quick ROI Example](#quick-roi-example)
-- [How to Get Started](#how-to-get-started)
-- [FAQ](#faq)
-
----
-
 ## 7 Ways AI Automation Makes Money
 
 This section covers the main categories of profit-generating AI automation—so you can pick what fits your business best.
