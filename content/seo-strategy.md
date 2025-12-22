@@ -213,8 +213,9 @@ Add **3–5 internal links**:
 - 1–2 to relevant service pages
 - 1–3 to related blog posts
 
-### External links (selective)
-Add **2–4 authoritative links** when you reference stats, regulations, or standards.
+### External links (mandatory)
+Add **2–4 authoritative links** when you reference stats, regulations, or standards, theories, facs and so on.
+Make sure the links are redirecting.
 
 
 ### Images (required — 4 per post)
