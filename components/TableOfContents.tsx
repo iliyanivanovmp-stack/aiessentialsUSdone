@@ -5,43 +5,37 @@ import { useEffect, useState, useCallback } from 'react';
 interface Heading {
   id: string;
   text: string;
-  level: number;
 }
 
 interface TableOfContentsProps {
   content: string;
-  variant?: 'sidebar' | 'inline';
 }
 
-function extractHeadings(html: string): Heading[] {
+function extractH2s(html: string): Heading[] {
   const headings: Heading[] = [];
-  // Match h2 and h3 tags with their id and text content
-  const regex = /<h([23])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[23]>/gi;
+  const regex = /<h2[^>]*id="([^"]*)"[^>]*>(.*?)<\/h2>/gi;
   let match;
 
   while ((match = regex.exec(html)) !== null) {
-    const level = parseInt(match[1]);
-    const id = match[2];
-    // Strip HTML tags from the heading text
-    const text = match[3].replace(/<[^>]*>/g, '').trim();
+    const id = match[1];
+    const text = match[2].replace(/<[^>]*>/g, '').trim();
 
     if (id && text) {
-      headings.push({ id, text, level });
+      headings.push({ id, text });
     }
   }
 
   return headings;
 }
 
-export default function TableOfContents({ content, variant = 'sidebar' }: TableOfContentsProps) {
+export default function TableOfContents({ content }: TableOfContentsProps) {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
-    const extracted = extractHeadings(content);
+    const extracted = extractH2s(content);
     setHeadings(extracted);
 
-    // Set initial active heading
     if (extracted.length > 0) {
       setActiveId(extracted[0].id);
     }
@@ -50,9 +44,8 @@ export default function TableOfContents({ content, variant = 'sidebar' }: TableO
   const handleScroll = useCallback(() => {
     if (headings.length === 0) return;
 
-    const scrollPosition = window.scrollY + 150; // Offset for better UX
+    const scrollPosition = window.scrollY + 150;
 
-    // Find the current section
     for (let i = headings.length - 1; i >= 0; i--) {
       const element = document.getElementById(headings[i].id);
       if (element && element.offsetTop <= scrollPosition) {
@@ -61,19 +54,15 @@ export default function TableOfContents({ content, variant = 'sidebar' }: TableO
       }
     }
 
-    // Default to first heading if none found
     setActiveId(headings[0]?.id || '');
   }, [headings]);
 
   useEffect(() => {
-    // Only track scroll for sidebar variant
-    if (variant === 'sidebar') {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll(); // Call once on mount
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [handleScroll, variant]);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
@@ -87,41 +76,13 @@ export default function TableOfContents({ content, variant = 'sidebar' }: TableO
     }
   };
 
-  // Don't render if no headings
   if (headings.length === 0) {
     return null;
   }
 
-  // Inline variant for mobile
-  if (variant === 'inline') {
-    return (
-      <nav className="xl:hidden mb-8 p-4 border border-gray-800 rounded-lg">
-        <h4 className="text-sm font-semibold text-gray-400 mb-3">
-          Table of Contents
-        </h4>
-        <ul className="space-y-2">
-          {headings.map((heading) => (
-            <li key={heading.id}>
-              <button
-                onClick={() => scrollToHeading(heading.id)}
-                className={`
-                  block w-full text-left text-sm text-cyan-400 hover:text-cyan-300 transition-colors
-                  ${heading.level === 3 ? 'pl-4' : ''}
-                `}
-              >
-                {heading.text}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  }
-
-  // Sidebar variant for desktop
   return (
-    <nav className="hidden xl:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
-      <div className="pr-8">
+    <nav className="hidden xl:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+      <div className="pr-6">
         <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
           Table of Contents
         </h4>
@@ -131,11 +92,10 @@ export default function TableOfContents({ content, variant = 'sidebar' }: TableO
               <button
                 onClick={() => scrollToHeading(heading.id)}
                 className={`
-                  block w-full text-left text-sm py-1.5 transition-all duration-200 border-l-2
-                  ${heading.level === 3 ? 'pl-6' : 'pl-4'}
+                  block w-full text-left text-sm py-1.5 transition-all duration-200 border-l-2 pl-3
                   ${activeId === heading.id
-                    ? 'text-[#22c55e] border-[#22c55e] font-medium'
-                    : 'text-gray-400 border-transparent hover:text-[#22c55e] hover:border-[#22c55e]/50'
+                    ? 'text-purple-400 border-purple-400 font-medium'
+                    : 'text-gray-400 border-transparent hover:text-purple-400 hover:border-purple-400/50'
                   }
                 `}
               >
