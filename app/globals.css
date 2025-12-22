@@ -94,6 +94,23 @@ body:has(#process:hover) .cursor-grid-overlay {
   opacity: 0 !important;
 }
 
+/* Blog inline TOC - hide on desktop where sticky sidebar TOC is shown */
+@media (min-width: 1280px) {
+  .prose > p:has(> strong:only-child):has(+ ul) {
+    display: none !important;
+  }
+  .prose > p:has(> strong:only-child) + ul {
+    display: none !important;
+  }
+  /* Also hide the horizontal rules around the TOC on desktop */
+  .prose > hr:has(+ p > strong:only-child) {
+    display: none !important;
+  }
+  .prose > p:has(> strong:only-child) + ul + hr {
+    display: none !important;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;
