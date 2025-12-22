@@ -75,6 +75,9 @@ export default async function BlogPostPage({ params }: Props) {
               Back to Blog
             </Link>
 
+            {/* Inline TOC for mobile */}
+            <TableOfContents content={content} variant="inline" />
+
             <header className="mb-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map((tag) => (

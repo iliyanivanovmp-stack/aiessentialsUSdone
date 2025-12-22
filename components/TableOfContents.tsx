@@ -10,6 +10,7 @@ interface Heading {
 
 interface TableOfContentsProps {
   content: string;
+  variant?: 'sidebar' | 'inline';
 }
 
 function extractHeadings(html: string): Heading[] {
@@ -32,7 +33,7 @@ function extractHeadings(html: string): Heading[] {
   return headings;
 }
 
-export default function TableOfContents({ content }: TableOfContentsProps) {
+export default function TableOfContents({ content, variant = 'sidebar' }: TableOfContentsProps) {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
@@ -65,11 +66,14 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   }, [headings]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Call once on mount
+    // Only track scroll for sidebar variant
+    if (variant === 'sidebar') {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // Call once on mount
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [handleScroll, variant]);
 
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
@@ -88,6 +92,33 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
     return null;
   }
 
+  // Inline variant for mobile
+  if (variant === 'inline') {
+    return (
+      <nav className="xl:hidden mb-8 p-4 border border-gray-800 rounded-lg">
+        <h4 className="text-sm font-semibold text-gray-400 mb-3">
+          Table of Contents
+        </h4>
+        <ul className="space-y-2">
+          {headings.map((heading) => (
+            <li key={heading.id}>
+              <button
+                onClick={() => scrollToHeading(heading.id)}
+                className={`
+                  block w-full text-left text-sm text-cyan-400 hover:text-cyan-300 transition-colors
+                  ${heading.level === 3 ? 'pl-4' : ''}
+                `}
+              >
+                {heading.text}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  }
+
+  // Sidebar variant for desktop
   return (
     <nav className="hidden xl:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
       <div className="pr-8">
