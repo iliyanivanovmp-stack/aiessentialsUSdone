@@ -4,6 +4,57 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import TableOfContents from '@/components/TableOfContents';
 
+// Helper to extract H2 headings from HTML content
+function extractH2Headings(html: string): { id: string; text: string }[] {
+  const headings: { id: string; text: string }[] = [];
+  const regex = /<h2[^>]*id="([^"]*)"[^>]*>(.*?)<\/h2>/gi;
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    const id = match[1];
+    const text = match[2].replace(/<[^>]*>/g, '').trim();
+    if (id && text) {
+      headings.push({ id, text });
+    }
+  }
+
+  return headings;
+}
+
+// Inject mobile TOC before the first H2
+function injectMobileTOC(html: string): string {
+  const headings = extractH2Headings(html);
+
+  if (headings.length === 0) {
+    return html;
+  }
+
+  const mobileTOCHtml = `
+<nav class="xl:hidden my-8 p-4 bg-gray-900/50 border border-gray-800 rounded-lg">
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">
+    Table of Contents
+  </h4>
+  <ul class="space-y-2">
+    ${headings.map(h => `
+    <li>
+      <a href="#${h.id}" class="text-sm text-gray-400 hover:text-purple-400 transition-colors block py-0.5">
+        ${h.text}
+      </a>
+    </li>
+    `).join('')}
+  </ul>
+</nav>
+`;
+
+  // Find the first H2 and insert mobile TOC before it
+  const firstH2Match = html.match(/<h2[^>]*>/i);
+  if (firstH2Match && firstH2Match.index !== undefined) {
+    return html.slice(0, firstH2Match.index) + mobileTOCHtml + html.slice(firstH2Match.index);
+  }
+
+  return html;
+}
+
 export const dynamicParams = false;
 
 interface Props {
@@ -52,7 +103,8 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  const content = await getPostContent(params.slug);
+  const rawContent = await getPostContent(params.slug);
+  const content = injectMobileTOC(rawContent);
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -60,7 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="xl:grid xl:grid-cols-[280px_1fr] xl:gap-8">
           {/* Table of Contents - Desktop Sticky Sidebar */}
           <aside className="hidden xl:block">
-            <TableOfContents content={content} />
+            <TableOfContents content={rawContent} />
           </aside>
 
           {/* Main Article Content */}
