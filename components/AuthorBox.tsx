@@ -16,8 +16,8 @@ export default function AuthorBox() {
               alt="Iliyan Ivanov"
               width={64}
               height={64}
-              className="w-16 h-16 rounded-full"
-              style={{ imageRendering: 'crisp-edges' }}
+              className="w-16 h-16 rounded-full object-cover"
+              style={{ imageRendering: 'crisp-edges', objectPosition: 'center 55%' }}
               onError={() => setImageError(true)}
             />
           ) : (
