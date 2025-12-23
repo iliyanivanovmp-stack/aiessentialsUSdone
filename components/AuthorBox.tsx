@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 
 export default function AuthorBox() {
@@ -12,13 +11,11 @@ export default function AuthorBox() {
         {/* Author Photo */}
         <div className="flex-shrink-0">
           {!imageError ? (
-            <Image
+            <img
               src="/images/iliyan-ivanov.webp"
               alt="Iliyan Ivanov"
-              width={192}
-              height={192}
-              quality={100}
-              unoptimized
+              width={64}
+              height={64}
               className="w-16 h-16 rounded-full object-cover"
               onError={() => setImageError(true)}
             />
