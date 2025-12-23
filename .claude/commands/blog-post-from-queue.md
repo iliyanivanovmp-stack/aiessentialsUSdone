@@ -16,6 +16,7 @@ Read these files to understand what to write and how:
 2. **content/tone-of-voice.md** - Follow these writing guidelines exactly
 3. **content/llms.txt** - Understand company context, services, and value propositions
 4. **content/seo-strategy.md** - Reference for SEO best practices, target audience, content standards, and **image placement rules**
+5. **content/evergreen-seo-requirements.md** - Understand the SEO enhancements automatically applied at render time (canonical URLs, JSON-LD structured data, author box, related posts)
 
 ### Step 2: Extract Post Details from Queue
 

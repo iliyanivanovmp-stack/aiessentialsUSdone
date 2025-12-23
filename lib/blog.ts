@@ -18,6 +18,7 @@ export interface BlogPost {
   tags: string[];
   content: string;
   readingTime: string;
+  image?: string;
   coverImage?: string;
 }
 
@@ -29,6 +30,7 @@ export interface BlogPostMeta {
   author: string;
   tags: string[];
   readingTime: string;
+  image?: string;
   coverImage?: string;
 }
 
@@ -77,6 +79,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       tags: data.tags || [],
       content,
       readingTime: calculateReadingTime(content),
+      image: data.image || undefined,
       coverImage: data.coverImage || undefined,
     };
   } catch {

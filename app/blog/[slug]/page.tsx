@@ -1,8 +1,141 @@
-import { getPostBySlug, getPostContent, getAllPostSlugs } from '@/lib/blog';
+import { getPostBySlug, getPostContent, getAllPostSlugs, getAllPosts } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import TableOfContents from '@/components/TableOfContents';
+import AuthorBox from '@/components/AuthorBox';
+import RelatedPosts from '@/components/RelatedPosts';
+
+const SITE_URL = 'https://aiessentials.us';
+
+// Helper to extract FAQ items from HTML content
+function extractFAQItems(html: string): { question: string; answer: string }[] {
+  const faqItems: { question: string; answer: string }[] = [];
+
+  // Find the FAQ section and extract H3 questions with their answers
+  const faqSectionMatch = html.match(/<h2[^>]*id="faq"[^>]*>.*?<\/h2>([\s\S]*?)(?=<h2|$)/i);
+  if (!faqSectionMatch) return faqItems;
+
+  const faqContent = faqSectionMatch[1];
+  const questionRegex = /<h3[^>]*>(.*?)<\/h3>([\s\S]*?)(?=<h3|$)/gi;
+  let match;
+
+  while ((match = questionRegex.exec(faqContent)) !== null) {
+    const question = match[1].replace(/<[^>]*>/g, '').trim();
+    // Extract just the first paragraph as the answer
+    const answerMatch = match[2].match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    const answer = answerMatch
+      ? answerMatch[1].replace(/<[^>]*>/g, '').trim()
+      : match[2].replace(/<[^>]*>/g, '').trim().slice(0, 300);
+
+    if (question && answer) {
+      faqItems.push({ question, answer });
+    }
+  }
+
+  return faqItems;
+}
+
+// Generate JSON-LD structured data
+function generateStructuredData(post: {
+  title: string;
+  excerpt: string;
+  date: string;
+  author: string;
+  image?: string;
+  tags: string[];
+}, slug: string, faqItems: { question: string; answer: string }[]) {
+  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
+  const imageUrl = post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.png`;
+
+  const structuredData: object[] = [
+    // Article Schema
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description: post.excerpt,
+      author: {
+        '@type': 'Organization',
+        name: 'AI Essentials',
+        url: SITE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'AI Essentials',
+        url: SITE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/images/logo.png`,
+        },
+      },
+      datePublished: post.date,
+      dateModified: post.date,
+      image: imageUrl,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      },
+      keywords: post.tags.join(', '),
+    },
+    // BreadcrumbList Schema
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: SITE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: `${SITE_URL}/blog`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: post.title,
+          item: canonicalUrl,
+        },
+      ],
+    },
+    // Organization Schema
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'AI Essentials',
+      url: SITE_URL,
+      description: 'AI automation consulting for B2B businesses. We build custom AI automation systems in 14-30 days that pay for themselves within 60 days.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        url: 'https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials',
+      },
+    },
+  ];
+
+  // Add FAQPage schema if there are FAQ items
+  if (faqItems.length > 0) {
+    structuredData.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
+  return structuredData;
+}
 
 // Helper to extract H2 headings from HTML content
 function extractH2Headings(html: string): { id: string; text: string }[] {
@@ -75,10 +208,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const canonicalUrl = `${SITE_URL}/blog/${params.slug}`;
+  const imageUrl = post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.png`;
+
   return {
     title: `${post.title} | AI Essentials Blog`,
     description: post.excerpt,
     authors: [{ name: post.author }],
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -86,11 +225,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      url: canonicalUrl,
+      images: [{ url: imageUrl }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
+      images: [imageUrl],
     },
     keywords: post.tags,
   };
@@ -106,8 +248,35 @@ export default async function BlogPostPage({ params }: Props) {
   const rawContent = await getPostContent(params.slug);
   const content = injectMobileTOC(rawContent);
 
+  // Get related posts (matching tags, excluding current post)
+  const allPosts = getAllPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== params.slug)
+    .filter((p) => p.tags.some((tag) => post.tags.includes(tag)))
+    .slice(0, 3);
+
+  // If not enough related posts by tag, fill with recent posts
+  if (relatedPosts.length < 3) {
+    const recentPosts = allPosts
+      .filter((p) => p.slug !== params.slug && !relatedPosts.some((rp) => rp.slug === p.slug))
+      .slice(0, 3 - relatedPosts.length);
+    relatedPosts.push(...recentPosts);
+  }
+
+  // Generate structured data
+  const faqItems = extractFAQItems(rawContent);
+  const structuredData = generateStructuredData(post, params.slug, faqItems);
+
   return (
     <main className="min-h-screen bg-black text-white">
+      {/* JSON-LD Structured Data */}
+      {structuredData.map((data, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <div className="max-w-7xl mx-auto px-4 py-24 relative">
         <div className="xl:grid xl:grid-cols-[280px_1fr] xl:gap-8">
           {/* Table of Contents - Desktop Sticky Sidebar */}
@@ -174,6 +343,10 @@ export default async function BlogPostPage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: content }}
             />
 
+            {/* Author Credibility Box */}
+            <AuthorBox />
+
+            {/* Footer CTA */}
             <footer className="mt-16 pt-8 border-t border-gray-800">
               <div className="flex justify-between items-center">
                 <Link
@@ -192,6 +365,11 @@ export default async function BlogPostPage({ params }: Props) {
             </footer>
           </article>
         </div>
+
+        {/* Continue Reading - Related Posts (after CTA, last element before site footer) */}
+        {relatedPosts.length > 0 && (
+          <RelatedPosts posts={relatedPosts} />
+        )}
       </div>
     </main>
   );
