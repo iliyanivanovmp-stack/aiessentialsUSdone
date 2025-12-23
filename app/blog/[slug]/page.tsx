@@ -386,7 +386,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-b from-black to-cyan-950/20 py-16">
+        <div className="mt-16 py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">
               Ready to automate your business?

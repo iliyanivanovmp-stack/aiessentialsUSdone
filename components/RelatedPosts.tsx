@@ -12,7 +12,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
 
   return (
     <section className="mt-16 pt-12 border-t border-gray-800">
-      <h2 className="text-2xl font-headline font-bold text-white mb-8">
+      <h2 className="text-2xl font-headline font-bold text-white mb-8 text-center">
         Continue Reading
       </h2>
 
