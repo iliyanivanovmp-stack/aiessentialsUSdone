@@ -12,7 +12,7 @@ export default function AuthorBox() {
         <div className="flex-shrink-0">
           {!imageError ? (
             <img
-              src="/images/iliyan-ivanov.webp"
+              src="/images/iliyan-ivanov.png"
               alt="Iliyan Ivanov"
               width={64}
               height={64}
