@@ -93,7 +93,41 @@ Every blog post must display an author bio section after the main content.
 
 ---
 
-## 4) Continue Reading Section (Related Posts)
+## 4) Updated At Date (Content Freshness)
+
+Every blog post should include an `updatedAt` date in its frontmatter to signal content freshness to search engines.
+
+**Why it matters:**
+- Google favors fresh, updated content
+- `dateModified` in JSON-LD helps search engines understand content relevance
+- OpenGraph `modifiedTime` signals freshness to social platforms
+- Builds user trust by showing content is maintained
+
+**Frontmatter field:**
+```yaml
+---
+title: "Your Post Title"
+date: "2025-12-17"
+updatedAt: "2025-12-23"
+# ... other fields
+---
+```
+
+**Implementation:**
+- Add `updatedAt` field to frontmatter when updating a post
+- JSON-LD `dateModified` uses `updatedAt` (falls back to `date` if not set)
+- OpenGraph `modifiedTime` uses `updatedAt` (falls back to `date` if not set)
+- Display "Updated [date]" in post header when `updatedAt` differs from `date`
+
+**When to update:**
+- Any content changes (fixes, additions, improvements)
+- Adding new sections or examples
+- Updating outdated information
+- SEO improvements to existing content
+
+---
+
+## 5) Continue Reading Section (Related Posts)
 
 Every blog post must include a "Continue Reading" section with related posts.
 
@@ -138,10 +172,11 @@ The blog post generation command (`/blog-post-from-queue`) does not need modific
 | Article Schema | Eligibility for rich results, better SERP display |
 | Breadcrumb Schema | Enhanced navigation display in search results |
 | Organization Schema | Brand knowledge panel eligibility |
+| Updated At Date | Content freshness signals, improved rankings for timely content |
 | Author Box | E-E-A-T signals (Experience, Expertise, Authority, Trust) |
 | Related Posts | Reduced bounce rate, increased session duration, internal linking |
 
 ---
 
-**Document Version:** 1.0
+**Document Version:** 1.1
 **Prepared for:** AI Essentials (https://aiessentials.us/)

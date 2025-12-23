@@ -36,12 +36,15 @@ Create a comprehensive, SEO-optimized blog post with this EXACT structure:
 ---
 title: "Your SEO-Optimized Title Here"
 date: "YYYY-MM-DD"
+updatedAt: "YYYY-MM-DD"
 excerpt: "A compelling 150-160 character description that answers the core question"
 author: "AI Essentials Team"
 tags: ["primary-keyword", "related-tag", "another-tag"]
 image: "/images/blog/[slug]-hero.png"
 ---
 ```
+
+**Note:** For new posts, set `updatedAt` to the same date as `date`. When updating existing posts, change `updatedAt` to the current date.
 
 **Content Structure (CRITICAL - Follow Exactly):**
 

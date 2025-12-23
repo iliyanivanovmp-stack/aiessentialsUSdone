@@ -5,6 +5,7 @@ target_keywords: "AI lead generation automation, automated prospecting, AI for B
 word_count_target: 2800
 status: published
 date: 2025-12-13
+updatedAt: 2025-12-23
 external_links: 3
 internal_links: 2
 featured_snippet_target: "What is AI lead generation automation?"

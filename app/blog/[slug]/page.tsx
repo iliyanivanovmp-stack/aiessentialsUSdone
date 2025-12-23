@@ -41,6 +41,7 @@ function generateStructuredData(post: {
   title: string;
   excerpt: string;
   date: string;
+  updatedAt?: string;
   author: string;
   image?: string;
   tags: string[];
@@ -70,7 +71,7 @@ function generateStructuredData(post: {
         },
       },
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.updatedAt || post.date,
       image: imageUrl,
       mainEntityOfPage: {
         '@type': 'WebPage',
@@ -223,6 +224,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updatedAt || post.date,
       authors: [post.author],
       tags: post.tags,
       url: canonicalUrl,
@@ -312,7 +314,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.title}
               </h1>
 
-              <div className="flex items-center text-gray-400">
+              <div className="flex flex-wrap items-center text-gray-400 gap-y-1">
                 <span className="font-medium">{post.author}</span>
                 <span className="mx-3">•</span>
                 <time dateTime={post.date}>
@@ -322,6 +324,21 @@ export default async function BlogPostPage({ params }: Props) {
                     day: 'numeric'
                   })}
                 </time>
+                {post.updatedAt && post.updatedAt !== post.date && (
+                  <>
+                    <span className="mx-3">•</span>
+                    <span className="text-gray-500">
+                      Updated{' '}
+                      <time dateTime={post.updatedAt}>
+                        {new Date(post.updatedAt).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </time>
+                    </span>
+                  </>
+                )}
                 <span className="mx-3">•</span>
                 <span>{post.readingTime}</span>
               </div>
