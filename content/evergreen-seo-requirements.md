@@ -81,7 +81,7 @@ Every blog post must display an author bio section after the main content.
 **Placement:** After the article content, before the footer CTA
 
 **Content:**
-- Author photo: `/images/iliyan-ivanov.png`
+- Author photo: `/images/iliyan-ivanov.webp`
 - Author name: "Iliyan Ivanov"
 - Bio: "Founder of AIessentials"
 

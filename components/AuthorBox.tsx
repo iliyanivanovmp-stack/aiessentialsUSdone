@@ -8,7 +8,7 @@ export default function AuthorBox() {
         {/* Author Photo */}
         <div className="flex-shrink-0">
           <Image
-            src="/images/iliyan-ivanov.png"
+            src="/images/iliyan-ivanov.webp"
             alt="Iliyan Ivanov"
             width={64}
             height={64}
