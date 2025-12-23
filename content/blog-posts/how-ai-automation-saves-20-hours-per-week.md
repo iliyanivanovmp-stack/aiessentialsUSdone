@@ -1,6 +1,7 @@
 ---
 title: "How AI Automation Can Save Your Business 20+ Hours Per Week"
 date: "2025-12-14"
+updatedAt: "2025-12-23"
 excerpt: "Discover practical AI automation strategies that help small businesses reclaim 20+ hours weekly. Real examples, ROI breakdown, and implementation tips."
 author: "AI Essentials Team"
 tags: ["AI automation", "business efficiency", "time savings", "workflow automation"]

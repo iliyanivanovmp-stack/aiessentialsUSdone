@@ -1,6 +1,7 @@
 ---
 title: "How to Use AI Automation to Make Money: 7 Proven Methods for Business Owners"
 date: "2025-12-17"
+updatedAt: "2025-12-23"
 excerpt: "AI automation makes money by cutting costs and boosting revenue. Learn 7 proven methods to profit from AI, from lead generation to customer service."
 author: "AI Essentials Team"
 tags: ["ai automation", "business automation", "make money with ai", "revenue growth"]

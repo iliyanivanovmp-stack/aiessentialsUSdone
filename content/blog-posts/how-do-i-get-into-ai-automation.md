@@ -1,6 +1,7 @@
 ---
 title: "How Do I Get Into AI Automation? A Practical Guide for Business Owners"
 date: "2025-12-17"
+updatedAt: "2025-12-23"
 excerpt: "Learn how to get started with AI automation for your business. Discover essential skills, tools, costs, and step-by-step strategies to automate your operations."
 author: "AI Essentials Team"
 tags: ["ai automation", "business automation", "getting started", "small business"]

@@ -13,11 +13,13 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  updatedAt?: string;
   excerpt: string;
   author: string;
   tags: string[];
   content: string;
   readingTime: string;
+  image?: string;
   coverImage?: string;
 }
 
@@ -25,10 +27,12 @@ export interface BlogPostMeta {
   slug: string;
   title: string;
   date: string;
+  updatedAt?: string;
   excerpt: string;
   author: string;
   tags: string[];
   readingTime: string;
+  image?: string;
   coverImage?: string;
 }
 
@@ -72,11 +76,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
       slug,
       title: data.title || 'Untitled',
       date: data.date || new Date().toISOString().split('T')[0],
+      updatedAt: data.updatedAt || undefined,
       excerpt: data.excerpt || '',
       author: data.author || 'AI Essentials Team',
       tags: data.tags || [],
       content,
       readingTime: calculateReadingTime(content),
+      image: data.image || undefined,
       coverImage: data.coverImage || undefined,
     };
   } catch {

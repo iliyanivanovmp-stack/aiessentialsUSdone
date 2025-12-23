@@ -16,6 +16,7 @@ Read these files to understand what to write and how:
 2. **content/tone-of-voice.md** - Follow these writing guidelines exactly
 3. **content/llms.txt** - Understand company context, services, and value propositions
 4. **content/seo-strategy.md** - Reference for SEO best practices, target audience, content standards, and **image placement rules**
+5. **content/evergreen-seo-requirements.md** - Understand the SEO enhancements automatically applied at render time (canonical URLs, JSON-LD structured data, author box, related posts)
 
 ### Step 2: Extract Post Details from Queue
 
@@ -35,12 +36,15 @@ Create a comprehensive, SEO-optimized blog post with this EXACT structure:
 ---
 title: "Your SEO-Optimized Title Here"
 date: "YYYY-MM-DD"
+updatedAt: "YYYY-MM-DD"
 excerpt: "A compelling 150-160 character description that answers the core question"
 author: "AI Essentials Team"
 tags: ["primary-keyword", "related-tag", "another-tag"]
 image: "/images/blog/[slug]-hero.png"
 ---
 ```
+
+**Note:** For new posts, set `updatedAt` to the same date as `date`. When updating existing posts, change `updatedAt` to the current date.
 
 **Content Structure (CRITICAL - Follow Exactly):**
 
