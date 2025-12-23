@@ -17,7 +17,7 @@ export default function AuthorBox() {
               width={64}
               height={64}
               className="w-16 h-16 rounded-full object-cover"
-              style={{ imageRendering: 'crisp-edges', objectPosition: 'center 45%' }}
+              style={{ imageRendering: 'crisp-edges', objectPosition: 'center 55%' }}
               onError={() => setImageError(true)}
             />
           ) : (
