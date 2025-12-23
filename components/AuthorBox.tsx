@@ -15,8 +15,8 @@ export default function AuthorBox() {
             <Image
               src="/images/iliyan-ivanov.webp"
               alt="Iliyan Ivanov"
-              width={64}
-              height={64}
+              width={192}
+              height={192}
               className="w-16 h-16 rounded-full object-cover"
               onError={() => setImageError(true)}
             />
