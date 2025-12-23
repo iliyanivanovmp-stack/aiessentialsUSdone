@@ -153,12 +153,49 @@ Every blog post must include a "Continue Reading" section with related posts.
 
 ---
 
+## 6) CTA Section (Call-to-Action)
+
+Every blog post must include a prominent CTA section before the footer.
+
+**Placement:** After the Related Posts section, before the site footer
+
+**Content:**
+- Headline: "Ready to automate your business?"
+- Subtext: "Book a free discovery call and learn how AI can save you 20+ hours per week."
+- Button: "Book Free Call" linking to Calendly
+
+**Design:**
+- Gradient background (black to cyan tint)
+- Centered text layout
+- Prominent cyan button
+- Consistent with /blog page CTA
+
+---
+
+## 7) Site Footer
+
+Every blog post must include the standard site footer.
+
+**Placement:** At the very bottom of the page, after all content
+
+**Content:**
+- Company info: "AIessentials by IvanovIV LLC 2025"
+- Links: Privacy, Terms, Home, Contact
+- Modal popups for Privacy Policy and Terms of Service
+
+**Implementation:**
+- Uses the shared `Footer` component from `/components/Footer.tsx`
+- Consistent across all pages (home, blog listing, blog posts)
+
+---
+
 ## Implementation Notes
 
 These requirements are implemented in:
 - `app/blog/[slug]/page.tsx` - Main blog post template
 - `components/AuthorBox.tsx` - Author credibility component
 - `components/RelatedPosts.tsx` - Continue reading component
+- `components/Footer.tsx` - Site footer component
 
 The blog post generation command (`/blog-post-from-queue`) does not need modification—these enhancements are applied automatically at render time.
 
@@ -175,8 +212,10 @@ The blog post generation command (`/blog-post-from-queue`) does not need modific
 | Updated At Date | Content freshness signals, improved rankings for timely content |
 | Author Box | E-E-A-T signals (Experience, Expertise, Authority, Trust) |
 | Related Posts | Reduced bounce rate, increased session duration, internal linking |
+| CTA Section | Conversion optimization, clear user journey |
+| Site Footer | Trust signals, legal compliance, consistent UX |
 
 ---
 
-**Document Version:** 1.1
+**Document Version:** 1.2
 **Prepared for:** AI Essentials (https://aiessentials.us/)
