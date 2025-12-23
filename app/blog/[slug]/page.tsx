@@ -385,30 +385,30 @@ export default async function BlogPostPage({ params }: Props) {
           </article>
         </div>
 
-        {/* Continue Reading - Related Posts */}
+        {/* CTA Section */}
+        <div className="bg-gradient-to-b from-black to-cyan-950/20 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">
+              Ready to automate your business?
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              Book a free discovery call and learn how AI can save you 20+ hours per week.
+            </p>
+            <Link
+              href="https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-cyan-400 text-black px-8 py-3 font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
+            >
+              Book Free Call
+            </Link>
+          </div>
+        </div>
+
+        {/* Continue Reading - Related Posts (last element before footer) */}
         {relatedPosts.length > 0 && (
           <RelatedPosts posts={relatedPosts} />
         )}
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-gradient-to-b from-black to-cyan-950/20 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">
-            Ready to automate your business?
-          </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            Book a free discovery call and learn how AI can save you 20+ hours per week.
-          </p>
-          <Link
-            href="https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-cyan-400 text-black px-8 py-3 font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
-          >
-            Book Free Call
-          </Link>
-        </div>
       </div>
     </main>
     <Footer />

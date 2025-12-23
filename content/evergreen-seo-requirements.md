@@ -81,12 +81,12 @@ Every blog post must display an author bio section after the main content.
 **Placement:** After the article content, before the footer CTA
 
 **Content:**
-- Author name: "AI Essentials Team"
-- Author image: Company logo or team avatar
-- Bio: Brief description of expertise and credentials
-- Optional: Links to about page or LinkedIn
+- Author photo: `/images/iliyan-ivanov.png`
+- Author name: "Iliyan Ivanov"
+- Bio: "Founder of AIessentials"
 
 **Design:**
+- Compact horizontal layout with photo and text
 - Subtle styling that matches site design
 - Professional appearance that builds trust
 - Mobile-responsive layout
@@ -131,7 +131,7 @@ updatedAt: "2025-12-23"
 
 Every blog post must include a "Continue Reading" section with related posts.
 
-**Placement:** After the footer CTA section (last element before site footer)
+**Placement:** Last element before the site footer (after CTA section)
 
 **Content:**
 - 3 related posts maximum
@@ -157,7 +157,7 @@ Every blog post must include a "Continue Reading" section with related posts.
 
 Every blog post must include a prominent CTA section before the footer.
 
-**Placement:** After the Related Posts section, before the site footer
+**Placement:** Before the Related Posts section (CTA → Related Posts → Footer)
 
 **Content:**
 - Headline: "Ready to automate your business?"
