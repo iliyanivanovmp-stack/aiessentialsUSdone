@@ -176,24 +176,24 @@ Edit `content/q.md` to update the published item:
 - Set `publishedAt: "[current ISO timestamp]"`
 - Set `updatedAt: "[current ISO timestamp]"`
 
-### Step 7: Update llms.txt
+### Step 7: Regenerate SEO Files (sitemap.xml and llms.txt)
 
-Edit `content/llms.txt` to add the new blog post to the "Recent Blog Posts" section:
+**IMPORTANT: Run this script to update the sitemap and llms.txt with the new blog post.**
 
-```markdown
-## Recent Blog Posts
-- [New Post Title](/blog/[slug]) - [Month] [Year]
-- [Previous posts...]
+```bash
+node scripts/generate-seo-files.js
 ```
 
-Add the new post at the TOP of the list.
+This script automatically:
+- Regenerates `public/sitemap.xml` with all blog posts and correct dates
+- Regenerates `public/llms.txt` with the updated blog post list
 
 ### Step 8: Commit and Push
 
 Create a git commit and push:
 
 ```bash
-git add content/blog-posts/[slug].md content/q.md content/llms.txt public/images/blog/
+git add content/blog-posts/[slug].md content/q.md public/images/blog/ public/sitemap.xml public/llms.txt
 git commit -m "Add blog post: [title] (with images)"
 git push
 ```
@@ -211,15 +211,20 @@ After completing all steps, provide:
    - `/images/blog/[slug]-2.png`
    - `/images/blog/[slug]-3.png`
 6. ✅ Confirmation that q.md status was updated to "published"
-7. ✅ Confirmation that llms.txt was updated
+7. ✅ Confirmation that SEO files were regenerated (sitemap.xml and llms.txt)
 8. ✅ Git commit confirmation
 
 ## Troubleshooting
 
 **If image generation fails:**
-- Check that GEMINI_API_KEY is set in .env file
+- Check that both GEMINI_API_KEY and KIE_API_KEY are set in .env file
 - The script is at: `scripts/generate-blog-images.js`
 - Images save to: `public/images/blog/`
 - If API fails, the blog post is still valid - images can be regenerated later
+
+**If SEO files generation fails:**
+- The script is at: `scripts/generate-seo-files.js`
+- Run manually: `node scripts/generate-seo-files.js`
+- Check that all blog posts have valid date formats in frontmatter (YYYY-MM-DD)
 
 **The command should complete fully automatically with no manual intervention required.**
