@@ -1,14 +1,22 @@
 exports.handler = async (event) => {
   const token = event.queryStringParameters?.t || "";
 
-  // Fire-and-forget tracking call to n8n (doesn't block redirect)
-  const trackBase = process.env.N8N_TRACK_URL; // set in Netlify env vars
-  const secret = process.env.N8N_SECRET;       // optional
-  if (token && trackBase) {
-    fetch(`${trackBase}?t=${encodeURIComponent(token)}`, {
-      method: "GET",
-      headers: secret ? { "x-internal-secret": secret } : {},
-    }).catch(() => {});
+  // ✅ Hardcoded n8n tracking webhook (PRODUCTION URL)
+  const trackBase = "https://getrich1207.app.n8n.cloud/webhook/track-click";
+
+  // Optional secret header (only if you implement this check in n8n)
+  const secret = process.env.N8N_SECRET || "";
+
+  // Send tracking call (quick + reliable)
+  if (token) {
+    try {
+      await fetch(`${trackBase}?t=${encodeURIComponent(token)}`, {
+        method: "GET",
+        headers: secret ? { "x-internal-secret": secret } : {},
+      });
+    } catch (e) {
+      // ignore tracking errors so redirect still works
+    }
   }
 
   // Redirect to TestBuddy
