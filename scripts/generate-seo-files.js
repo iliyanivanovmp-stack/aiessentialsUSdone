@@ -26,19 +26,27 @@ function getAllPosts() {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
 
-      // Ensure date is in YYYY-MM-DD format (handles Date objects from gray-matter)
-      let dateStr = data.date;
-      if (dateStr instanceof Date) {
-        dateStr = dateStr.toISOString().split('T')[0];
-      } else if (typeof dateStr === 'string' && dateStr.includes(' ')) {
-        // Handle full date strings like "Sat Dec 13 2025..."
-        dateStr = new Date(dateStr).toISOString().split('T')[0];
-      }
+      // Helper to format date to YYYY-MM-DD
+      const formatDate = (dateValue) => {
+        if (!dateValue) return null;
+        if (dateValue instanceof Date) {
+          return dateValue.toISOString().split('T')[0];
+        }
+        if (typeof dateValue === 'string' && dateValue.includes(' ')) {
+          return new Date(dateValue).toISOString().split('T')[0];
+        }
+        return dateValue;
+      };
+
+      const dateStr = formatDate(data.date) || new Date().toISOString().split('T')[0];
+      const updatedAtStr = formatDate(data.updatedAt);
 
       return {
         slug,
         title: data.title || 'Untitled',
-        date: dateStr || new Date().toISOString().split('T')[0],
+        date: dateStr,
+        updatedAt: updatedAtStr,
+        lastmod: updatedAtStr || dateStr, // Use updatedAt for sitemap if available
         excerpt: data.excerpt || '',
       };
     })
@@ -56,7 +64,7 @@ function generateSitemap() {
     .map(
       (post) => `  <url>
     <loc>${baseUrl}/blog/${post.slug}</loc>
-    <lastmod>${post.date}</lastmod>
+    <lastmod>${post.lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`
