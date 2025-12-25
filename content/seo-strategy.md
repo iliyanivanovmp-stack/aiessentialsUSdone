@@ -213,9 +213,17 @@ Add **3–5 internal links**:
 - 1–2 to relevant service pages
 - 1–3 to related blog posts
 
-### External links (mandatory)
-Add **2–4 authoritative links** when you reference stats, regulations, or standards, theories, facs and so on.
-Make sure the links are redirecting.
+### External links (mandatory — 2-3 per post minimum)
+Every blog post MUST include **2-3 authoritative external links** to:
+- Research studies (Harvard Business Review, MIT Sloan, academic sources)
+- Industry reports (McKinsey, Gartner, Forrester)
+- Official documentation or standards
+
+**Requirements:**
+- Links must be contextually relevant to surrounding content
+- All links must be verified to redirect correctly (test before publishing)
+- Place links naturally within sentences, not as standalone references
+- Avoid linking to competitors or low-authority sources
 
 
 ### Images (required — 4 per post)
@@ -271,7 +279,7 @@ Important:
 
 
 
-**Document Version:** 2.3 (Added AI-generated image requirements)
+**Document Version:** 2.3 (Enhanced external links requirements)
 **Last Updated:** December 17, 2025
 **Prepared for:** AI Essentials (https://aiessentials.us/)
 
