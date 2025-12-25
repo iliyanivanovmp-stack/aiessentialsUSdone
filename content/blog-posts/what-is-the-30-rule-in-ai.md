@@ -102,7 +102,7 @@ Let's say you spend 10 hours weekly on tasks that fit the 30% rule. With automat
 | Monthly time recovered | 40 hours | 8 hours | 32 hours |
 | Annual value (at $50/hour) | $24,000 | $4,800 | $19,200 |
 
-That's nearly $20,000 in recovered productivity from focusing on just 30% of your work.
+That's nearly $20,000 in recovered productivity from focusing on just 30% of your work. [According to MIT Sloan Management Review](https://mitsloan.mit.edu/ideas-made-to-matter/ai-implementation-strategies-4-insights-mit-sloan-management-review), companies that properly identify automation value at the proof-of-concept stage see the best returns—some generating over 50 million euros in annual ROI.
 
 How AI Essentials helps here: We implement automation for your specific 30% in 14-30 days, with clear ROI projections before we start.
 
@@ -122,7 +122,7 @@ The 30% rule exists for a reason: trying to automate everything at once usually 
 
 **Loss of human judgment:** Some decisions need context that AI can't provide. Automating customer complaints, for example, can turn minor issues into PR disasters.
 
-**Team resistance:** When employees feel replaced rather than supported, they fight the system instead of helping it succeed.
+**Team resistance:** When employees feel replaced rather than supported, they fight the system instead of helping it succeed. [Research from Harvard Business Review](https://hbr.org/2024/05/for-success-with-ai-bring-everyone-on-board) shows that excluding workers from AI adoption makes them averse to the technology and resistant to positive changes.
 
 **Maintenance nightmares:** Every automated process needs monitoring. Automate 80% of your work, and you'll spend all your time babysitting the automation.
 
@@ -136,7 +136,7 @@ The smart approach is to start at 30% and expand slowly:
 
 **Month 5-6:** Evaluate what's working. Expand only where you see clear wins.
 
-**Ongoing:** Never exceed 60-70% automation. Keep humans in the loop for anything involving judgment, creativity, or relationship-building.
+**Ongoing:** Never exceed 60-70% automation. Keep humans in the loop for anything involving judgment, creativity, or relationship-building. [Studies show](https://hbr.org/2024/06/research-warehouse-and-logistics-automation-works-better-with-human-partners) that hybrid systems combining human workers with automation consistently outperform fully automated operations.
 
 ### Warning Signs You've Gone Too Far
 
