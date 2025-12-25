@@ -6,6 +6,7 @@ import TableOfContents from '@/components/TableOfContents';
 import AuthorBox from '@/components/AuthorBox';
 import RelatedPosts from '@/components/RelatedPosts';
 import Footer from '@/components/Footer';
+import BlogHeader from '@/components/BlogHeader';
 
 const SITE_URL = 'https://aiessentials.us';
 
@@ -272,6 +273,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+    <BlogHeader />
     <main className="min-h-screen bg-black text-white">
       {/* JSON-LD Structured Data */}
       {structuredData.map((data, index) => (
