@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-    <BlogHeader />
+    <BlogHeader showBackToBlog={true} />
     <main className="min-h-screen bg-black text-white">
       {/* JSON-LD Structured Data */}
       {structuredData.map((data, index) => (
@@ -292,16 +292,6 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Main Article Content */}
           <article className="max-w-3xl mx-auto xl:mx-0">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-8 transition-colors"
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to Blog
-            </Link>
-
             <header className="mb-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map((tag) => (
