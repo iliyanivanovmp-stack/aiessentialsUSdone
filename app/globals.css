@@ -111,6 +111,42 @@ body:has(#process:hover) .cursor-grid-overlay {
   }
 }
 
+/* CTA Block Styling for Blog Posts */
+.prose blockquote:has(strong:first-child) {
+  border-left-width: 4px;
+  border-left-color: #22d3ee;
+  background: linear-gradient(to right, rgba(8, 145, 178, 0.15), transparent);
+  padding: 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 2rem 0;
+}
+
+.prose blockquote:has(strong:first-child) p {
+  margin: 0.5rem 0;
+}
+
+.prose blockquote:has(strong:first-child) strong {
+  color: #ffffff;
+  font-size: 1.125rem;
+}
+
+.prose blockquote:has(strong:first-child) a {
+  display: inline-block;
+  background-color: #22d3ee;
+  color: #000000;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.prose blockquote:has(strong:first-child) a:hover {
+  background-color: #67e8f9;
+  text-decoration: none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;

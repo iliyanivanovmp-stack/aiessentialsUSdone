@@ -57,6 +57,10 @@ image: "/images/blog/[slug]-hero.png"
 
 [2-3 paragraphs expanding on the answer with more detail, context, and examples. This section should be 200-300 words total.]
 
+> **[Benefit-oriented headline - e.g., "Want to see how much time AI could save you?"]**
+> [1-2 sentences explaining the value proposition]
+> [Book a Free Strategy Call →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
+
 ## Table of Contents
 - [Section 2 Title](#section-2-anchor)
 - [Section 3 Title](#section-3-anchor)
@@ -68,7 +72,10 @@ image: "/images/blog/[slug]-hero.png"
 [Comprehensive content addressing a key aspect of the topic]
 [Use H3 subsections as needed]
 [Include specific examples and data]
-[End with "How AI Essentials helps here:" tie-back]
+
+> **[CTA headline related to section topic - e.g., "Ready to automate this process?"]**
+> [Brief value prop specific to this section's topic]
+> [Get Your Free Assessment →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
 ![Section 2 illustration](/images/blog/{slug}-1.png)
 
@@ -77,7 +84,10 @@ image: "/images/blog/[slug]-hero.png"
 [Continue building on the topic]
 [Add practical, actionable advice]
 [Use bullet points for scannability]
-[End with "How AI Essentials helps here:" tie-back]
+
+> **[CTA headline related to section topic]**
+> [Brief value prop specific to this section's topic]
+> [Book Your Free Call →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
 ![Section 3 illustration](/images/blog/{slug}-2.png)
 
@@ -85,7 +95,10 @@ image: "/images/blog/[slug]-hero.png"
 
 [Tie everything together]
 [Include case study or real-world example if applicable]
-[End with "How AI Essentials helps here:" tie-back]
+
+> **[CTA headline related to section topic]**
+> [Brief value prop specific to this section's topic]
+> [Start Your AI Journey →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
 ![Section 4 illustration](/images/blog/{slug}-3.png)
 
@@ -105,6 +118,30 @@ image: "/images/blog/[slug]-hero.png"
 
 Ready to [benefit]? [Book a free 30-minute strategy call](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials) to see how AI automation can [specific outcome] for your business.
 ```
+
+**CTA Block Requirements (CRITICAL - Must include 3-4 CTAs):**
+
+Each blog post MUST include **3-4 CTA blocks** using this exact blockquote format:
+
+```markdown
+> **[Benefit-oriented headline]**
+> [1-2 sentences with specific value proposition]
+> [Button Text →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
+```
+
+**CTA Placement Rules:**
+1. **First CTA**: After the opening section (after hero image and expansion paragraphs)
+2. **Section CTAs**: At the end of each major H2 section (before the section image)
+3. **Each CTA must be unique** - different headline, different benefit, relevant to the section topic
+
+**CTA Headline Examples:**
+- "Want to see how much time AI could save you?"
+- "Ready to automate your [topic] process?"
+- "Curious what this would look like for your business?"
+- "Want a custom implementation plan?"
+- "Ready to stop doing this manually?"
+
+The blockquote format with **bold headline** triggers special CTA styling (cyan left border, gradient background, styled button).
 
 **Image Placement Rules (from seo-strategy.md):**
 1. **Hero Image** (`{slug}-hero.png`): Immediately after the direct answer, before the expansion paragraphs
@@ -200,19 +237,72 @@ git push
 
 ## Output
 
-After completing all steps, provide:
-1. ✅ Blog post title and file path
-2. ✅ Word count (target: 1,800-2,500)
-3. ✅ Primary keyword used
-4. ✅ Number of FAQ questions included (should be 10)
-5. ✅ 4 images generated with paths:
-   - `/images/blog/[slug]-hero.png`
-   - `/images/blog/[slug]-1.png`
-   - `/images/blog/[slug]-2.png`
-   - `/images/blog/[slug]-3.png`
-6. ✅ Confirmation that q.md status was updated to "published"
-7. ✅ Confirmation that SEO files were regenerated (sitemap.xml and llms.txt)
-8. ✅ Git commit confirmation
+After completing all steps, provide a **Requirements Compliance Report** showing all requirements were followed:
+
+### 📋 Requirements Checklist
+
+**Content Structure:**
+- [ ] Direct answer in first 2-3 sentences
+- [ ] Hero image placed after direct answer
+- [ ] 2-3 expansion paragraphs after hero image
+- [ ] Table of Contents with anchor links
+- [ ] 3-4 H2 sections covering the topic comprehensively
+- [ ] Each H2 section has H3 subsections where appropriate
+- [ ] Conclusion section with key takeaways
+
+**CTA Blocks (3-4 required):**
+- [ ] CTA #1: After opening section - Headline: "[headline]"
+- [ ] CTA #2: End of Section 2 - Headline: "[headline]"
+- [ ] CTA #3: End of Section 3 - Headline: "[headline]"
+- [ ] CTA #4: End of Section 4 - Headline: "[headline]"
+- [ ] All CTAs use blockquote format with bold headline
+- [ ] All CTAs have unique, benefit-oriented headlines
+- [ ] All CTAs link to Calendly booking page
+
+**Images (4 required):**
+- [ ] Hero image: `/images/blog/[slug]-hero.png`
+- [ ] Section 2 image: `/images/blog/[slug]-1.png`
+- [ ] Section 3 image: `/images/blog/[slug]-2.png`
+- [ ] Section 4 image: `/images/blog/[slug]-3.png`
+
+**FAQ Section:**
+- [ ] All 10 FAQ questions from queue included
+- [ ] Each answer is 50-100 words
+- [ ] Direct, helpful answers
+
+**SEO Requirements:**
+- [ ] Primary keyword used 3-5 times naturally
+- [ ] Title is SEO-optimized
+- [ ] Excerpt is 150-160 characters
+- [ ] Frontmatter includes all required fields (title, date, updatedAt, excerpt, author, tags, image)
+
+**Tone & Style:**
+- [ ] Follows tone-of-voice.md guidelines
+- [ ] 8th-10th grade reading level
+- [ ] No corporate jargon
+- [ ] Friendly but professional tone
+- [ ] Short paragraphs (2-4 sentences)
+
+**Technical:**
+- [ ] Word count: [X] words (target: 1,800-2,500)
+- [ ] File saved to: `content/blog-posts/[slug].md`
+- [ ] q.md status updated to "published"
+- [ ] SEO files regenerated (sitemap.xml, llms.txt)
+- [ ] Git commit completed
+
+### 📊 Summary
+
+| Requirement | Status |
+|-------------|--------|
+| Blog post title | [title] |
+| File path | `content/blog-posts/[slug].md` |
+| Word count | [X] words |
+| Primary keyword | [keyword] |
+| CTA blocks | [X]/4 |
+| Images generated | [X]/4 |
+| FAQ questions | [X]/10 |
+| SEO files updated | ✅ |
+| Git committed | ✅ |
 
 ## Troubleshooting
 
