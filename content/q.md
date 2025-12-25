@@ -31,10 +31,10 @@ items:
       - "What types of customer service tasks can be automated using AI to improve customer satisfaction and sales?"
       - "How can I use AI automation to personalize marketing campaigns and increase conversion rates?"
       - "What are some realistic examples of businesses similar to mine that have successfully used AI automation to increase profits?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-to-use-ai-automation-to-make-money.md"
+    updatedAt: "2025-12-25T18:10:00Z"
+    publishedAt: "2025-12-23T19:05:00Z"
     error: null
 
   - id: "kw01-q02"
@@ -75,10 +75,10 @@ items:
       - "What are the potential risks of over-automating with AI and exceeding the 30% threshold?"
       - "What skills or training do my employees need to effectively work alongside AI-powered automation, adhering to the 30% rule?"
       - "How does the 30% rule for AI automation apply differently to various industries or business sizes?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-the-30-rule-in-ai.md"
+    updatedAt: "2025-12-25T18:10:00Z"
+    publishedAt: "2025-12-25T18:10:00Z"
     error: null
 
   - id: "kw02-q01"
