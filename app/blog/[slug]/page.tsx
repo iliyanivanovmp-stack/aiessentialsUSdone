@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-    <BlogHeader />
+    <BlogHeader showBackToBlog={true} />
     <main className="min-h-screen bg-black text-white">
       {/* JSON-LD Structured Data */}
       {structuredData.map((data, index) => (
