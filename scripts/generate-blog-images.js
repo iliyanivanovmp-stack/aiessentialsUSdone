@@ -2,11 +2,13 @@
 
 /**
  * Generate Blog Images using KIE.ai Nano Banana Pro API
+ * Outputs optimized WebP format for smaller file sizes
  */
 
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const sharp = require('sharp');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const KIE_API_KEY = process.env.KIE_API_KEY;
@@ -84,8 +86,15 @@ async function downloadImage(url, outputPath) {
   const res = await fetch(url);
   if (!res.ok) throw new Error('Download failed: ' + res.status);
   const buf = Buffer.from(await res.arrayBuffer());
-  fs.writeFileSync(outputPath, buf);
-  return buf.length;
+
+  // Convert to WebP for smaller file size
+  const webpPath = outputPath.replace(/\.png$/, '.webp');
+  await sharp(buf)
+    .webp({ quality: 85 })
+    .toFile(webpPath);
+
+  const webpStats = fs.statSync(webpPath);
+  return webpStats.size;
 }
 
 async function generateImageWithKie(prompt, outputPath) {
@@ -118,7 +127,7 @@ async function main() {
       const prompt = await generateImagePrompt(s.content, s.imageNumber, blogTitle);
       console.log('  Prompt:', prompt.substring(0, 100) + '...');
       await generateImageWithKie(prompt, outPath);
-      results.push({ imageNumber: s.imageNumber, path: '/images/blog/' + slug + '-' + suffix + '.png', prompt });
+      results.push({ imageNumber: s.imageNumber, path: '/images/blog/' + slug + '-' + suffix + '.webp', prompt });
       if (s.imageNumber < sections.length) await new Promise(r => setTimeout(r, 1000));
     } catch (e) { console.error('  Error:', e.message); }
   }
