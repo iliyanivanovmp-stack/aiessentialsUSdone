@@ -174,10 +174,10 @@ If jargon is required (e.g., “RPA”, “INP”), define it in plain English t
 ### C.1) Image Placement (4 images per post)
 | Image | Position | Content Basis |
 |-------|----------|---------------|
-| Hero (`{slug}-hero.png`) | After direct answer, before "Click Deeper" | Reflects the direct answer |
-| Image 1 (`{slug}-1.png`) | End of first major H2 section | Reflects Section 2 content |
-| Image 2 (`{slug}-2.png`) | End of second major H2 section | Reflects Section 3 content |
-| Image 3 (`{slug}-3.png`) | End of third major H2 section | Reflects Section 4 content |
+| Hero (`{slug}-hero.webp`) | After direct answer, before "Click Deeper" | Reflects the direct answer |
+| Image 1 (`{slug}-1.webp`) | End of first major H2 section | Reflects Section 2 content |
+| Image 2 (`{slug}-2.webp`) | End of second major H2 section | Reflects Section 3 content |
+| Image 3 (`{slug}-3.webp`) | End of third major H2 section | Reflects Section 4 content |
 
 Images are generated via Imagen 3 API with contextual prompts based on the preceding content. Store in `/public/images/blog/`.
 
@@ -221,8 +221,8 @@ Make sure the links are redirecting.
 ### Images (required — 4 per post)
 - Include all 4 AI-generated images as specified in Section 6 C.1
 - Use descriptive alt text that describes the image content
-- Image format: PNG, stored in `/public/images/blog/`
-- Naming convention: `{slug}-hero.png`, `{slug}-1.png`, `{slug}-2.png`, `{slug}-3.png`
+- Image format: WebP (optimized for web), stored in `/public/images/blog/`
+- Naming convention: `{slug}-hero.webp`, `{slug}-1.webp`, `{slug}-2.webp`, `{slug}-3.webp`
 - Add `image` field to frontmatter pointing to hero image
 
 ---

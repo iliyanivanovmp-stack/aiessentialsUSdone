@@ -40,7 +40,7 @@ updatedAt: "YYYY-MM-DD"
 excerpt: "A compelling 150-160 character description that answers the core question"
 author: "AI Essentials Team"
 tags: ["primary-keyword", "related-tag", "another-tag"]
-image: "/images/blog/[slug]-hero.png"
+image: "/images/blog/[slug]-hero.webp"
 ---
 ```
 
@@ -53,7 +53,7 @@ image: "/images/blog/[slug]-hero.png"
 
 [Direct answer - 2-3 sentences that directly answer the question. Be concise and clear. This is for featured snippets.]
 
-![Hero image for {title}](/images/blog/{slug}-hero.png)
+![Hero image for {title}](/images/blog/{slug}-hero.webp)
 
 [2-3 paragraphs expanding on the answer with more detail, context, and examples. This section should be 200-300 words total.]
 
@@ -77,7 +77,7 @@ image: "/images/blog/[slug]-hero.png"
 > [Brief value prop specific to this section's topic]
 > [Get Your Free Assessment →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![Section 2 illustration](/images/blog/{slug}-1.png)
+![Section 2 illustration](/images/blog/{slug}-1.webp)
 
 ## [Section 3 Title - Second Major Topic] (400-500 words)
 
@@ -89,7 +89,7 @@ image: "/images/blog/[slug]-hero.png"
 > [Brief value prop specific to this section's topic]
 > [Book Your Free Call →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![Section 3 illustration](/images/blog/{slug}-2.png)
+![Section 3 illustration](/images/blog/{slug}-2.webp)
 
 ## [Section 4 Title - Third Major Topic] (300-400 words)
 
@@ -100,7 +100,7 @@ image: "/images/blog/[slug]-hero.png"
 > [Brief value prop specific to this section's topic]
 > [Start Your AI Journey →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![Section 4 illustration](/images/blog/{slug}-3.png)
+![Section 4 illustration](/images/blog/{slug}-3.webp)
 
 ## Frequently Asked Questions
 
@@ -144,10 +144,10 @@ Each blog post MUST include **3-4 CTA blocks** using this exact blockquote forma
 The blockquote format with **bold headline** triggers special CTA styling (cyan left border, gradient background, styled button).
 
 **Image Placement Rules (from seo-strategy.md):**
-1. **Hero Image** (`{slug}-hero.png`): Immediately after the direct answer, before the expansion paragraphs
-2. **Image 1** (`{slug}-1.png`): At the end of Section 2, reflecting that section's content
-3. **Image 2** (`{slug}-2.png`): At the end of Section 3, reflecting that section's content
-4. **Image 3** (`{slug}-3.png`): At the end of Section 4, reflecting that section's content
+1. **Hero Image** (`{slug}-hero.webp`): Immediately after the direct answer, before the expansion paragraphs
+2. **Image 1** (`{slug}-1.webp`): At the end of Section 2, reflecting that section's content
+3. **Image 2** (`{slug}-2.webp`): At the end of Section 3, reflecting that section's content
+4. **Image 3** (`{slug}-3.webp`): At the end of Section 4, reflecting that section's content
 
 **Content Requirements:**
 - **Word Count:** 1,800-2,500 words total (main content + FAQ answers)
@@ -197,7 +197,7 @@ After saving the blog post, you MUST automatically generate 4 contextual images:
 
 4. **Verify images were created:**
    ```bash
-   ls -la public/images/blog/[slug]*.png
+   ls -la public/images/blog/[slug]*.webp
    ```
 
 5. **Clean up temp file:**
@@ -260,10 +260,10 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 - [ ] All CTAs link to Calendly booking page
 
 **Images (4 required):**
-- [ ] Hero image: `/images/blog/[slug]-hero.png`
-- [ ] Section 2 image: `/images/blog/[slug]-1.png`
-- [ ] Section 3 image: `/images/blog/[slug]-2.png`
-- [ ] Section 4 image: `/images/blog/[slug]-3.png`
+- [ ] Hero image: `/images/blog/[slug]-hero.webp`
+- [ ] Section 2 image: `/images/blog/[slug]-1.webp`
+- [ ] Section 3 image: `/images/blog/[slug]-2.webp`
+- [ ] Section 4 image: `/images/blog/[slug]-3.webp`
 
 **FAQ Section:**
 - [ ] All 10 FAQ questions from queue included

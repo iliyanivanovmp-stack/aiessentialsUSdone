@@ -12,12 +12,12 @@ featured_snippet_target: "What is AI lead generation automation?"
 excerpt: "AI lead generation automation uses machine learning to find, qualify, and engage prospects automatically—saving 30+ hours per week while boosting reply rates by 25-45%."
 author: "AI Essentials Team"
 tags: ["AI automation", "lead generation", "B2B sales", "prospecting"]
-image: "/images/blog/01-ai-lead-generation-automation-hero.png"
+image: "/images/blog/01-ai-lead-generation-automation-hero.webp"
 ---
 
 AI lead generation automation uses machine learning to find, enrich, and engage B2B prospects without manual effort. Companies using these systems typically see **25-45% higher reply rates** and save **30-50 hours per week** on prospecting tasks.
 
-![AI Lead Generation Automation](/images/blog/01-ai-lead-generation-automation-hero.png)
+![AI Lead Generation Automation](/images/blog/01-ai-lead-generation-automation-hero.webp)
 
 Think of it like hiring a team of research assistants who work 24/7, never get tired, and get smarter over time. They scan thousands of data points—job titles, company size, tech stack, hiring signals—to find the exact people who need what you sell. Then they craft personalized messages that actually get responses.
 
@@ -63,7 +63,7 @@ For example, traditional automation might send the same email to every VP of Sal
 
 **How AI Essentials helps here:** We build custom AI lead generation systems that integrate with your existing CRM and outreach tools. Most clients see their first qualified leads within 14 days of implementation.
 
-![AI Lead Generation Process](/images/blog/01-ai-lead-generation-automation-1.png)
+![AI Lead Generation Process](/images/blog/01-ai-lead-generation-automation-1.webp)
 
 ---
 
@@ -156,7 +156,7 @@ This data helps you refine your entire go-to-market strategy—not just lead gen
 
 **How AI Essentials helps here:** We provide weekly reports showing exactly what's working. You'll know your cost per lead, response rates by segment, and pipeline value generated—no guesswork.
 
-![AI Lead Generation Benefits](/images/blog/01-ai-lead-generation-automation-2.png)
+![AI Lead Generation Benefits](/images/blog/01-ai-lead-generation-automation-2.webp)
 
 ---
 
@@ -304,7 +304,7 @@ AI makes mistakes. Without human oversight, you'll:
 
 **How AI Essentials helps here:** We've made all these mistakes so you don't have to. Our implementation process includes safeguards at every stage, plus weekly reviews to catch issues early.
 
-![AI Lead Generation Mistakes](/images/blog/01-ai-lead-generation-automation-3.png)
+![AI Lead Generation Mistakes](/images/blog/01-ai-lead-generation-automation-3.webp)
 
 ---
 

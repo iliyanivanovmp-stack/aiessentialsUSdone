@@ -5,14 +5,14 @@ updatedAt: "2025-12-23"
 excerpt: "Learn how to get started with AI automation for your business. Discover essential skills, tools, costs, and step-by-step strategies to automate your operations."
 author: "AI Essentials Team"
 tags: ["ai automation", "business automation", "getting started", "small business"]
-image: "/images/blog/how-do-i-get-into-ai-automation-hero.png"
+image: "/images/blog/how-do-i-get-into-ai-automation-hero.webp"
 ---
 
 ## How Do I Get Into AI Automation?
 
 Start by identifying one repetitive task in your business that eats up at least 5 hours per week, then use a no-code tool like Zapier or Make.com to automate it. You don't need coding skills or a technical background—just a clear process and the willingness to experiment.
 
-![How to get into AI automation](/images/blog/how-do-i-get-into-ai-automation-hero.png)
+![How to get into AI automation](/images/blog/how-do-i-get-into-ai-automation-hero.webp)
 
 The barrier to entry for AI automation has never been lower. Five years ago, you'd need a software engineering team to build basic automations. Today, you can connect your email, CRM, and scheduling tools in an afternoon without writing a single line of code.
 
@@ -51,7 +51,7 @@ Avoid starting with tasks that require nuanced judgment, involve high-stakes dec
 
 **How AI Essentials helps here:** We run a free automation audit that identifies your top 3 opportunities based on time saved and implementation difficulty. Most businesses have $50,000+ in hidden automation potential they don't see.
 
-![AI automation opportunities assessment](/images/blog/how-do-i-get-into-ai-automation-1.png)
+![AI automation opportunities assessment](/images/blog/how-do-i-get-into-ai-automation-1.webp)
 
 ## Essential Skills You Actually Need
 
@@ -91,7 +91,7 @@ You'll need to learn how your chosen automation platform works. This typically t
 
 **How AI Essentials helps here:** We offer hands-on training sessions where you learn by building your first automation with expert guidance. You'll walk away with a working system and the skills to expand it.
 
-![Essential AI automation skills](/images/blog/how-do-i-get-into-ai-automation-2.png)
+![Essential AI automation skills](/images/blog/how-do-i-get-into-ai-automation-2.webp)
 
 ## Beginner-Friendly Tools and Platforms
 
@@ -139,7 +139,7 @@ If a tool costs $20/month and saves you 4 hours of work, that's $5/hour for your
 
 **How AI Essentials helps here:** We're tool-agnostic and help you choose based on your actual needs, not vendor marketing. We've implemented dozens of systems and know which tools work best for different situations.
 
-![AI automation tools comparison](/images/blog/how-do-i-get-into-ai-automation-3.png)
+![AI automation tools comparison](/images/blog/how-do-i-get-into-ai-automation-3.webp)
 
 ## Costs and ROI Expectations
 
