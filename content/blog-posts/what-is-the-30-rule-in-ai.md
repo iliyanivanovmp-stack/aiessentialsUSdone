@@ -5,14 +5,14 @@ updatedAt: "2025-12-25"
 excerpt: "The 30% rule in AI means automating 30% of your tasks first for maximum ROI. Learn how to apply this framework to your business for quick wins."
 author: "AI Essentials Team"
 tags: ["ai automation", "business automation", "productivity", "automation strategy"]
-image: "/images/blog/what-is-the-30-rule-in-ai-hero.png"
+image: "/images/blog/what-is-the-30-rule-in-ai-hero.webp"
 ---
 
 ## What Is the 30% Rule in AI Automation?
 
 The 30% rule in AI is a practical framework that says you should start by automating roughly 30% of your repetitive tasks—the ones that eat up time but don't require human creativity or judgment. This focused approach delivers the biggest ROI while avoiding the chaos of trying to automate everything at once.
 
-![The 30% rule in AI automation](/images/blog/what-is-the-30-rule-in-ai-hero.png)
+![The 30% rule in AI automation](/images/blog/what-is-the-30-rule-in-ai-hero.webp)
 
 Here's why this works: most businesses have a handful of tasks that consume way more time than they should. Think data entry, appointment scheduling, follow-up emails, or invoice processing. These tasks are perfect for AI automation because they're predictable, repetitive, and honestly boring.
 
@@ -62,7 +62,7 @@ How AI Essentials helps here: We audit your workflows and identify exactly which
 > Our free workflow audit shows you exactly where automation will save you the most time.
 > [Get Your Free Assessment →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![How the 30% rule works in practice](/images/blog/what-is-the-30-rule-in-ai-1.png)
+![How the 30% rule works in practice](/images/blog/what-is-the-30-rule-in-ai-1.webp)
 
 ## Finding Your 30%: Which Tasks to Automate First
 
@@ -110,7 +110,7 @@ How AI Essentials helps here: We implement automation for your specific 30% in 1
 > We'll build your custom automation stack with a money-back guarantee.
 > [Book Your Free Call →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![Finding your automation sweet spot](/images/blog/what-is-the-30-rule-in-ai-2.png)
+![Finding your automation sweet spot](/images/blog/what-is-the-30-rule-in-ai-2.webp)
 
 ## The Risks of Over-Automation (And How to Avoid Them)
 
@@ -155,7 +155,7 @@ How AI Essentials helps here: We build in human checkpoints and oversight from d
 > We design systems that grow with you, not against you.
 > [Start Your AI Journey →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
-![Avoiding the risks of over-automation](/images/blog/what-is-the-30-rule-in-ai-3.png)
+![Avoiding the risks of over-automation](/images/blog/what-is-the-30-rule-in-ai-3.webp)
 
 ## Frequently Asked Questions
 
