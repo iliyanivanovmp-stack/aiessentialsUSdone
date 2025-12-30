@@ -14,8 +14,8 @@ const SITE_URL = 'https://aiessentials.us';
 function extractFAQItems(html: string): { question: string; answer: string }[] {
   const faqItems: { question: string; answer: string }[] = [];
 
-  // Find the FAQ section and extract H3 questions with their answers
-  const faqSectionMatch = html.match(/<h2[^>]*id="faq"[^>]*>.*?<\/h2>([\s\S]*?)(?=<h2|$)/i);
+  // Find the FAQ section - matches both "faq" and "frequently-asked-questions" IDs
+  const faqSectionMatch = html.match(/<h2[^>]*id="(?:faq|frequently-asked-questions)"[^>]*>.*?<\/h2>([\s\S]*?)(?=<h2|$)/i);
   if (!faqSectionMatch) return faqItems;
 
   const faqContent = faqSectionMatch[1];

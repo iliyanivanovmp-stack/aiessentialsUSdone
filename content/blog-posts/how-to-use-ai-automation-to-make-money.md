@@ -232,7 +232,7 @@ Track results for 30 days. If it works, look for the next automation opportunity
 
 ---
 
-## FAQ
+## Frequently Asked Questions
 
 ### How can AI automation improve my existing business processes to generate more revenue?
 

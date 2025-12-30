@@ -65,7 +65,7 @@ image: "/images/blog/[slug]-hero.webp"
 - [Section 2 Title](#section-2-anchor)
 - [Section 3 Title](#section-3-anchor)
 - [Section 4 Title](#section-4-anchor)
-- [FAQ](#faq)
+- [Frequently Asked Questions](#frequently-asked-questions)
 
 ## [Section 2 Title - First Major Topic] (400-500 words)
 
