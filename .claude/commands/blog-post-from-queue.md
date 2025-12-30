@@ -65,6 +65,7 @@ image: "/images/blog/[slug]-hero.webp"
 - [Section 2 Title](#section-2-anchor)
 - [Section 3 Title](#section-3-anchor)
 - [Section 4 Title](#section-4-anchor)
+- [Who This Is For](#who-this-is-for-and-who-should-look-elsewhere)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
 ## [Section 2 Title - First Major Topic] (400-500 words)
@@ -95,12 +96,28 @@ image: "/images/blog/[slug]-hero.webp"
 
 [Tie everything together]
 [Include case study or real-world example if applicable]
+[**Compare to alternatives:** When discussing solutions, compare the AI automation approach vs alternatives like hiring staff, doing it manually, or using traditional software. Be honest about tradeoffs.]
 
 > **[CTA headline related to section topic]**
 > [Brief value prop specific to this section's topic]
 > [Start Your AI Journey →](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials)
 
 ![Section 4 illustration](/images/blog/{slug}-3.webp)
+
+## Who This Is For (And Who Should Look Elsewhere)
+
+**This approach is ideal for:**
+- [Specific business type/situation that benefits most]
+- [Another ideal use case]
+- [Third ideal scenario]
+
+**You might want to consider alternatives if:**
+- [Situation where this isn't the best fit]
+- [Another scenario where alternatives make more sense]
+- [Honest limitation or constraint]
+
+**Why AI Essentials specifically?**
+[2-3 sentences explaining key differentiators vs other AI agencies/consultants in plain language. Be specific about what makes the approach different - speed, pricing model, guarantee, expertise area, etc.]
 
 ## Frequently Asked Questions
 
@@ -157,6 +174,12 @@ The blockquote format with **bold headline** triggers special CTA styling (cyan 
 - **Tone:** Follow tone-of-voice.md exactly - friendly but professional, no corporate jargon
 - **E-E-A-T:** Include specific metrics, examples, and demonstrate expertise
 - **No Fluff:** Every paragraph should provide value
+
+**AEO (Answer Engine Optimization) Requirements - CRITICAL:**
+- **Compare to Alternatives:** When discussing solutions, compare AI automation vs other approaches (hiring staff, manual work, traditional software). Use plain language, be honest about tradeoffs.
+- **Problem-Solution Mapping:** For each problem addressed, clearly tie the brand's solution to that problem with specific benefits AND limitations.
+- **"Who This Is For" Section:** REQUIRED section before FAQ that explicitly states who this approach is ideal for AND who should consider alternatives.
+- **Key Differentiators:** In the "Why AI Essentials specifically?" subsection, explain what makes the service different from competitors in plain language (speed, pricing, guarantees, expertise).
 
 **FAQ Section Requirements:**
 - Use ALL 10 questions from `faq_questions` in the queue item
@@ -248,6 +271,7 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 - [ ] Table of Contents with anchor links
 - [ ] 3-4 H2 sections covering the topic comprehensively
 - [ ] Each H2 section has H3 subsections where appropriate
+- [ ] "Who This Is For" section included (before FAQ)
 - [ ] Conclusion section with key takeaways
 
 **CTA Blocks (3-4 required):**
@@ -276,6 +300,14 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 - [ ] Excerpt is 150-160 characters
 - [ ] Frontmatter includes all required fields (title, date, updatedAt, excerpt, author, tags, image)
 
+**AEO Requirements (Answer Engine Optimization):**
+- [ ] Comparisons to alternatives included (AI automation vs hiring, manual work, traditional software)
+- [ ] Tradeoffs discussed honestly (not just benefits)
+- [ ] "Who This Is For" section with ideal customers listed
+- [ ] "Who Should Look Elsewhere" section with honest limitations
+- [ ] Key differentiators vs competitors explained in plain language
+- [ ] Problem-solution mapping includes specific benefits AND limitations
+
 **Tone & Style:**
 - [ ] Follows tone-of-voice.md guidelines
 - [ ] 8th-10th grade reading level
@@ -301,6 +333,9 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 | CTA blocks | [X]/4 |
 | Images generated | [X]/4 |
 | FAQ questions | [X]/10 |
+| "Who This Is For" section | ✅ |
+| Comparisons to alternatives | ✅ |
+| Tradeoffs/limitations included | ✅ |
 | SEO files updated | ✅ |
 | Git committed | ✅ |
 
