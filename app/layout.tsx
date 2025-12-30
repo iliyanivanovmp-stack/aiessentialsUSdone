@@ -34,8 +34,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AIessentials",
+    "url": "https://aiessentials.us",
+    "description": "We design, deploy, and maintain automated AI systems that grow pipeline and remove busywork.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AIessentials",
+      "url": "https://aiessentials.us"
+    }
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <GridCursor />
         <SpotlightCursor
