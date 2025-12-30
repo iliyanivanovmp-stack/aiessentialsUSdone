@@ -39,7 +39,7 @@ This isn't science fiction. It's what forward-thinking B2B companies are doing r
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [DIY vs. Done-For-You: Which Path Is Right?](#diy-vs-done-for-you-which-path-is-right)
 - [Getting Started: Your First 30 Days](#getting-started-your-first-30-days)
-- [FAQ](#faq)
+- [Frequently Asked Questions](#frequently-asked-questions)
 
 ---
 
@@ -418,7 +418,7 @@ A practical roadmap to launch AI lead generation without getting overwhelmed.
 
 ---
 
-## FAQ
+## Frequently Asked Questions
 
 ### What is AI lead generation automation?
 
