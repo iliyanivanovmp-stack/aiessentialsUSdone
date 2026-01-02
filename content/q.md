@@ -97,10 +97,10 @@ items:
       - "What type of customer data is needed to effectively use AI systems?"
       - "How can AI improve my business's customer service?"
       - "What are the potential risks of relying too heavily on an AI system?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/which-is-the-best-ai-system-to-use.md"
+    updatedAt: "2026-01-02T00:00:00Z"
+    publishedAt: "2026-01-02T00:00:00Z"
     error: null
 
   - id: "kw03-q01"
