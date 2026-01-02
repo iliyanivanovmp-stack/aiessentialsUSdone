@@ -18,7 +18,7 @@ Here's the truth: chasing the "best" AI system is a trap. Companies waste months
 
 Think of it like choosing a car. A Ferrari might be the "best" car on paper, but it's useless if you need to haul equipment. The same logic applies to AI. ChatGPT might grab headlines, but if your bottleneck is invoice processing, you need something entirely different.
 
-The smartest approach? Start with your problem, not the technology. Identify one workflow that's eating up time. Find an AI tool that addresses that specific issue. Get it working. Then expand. If you're new to this, our guide on [how to get into AI automation](/blog/how-do-i-get-into-ai-automation) breaks down the exact steps.
+The smartest approach? Start with your problem, not the technology. Identify one workflow that's eating up time. Find an AI tool that addresses that specific issue. Get it working. Then expand.
 
 > **Not sure which AI system fits your business?**
 > We'll analyze your workflows and recommend the right tools for your specific needs.
@@ -29,8 +29,7 @@ The smartest approach? Start with your problem, not the technology. Identify one
 - [Matching AI Systems to Business Problems](#matching-ai-systems-to-business-problems)
 - [Free vs Paid AI Systems: When to Upgrade](#free-vs-paid-ai-systems-when-to-upgrade)
 - [How to Evaluate Any AI System in 30 Minutes](#how-to-evaluate-any-ai-system-in-30-minutes)
-- [Who This Is For](#who-this-is-for-and-who-should-look-elsewhere)
-- [Frequently Asked Questions](#frequently-asked-questions)
+- [FAQ](#faq)
 
 ## AI System Categories: Understanding Your Options
 
@@ -154,7 +153,7 @@ Upgrade when any of these are true:
 | Customer-facing content | $0 + quality issues | $40/month | Better conversions |
 | API automation needs | $0 (not possible) | $100/month | Enables automation |
 
-The math usually favors paid tools once you're using AI seriously. A $20-100 monthly subscription that saves 10+ hours weekly is one of the best investments in business. For more on the financial side, see our breakdown of [how to use AI automation to make money](/blog/how-to-use-ai-automation-to-make-money).
+The math usually favors paid tools once you're using AI seriously. A $20-100 monthly subscription that saves 10+ hours weekly is one of the best investments in business.
 
 How AI Essentials helps here: We help you choose the right tier for your needs. No overpaying for features you won't use. No under-investing and hitting walls.
 
@@ -215,23 +214,6 @@ How long would these tasks take manually? How long with the AI? The difference i
 Score of 7+: Worth adopting. 5-7: Viable but shop around. Under 5: Keep looking.
 
 How AI Essentials helps here: We've evaluated hundreds of AI tools. We know what works for businesses like yours and can skip straight to recommendations that fit.
-
-## Who This Is For (And Who Should Look Elsewhere)
-
-**This approach is ideal for:**
-- Small business owners spending 10+ hours weekly on repetitive tasks who want to [save significant time through automation](/blog/how-ai-automation-saves-20-hours-per-week)
-- Teams already using digital tools (CRM, email, spreadsheets) who want to connect and automate them
-- Business owners ready to invest $50-500/month in tools that deliver clear ROI
-- Companies with consistent, repeatable workflows that follow logical rules
-
-**You might want to consider alternatives if:**
-- Your business runs primarily on paper-based processes (digitize first, then automate)
-- You need highly specialized AI that requires custom model training (budget $10K+ and 6+ months)
-- Your workflows change constantly with no consistent patterns
-- You're looking for AI to replace strategic thinking and complex decision-making (AI assists, humans decide)
-
-**Why AI Essentials specifically?**
-Unlike general consultants who recommend tools and leave, we implement complete solutions in 14-30 days. We specialize in small business automation, not enterprise complexity. Our systems come with a clear guarantee: you'll see measurable time savings within 60 days or we'll fix it free. We focus on proven, practical tools rather than bleeding-edge experiments—because your business needs reliability, not beta tests.
 
 ## Frequently Asked Questions
 
