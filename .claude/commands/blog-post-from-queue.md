@@ -181,6 +181,14 @@ The blockquote format with **bold headline** triggers special CTA styling (cyan 
 - **"Who This Is For" Section:** REQUIRED section before FAQ that explicitly states who this approach is ideal for AND who should consider alternatives.
 - **Key Differentiators:** In the "Why AI Essentials specifically?" subsection, explain what makes the service different from competitors in plain language (speed, pricing, guarantees, expertise).
 
+**Internal Linking Requirements:**
+- Include **2-3 internal links** to other blog posts on the site
+- **ONLY add links when there's a natural topical connection** - don't force links
+- Link when you mention a concept that another post covers in depth
+- Use descriptive anchor text (not "click here" or "read more")
+- Check existing posts in `content/blog-posts/` to find relevant links
+- Example: If discussing "saving time with automation", link to the post about "how AI automation saves 20 hours per week"
+
 **FAQ Section Requirements:**
 - Use ALL 10 questions from `faq_questions` in the queue item
 - Each answer should be 50-100 words
@@ -308,6 +316,11 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 - [ ] Key differentiators vs competitors explained in plain language
 - [ ] Problem-solution mapping includes specific benefits AND limitations
 
+**Internal Linking:**
+- [ ] 2-3 internal links to other blog posts included
+- [ ] Links are contextually relevant (not forced)
+- [ ] Descriptive anchor text used
+
 **Tone & Style:**
 - [ ] Follows tone-of-voice.md guidelines
 - [ ] 8th-10th grade reading level
@@ -336,6 +349,7 @@ After completing all steps, provide a **Requirements Compliance Report** showing
 | "Who This Is For" section | ✅ |
 | Comparisons to alternatives | ✅ |
 | Tradeoffs/limitations included | ✅ |
+| Internal links | [X]/2-3 |
 | SEO files updated | ✅ |
 | Git committed | ✅ |
 
