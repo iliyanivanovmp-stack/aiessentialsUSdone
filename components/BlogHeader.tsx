@@ -10,8 +10,8 @@ interface BlogHeaderProps {
 const BlogHeader = ({ showBackToBlog = false }: BlogHeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo - Left */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -19,33 +19,33 @@ const BlogHeader = ({ showBackToBlog = false }: BlogHeaderProps) => {
               alt="AI Essentials"
               width={80}
               height={80}
-              className="h-12 w-auto"
+              className="h-8 sm:h-12 w-auto"
             />
           </Link>
 
           {/* Navigation - Center */}
-          <nav className="flex items-center space-x-8">
+          <nav className="flex items-center space-x-2 sm:space-x-8">
             <Link
               href="/"
-              className="text-white hover:text-cyan-400 text-sm font-medium uppercase tracking-wider transition-colors duration-200"
+              className="text-white hover:text-cyan-400 text-xs sm:text-sm font-medium uppercase tracking-wider transition-colors duration-200"
             >
               Home
             </Link>
             <Link
               href="/#faq"
-              className="text-white hover:text-cyan-400 text-sm font-medium uppercase tracking-wider transition-colors duration-200"
+              className="text-white hover:text-cyan-400 text-xs sm:text-sm font-medium uppercase tracking-wider transition-colors duration-200"
             >
               FAQs
             </Link>
             {showBackToBlog && (
               <Link
                 href="/blog"
-                className="inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                className="inline-flex items-center text-white hover:text-gray-300 text-xs sm:text-sm font-medium transition-colors duration-200"
               >
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                Back to Blog
+                <span className="hidden xs:inline">Back to </span>Blog
               </Link>
             )}
           </nav>
@@ -55,7 +55,7 @@ const BlogHeader = ({ showBackToBlog = false }: BlogHeaderProps) => {
             href="https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-black px-4 py-2 text-sm font-semibold hover:bg-gray-100 transition-colors duration-200 rounded"
+            className="bg-white text-black px-2 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold hover:bg-gray-100 transition-colors duration-200 rounded whitespace-nowrap"
           >
             Book Free Call
           </Link>
