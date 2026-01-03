@@ -6,6 +6,22 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
+import { visit } from 'unist-util-visit';
+
+// Custom rehype plugin to add target="_blank" to all links
+function rehypeExternalLinks() {
+  return (tree: any) => {
+    visit(tree, 'element', (node: any) => {
+      if (node.tagName === 'a' && node.properties?.href) {
+        // Skip anchor links (same-page navigation like #section)
+        if (!node.properties.href.startsWith('#')) {
+          node.properties.target = '_blank';
+          node.properties.rel = 'noopener noreferrer';
+        }
+      }
+    });
+  };
+}
 
 const postsDirectory = path.join(process.cwd(), 'content/blog-posts');
 
@@ -98,6 +114,7 @@ export async function getPostContent(slug: string): Promise<string> {
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
+    .use(rehypeExternalLinks)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(post.content);
 
