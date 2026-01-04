@@ -133,7 +133,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-24 px-6 md:px-12" style={{ backgroundColor: '#1A1A1A' }}>
+      <section id="contact" className="py-24 px-6 md:px-12 bg-gray-950/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
