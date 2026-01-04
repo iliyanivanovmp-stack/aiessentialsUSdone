@@ -250,7 +250,8 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const rawContent = await getPostContent(params.slug);
-  const content = injectMobileTOC(rawContent);
+  // Don't inject mobile TOC - the blog posts already have a TOC in the markdown content
+  const content = rawContent;
 
   // Get related posts (matching tags, excluding current post)
   const allPosts = getAllPosts();
