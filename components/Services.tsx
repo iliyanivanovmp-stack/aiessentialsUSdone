@@ -70,8 +70,11 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="font-headline font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight">
-            AI AUTOMATION • CONSULTING • INTEGRATION
+            Our <span className="gradient-text">Services</span>
           </h2>
+          <p className="text-gray-400 text-lg mt-3 tracking-wider">
+            Ai Automation • Consulting • Integration
+          </p>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
