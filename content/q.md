@@ -119,10 +119,10 @@ items:
       - "What are some smaller, lesser-known AI companies with high growth potential?"
       - "How can I stay updated on the latest news and developments in the AI industry that might impact stock prices?"
       - "How do I choose between investing directly in AI stocks versus AI-focused ETFs or mutual funds?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-the-best-ai-stock-to-invest-in.md"
+    updatedAt: "2026-01-05T00:00:00Z"
+    publishedAt: "2026-01-05T00:00:00Z"
     error: null
 
   - id: "kw03-q02"
