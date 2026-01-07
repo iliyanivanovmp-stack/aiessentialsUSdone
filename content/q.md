@@ -141,10 +141,10 @@ items:
       - "What are some alternative ways to gain exposure to the AI market besides individual stocks?"
       - "How can I use AI tools to analyze the potential of other AI stocks?"
       - "What are the tax implications of investing in AI stocks for my small business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-the-tiny-3-ai-stock.md"
+    updatedAt: "2026-01-08T00:35:00Z"
+    publishedAt: "2026-01-08T00:35:00Z"
     error: null
 
   - id: "kw04-q01"
