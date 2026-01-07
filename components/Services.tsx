@@ -42,15 +42,15 @@ const Services = () => {
       icon: Brain,
       title: 'Free AI Revenue + Savings Plan',
       description: 'In 30 minutes, you’ll know the top 3 AI automations that will save you  or make you money — plus a 1-page ROI plan and  rollout roadmap.',
-      bullets: ['Free', '3 ai opportunities', 'Rollout Roadmap', 'Tools', 'Clear Plan'],
-      microProof: 'Typical: faster decisions, fewer errors.',
+      bullets: ['Free', 'AI opportunity scan', 'Rollout Roadmap','1-Page Plan'],
+      microProof: 'Clear path to adopting AI in your business',
       details: [
-        'Production-ready RAG systems with vector search',
-        'Multi-agent workflows for complex decision making',
-        'Continuous evaluation and performance monitoring',
-        'Enterprise security with role-based access controls',
-        'AI governance frameworks and ethical guidelines',
-        'Team training and ongoing advisory support'
+        'A quick review of your workflows to discover time/money leaks',
+        'Top 3 AI opportunities',
+        'Select the #1 ROI “first build” opportunity',
+        'Recommended tools + what connects to what, and how',
+        'A custom map with milestones',
+        'A custom timeline (what to do first, next, later)'
       ]
     }
   ];
