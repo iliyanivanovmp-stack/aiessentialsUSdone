@@ -40,7 +40,7 @@ const Services = () => {
     },
     {
       icon: Brain,
-      title: 'AI Systems & Advisory',
+      title: 'Free AI Revenue + Savings Plan',
       description: 'Architecture, models, prompts, guardrails, training, and ongoing monitoring.',
       bullets: ['RAG', 'Agents', 'Evaluation', 'Security', 'Governance'],
       microProof: 'Typical: faster decisions, fewer errors.',
