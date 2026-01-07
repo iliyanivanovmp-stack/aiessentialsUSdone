@@ -140,7 +140,7 @@ export default function FreeAIRevenueSavingsPlan() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">Select the #1 ROI "first build" opportunity</span>
+                    <span className="text-gray-300">Select the #1 ROI &ldquo;first build&rdquo; opportunity</span>
                   </li>
                 </ul>
               </div>
@@ -275,7 +275,7 @@ export default function FreeAIRevenueSavingsPlan() {
                 The Common Problem
               </h3>
               <p className="text-xl text-gray-400">
-                Most teams spend months "experimenting with AI," often leading only to wasted time and wasted money.
+                Most teams spend months &ldquo;experimenting with AI,&rdquo; often leading only to wasted time and wasted money.
               </p>
             </motion.div>
 
@@ -346,7 +346,7 @@ export default function FreeAIRevenueSavingsPlan() {
                   Get the AI Revenue + Savings Call
                 </h3>
                 <p className="text-gray-400">
-                  In 30 minutes, you'll know the top 3 AI systems that will give you leverage in your business and choose the best ROI first system.
+                  In 30 minutes, you&apos;ll know the top 3 AI systems that will give you leverage in your business and choose the best ROI first system.
                 </p>
               </div>
             </div>
@@ -370,15 +370,6 @@ export default function FreeAIRevenueSavingsPlan() {
           </div>
 
           <div className="text-center space-y-6">
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
-              whileTap={{ scale: 0.95 }}
-              onClick={openCalendly}
-              className="bg-white text-black font-bold px-8 py-3 transition-colors uppercase text-sm tracking-wide"
-            >
-              Get My Free AI Plan
-            </motion.button>
-
             <div className="space-y-4 max-w-3xl mx-auto">
               <div className="relative bg-gradient-to-br from-green-950/50 to-gray-950 border-2 border-green-500/50 rounded-xl p-8 overflow-hidden group hover:border-green-500 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all"></div>
@@ -389,7 +380,7 @@ export default function FreeAIRevenueSavingsPlan() {
                     </div>
                   </div>
                   <p className="text-white text-xl font-semibold text-center">
-                    If we can't identify 3 clear AI opportunities and 1 best "first move," we'll extend the session to 60 minutes.
+                    If we can&apos;t identify 3 clear AI opportunities and 1 best &ldquo;first move,&rdquo; we&apos;ll extend the session to 60 minutes.
                   </p>
                 </div>
               </div>
@@ -408,6 +399,15 @@ export default function FreeAIRevenueSavingsPlan() {
                 </div>
               </div>
             </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openCalendly}
+              className="bg-white text-black font-bold px-12 py-5 transition-colors uppercase text-lg tracking-wide mt-8"
+            >
+              Get My Free AI Plan
+            </motion.button>
           </div>
         </div>
       </section>
@@ -443,15 +443,15 @@ export default function FreeAIRevenueSavingsPlan() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-lg">You're wasting time on manual processes or bottlenecks</span>
+                  <span className="text-gray-300 text-lg">You&apos;re wasting time on manual processes or bottlenecks</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-lg">You want AI applied practically (not "AI education")</span>
+                  <span className="text-gray-300 text-lg">You want AI applied practically (not &ldquo;AI education&rdquo;)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-lg">You're open to implementing improvements in the next 90 days</span>
+                  <span className="text-gray-300 text-lg">You&apos;re open to implementing improvements in the next 90 days</span>
                 </li>
               </ul>
             </div>
@@ -463,7 +463,7 @@ export default function FreeAIRevenueSavingsPlan() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="h-6 w-6 flex-shrink-0 mt-0.5 text-red-400 text-2xl">×</div>
-                  <span className="text-gray-300 text-lg">You're only "curious about AI"</span>
+                  <span className="text-gray-300 text-lg">You&apos;re only &ldquo;curious about AI&rdquo;</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="h-6 w-6 flex-shrink-0 mt-0.5 text-red-400 text-2xl">×</div>
