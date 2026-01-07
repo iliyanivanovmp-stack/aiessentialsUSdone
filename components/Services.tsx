@@ -41,8 +41,8 @@ const Services = () => {
     {
       icon: Brain,
       title: 'Free AI Revenue + Savings Plan',
-      description: 'Architecture, models, prompts, guardrails, training, and ongoing monitoring.',
-      bullets: ['RAG', 'Agents', 'Evaluation', 'Security', 'Governance'],
+      description: 'In 30 minutes, you’ll know the top 3 AI automations that will save you  or make you money — plus a 1-page ROI plan and  rollout roadmap.',
+      bullets: ['Free', '3 ai opportunities', 'Rollout Roadmap', 'Tools', 'Clear Plan'],
       microProof: 'Typical: faster decisions, fewer errors.',
       details: [
         'Production-ready RAG systems with vector search',
