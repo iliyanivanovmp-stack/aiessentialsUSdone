@@ -370,15 +370,6 @@ export default function FreeAIRevenueSavingsPlan() {
           </div>
 
           <div className="text-center space-y-6">
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
-              whileTap={{ scale: 0.95 }}
-              onClick={openCalendly}
-              className="bg-white text-black font-bold px-8 py-3 transition-colors uppercase text-sm tracking-wide"
-            >
-              Get My Free AI Plan
-            </motion.button>
-
             <div className="space-y-4 max-w-3xl mx-auto">
               <div className="relative bg-gradient-to-br from-green-950/50 to-gray-950 border-2 border-green-500/50 rounded-xl p-8 overflow-hidden group hover:border-green-500 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all"></div>
@@ -408,6 +399,15 @@ export default function FreeAIRevenueSavingsPlan() {
                 </div>
               </div>
             </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openCalendly}
+              className="bg-white text-black font-bold px-12 py-5 transition-colors uppercase text-lg tracking-wide mt-8"
+            >
+              Get My Free AI Plan
+            </motion.button>
           </div>
         </div>
       </section>
