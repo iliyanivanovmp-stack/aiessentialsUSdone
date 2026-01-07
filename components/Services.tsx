@@ -24,21 +24,6 @@ const Services = () => {
       ]
     },
     {
-      icon: Settings,
-      title: 'Ops & Workflow Automation',
-      description: 'Replace repetitive tasks with tailored AI systems, that never forget or make mistakes, so your team can have more time.',
-      bullets: ['Data Sync', 'Reporting', 'Ticketing', 'Slack Ops', 'Approvals'],
-      microProof: 'Typical: −30–60% handling time.',
-      details: [
-        'Real-time bi-directional data sync across all platforms',
-        'Automated reporting dashboards with custom KPIs',
-        'Smart ticket routing with priority-based escalation',
-        'Slack-integrated ops center with intelligent notifications',
-        'Automated approval chains with compliance tracking',
-        'Legacy system integrations and data migration'
-      ]
-    },
-    {
       icon: Brain,
       title: 'Free AI Revenue + Savings Plan',
       description: 'In 30 minutes, you’ll know the top 3 AI opportunities that will save you  or make you money — plus a 1-page ROI plan.',
@@ -51,6 +36,21 @@ const Services = () => {
         'Recommended tools + what connects to what, and how',
         'A custom map with milestones',
         'A custom timeline (what to do first, next, later)'
+      ]
+    },
+       {
+      icon: Settings,
+      title: 'Ops & Workflow Automation',
+      description: 'Replace repetitive tasks with tailored AI systems, that never forget or make mistakes, so your team can have more time.',
+      bullets: ['Data Sync', 'Reporting', 'Ticketing', 'Slack Ops', 'Approvals'],
+      microProof: 'Typical: −30–60% handling time.',
+      details: [
+        'Real-time bi-directional data sync across all platforms',
+        'Automated reporting dashboards with custom KPIs',
+        'Smart ticket routing with priority-based escalation',
+        'Slack-integrated ops center with intelligent notifications',
+        'Automated approval chains with compliance tracking',
+        'Legacy system integrations and data migration'
       ]
     }
   ];
