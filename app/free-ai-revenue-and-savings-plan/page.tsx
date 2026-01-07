@@ -346,7 +346,7 @@ export default function FreeAIRevenueSavingsPlan() {
                   Get the AI Revenue + Savings Call
                 </h3>
                 <p className="text-gray-400">
-                  In 30 minutes, you'll know the top 3 AI systems that will give you leverage in your business and choose the best ROI first system.
+                  In 30 minutes, you&apos;ll know the top 3 AI systems that will give you leverage in your business and choose the best ROI first system.
                 </p>
               </div>
             </div>

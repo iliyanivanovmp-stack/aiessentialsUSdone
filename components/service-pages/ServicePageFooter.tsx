@@ -80,7 +80,7 @@ const ServicePageFooter = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">1) Who we are</h4>
-                <p>Aiessentials is a brand operated by IvanovIv LLC, providing custom AI systems and automation services ("Services").</p>
+                <p>Aiessentials is a brand operated by IvanovIv LLC, providing custom AI systems and automation services (&ldquo;Services&rdquo;).</p>
               </div>
 
               <div>
@@ -90,7 +90,7 @@ const ServicePageFooter = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">3) Orders, fees, & refunds</h4>
-                <p>Fees are as shown in your invoice/order. Payment is due upfront unless stated otherwise. Refunds follow our accompanying 60-Day Money-Back Guarantee (incorporated by reference). Stripe's processing fees are typically not returned by Stripe on refunds. Unless your order states otherwise, we refund your full service fee and we absorb Stripe's fee.</p>
+                <p>Fees are as shown in your invoice/order. Payment is due upfront unless stated otherwise. Refunds follow our accompanying 60-Day Money-Back Guarantee (incorporated by reference). Stripe&apos;s processing fees are typically not returned by Stripe on refunds. Unless your order states otherwise, we refund your full service fee and we absorb Stripe&apos;s fee.</p>
               </div>
 
               <div>
@@ -110,12 +110,12 @@ const ServicePageFooter = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">7) Confidentiality</h4>
-                <p>Each party will protect the other's non-public information and use it only to deliver/receive the Services.</p>
+                <p>Each party will protect the other&apos;s non-public information and use it only to deliver/receive the Services.</p>
               </div>
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">8) Disclaimers & limitation of liability</h4>
-                <p>Services are provided "as is." We do not promise uninterrupted or error-free operation. To the maximum extent permitted by law, our total aggregate liability for all claims is limited to the fees you paid for the Service giving rise to the claim. We do not exclude liability that cannot be excluded by law.</p>
+                <p>Services are provided &ldquo;as is.&rdquo; We do not promise uninterrupted or error-free operation. To the maximum extent permitted by law, our total aggregate liability for all claims is limited to the fees you paid for the Service giving rise to the claim. We do not exclude liability that cannot be excluded by law.</p>
               </div>
 
               <div>
