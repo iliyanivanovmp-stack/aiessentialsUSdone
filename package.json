@@ -43,6 +43,7 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.10.57",
+    "@supabase/supabase-js": "^2.90.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "20.6.2",
     "@types/react": "18.2.22",

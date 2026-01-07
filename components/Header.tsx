@@ -45,7 +45,6 @@ const Header = () => {
     { name: 'Home', id: 'home' },
     { name: 'Services', id: 'services' },
     { name: 'Process', id: 'process' },
-    { name: 'Case Studies', id: 'case-studies' },
     { name: 'ROI Calculator', id: 'roi-calculator' },
     { name: 'Pricing', id: 'pricing' },
     { name: 'Blog', id: 'blog', href: '/blog' },
