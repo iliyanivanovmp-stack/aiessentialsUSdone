@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, X } from 'lucide-react';
 import ROIAnalysisGraphic from '@/components/service-pages/ROIAnalysisGraphic';
 import BookingForm from '@/components/service-pages/BookingForm';
 import ServicePageHeader from '@/components/service-pages/ServicePageHeader';
@@ -11,6 +11,7 @@ import { InteractiveRobot } from '@/components/service-pages/InteractiveRobot';
 
 export default function FreeAIRevenueSavingsPlan() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [showGuarantee, setShowGuarantee] = useState(false);
 
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
@@ -248,6 +249,21 @@ export default function FreeAIRevenueSavingsPlan() {
               <p className="text-gray-300">Lifetime access to a bonus free consultation call</p>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <button
+              onClick={() => setShowGuarantee(true)}
+              className="text-gray-400 hover:text-white transition-colors underline underline-offset-4 text-sm"
+            >
+              Our Money-Back Guarantee
+            </button>
+          </motion.div>
         </div>
       </section>
 
@@ -408,6 +424,13 @@ export default function FreeAIRevenueSavingsPlan() {
             >
               Get My Free AI Plan
             </motion.button>
+
+            <button
+              onClick={() => setShowGuarantee(true)}
+              className="text-gray-400 hover:text-white transition-colors underline underline-offset-4 text-sm mt-4 block mx-auto"
+            >
+              Our Money-Back Guarantee
+            </button>
           </div>
         </div>
       </section>
@@ -602,6 +625,79 @@ export default function FreeAIRevenueSavingsPlan() {
       </section>
 
       <ServicePageFooter />
+
+      {/* Money-Back Guarantee Modal */}
+      {showGuarantee && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="bg-gray-900 border border-gray-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          >
+            <div className="sticky top-0 bg-gray-900 border-b border-gray-800 p-6 flex items-center justify-between">
+              <h3 className="font-headline font-bold text-2xl text-white">
+                Our Money-Back Guarantee
+              </h3>
+              <button
+                onClick={() => setShowGuarantee(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="bg-gradient-to-br from-green-950/50 to-gray-950 border border-green-500/30 rounded-xl p-6">
+                <p className="text-green-400 font-semibold text-lg mb-2">
+                  100% Satisfaction Guaranteed
+                </p>
+                <p className="text-gray-300">
+                  If you&apos;re not completely satisfied with your AI Revenue + Savings Plan, we&apos;ll refund your investment in full - no questions asked.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="font-headline font-bold text-xl text-white">
+                  Here&apos;s Our Promise:
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">
+                      If we can&apos;t identify at least 3 clear AI opportunities for your business, you get a full refund
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">
+                      If your plan isn&apos;t delivered within 48 hours, you get a full refund
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">
+                      If you don&apos;t find the plan actionable and valuable, you get a full refund
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-t border-gray-800 pt-6">
+                <p className="text-gray-400 text-sm">
+                  We stand behind our work because we&apos;ve seen these plans transform businesses. Your success is our priority, and we won&apos;t rest until you&apos;re completely satisfied with your AI strategy.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowGuarantee(false)}
+                className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors"
+              >
+                Got It
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
