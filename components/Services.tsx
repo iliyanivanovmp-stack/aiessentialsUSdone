@@ -41,7 +41,7 @@ const Services = () => {
        {
       icon: Settings,
       title: 'Ops & Workflow Automation',
-      description: 'Replace repetitive tasks with tailored AI systems, that never forget or make mistakes, so your team can have more time.',
+      description: 'Replace repetitive tasks with tailored AI systems, that never forget or make mistakes, so your team can have more time to unlock creativity and focus on more revenue first tasks.',
       bullets: ['Data Sync', 'Reporting', 'Ticketing', 'Slack Ops', 'Approvals'],
       microProof: 'Typical: −30–60% handling time.',
       details: [
