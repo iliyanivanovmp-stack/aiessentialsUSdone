@@ -12,7 +12,7 @@ const Services = () => {
       icon: TrendingUp,
       title: 'Lead Gen Autopilot',
       description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and routes warm replies.',
-      bullets: ['Prospecting', 'Research', 'Personalization', 'Sequencing', 'CRM Handover'],
+      bullets: ['List Building', 'Enrichment', '24/7 Leadflow', 'Sequencing', 'CRM Integration'],
       microProof: 'Typical: +25–45% reply lift.',
       details: [
         'AI-powered prospect identification with ICP scoring',
