@@ -10,7 +10,7 @@ const Services = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: 'Lead Gen Autopilot',
+      title: '24/7 Pipeline Engine - LeadGen Systems',
       description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and appoints new meetings.',
       bullets: ['List Building', 'Enrichment', '24/7 Leadflow', 'Sequencing', 'CRM Integration'],
       microProof: 'Typical: +25–45% reply lift.',
