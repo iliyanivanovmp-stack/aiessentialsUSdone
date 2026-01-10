@@ -185,10 +185,10 @@ items:
       - "What are the common deliverables I should expect from an AI consultant I hire?"
       - "When is the best time to engage an AI consultant for my business needs?"
       - "How can I find affordable AI consulting services for my small business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-an-ai-consultants-salary.md"
+    updatedAt: "2026-01-10T17:06:00Z"
+    publishedAt: "2026-01-10T17:06:00Z"
     error: null
 
   - id: "kw05-q01"
