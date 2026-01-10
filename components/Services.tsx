@@ -27,9 +27,10 @@ const Services = () => {
     {
       icon: Brain,
       title: 'Free AI Revenue + Savings Plan',
-      description: 'In 30 minutes, you’ll know the top 3 AI opportunities that will save you  or make you money — plus a 1-page ROI plan.',
+      description: 'In 30 minutes, you will know the top 3 AI opportunities that will save you or make you money - plus a 1-page ROI plan.',
       bullets: ['Free', 'AI opportunity scan', 'Rollout Roadmap','1-Page Plan'],
       microProof: 'Clear path to adopting AI in your business',
+      link: '/free-ai-revenue-and-savings-plan',
       details: [
         'A quick review of your workflows to discover time/money leaks',
         'Top 3 AI opportunities',
@@ -91,11 +92,7 @@ const Services = () => {
                 y: -2,
                 transition: { duration: 0.2 }
               }}
-              onClick={() => {
-                if (index === 1) {
-                  window.location.href = 'https://aiessentials.us/free-ai-revenue-and-savings-plan';
-                }
-              }}
+              onClick={service.link ? () => { window.location.href = service.link; } : undefined}
             >
               {/* Iridescent border glow on hover */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
@@ -126,22 +123,25 @@ const Services = () => {
                 <p className="text-sm text-cyan-400 font-medium">{service.microProof}</p>
               </div>
 
-              <button
-                onClick={(e) => {
-                  if (index === 1) {
+              {service.link ? (
+                <span className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn">
+                  LEARN MORE
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </span>
+              ) : (
+                <button
+                  onClick={(e) => {
                     e.stopPropagation();
-                    window.location.href = 'https://aiessentials.us/free-ai-revenue-and-savings-plan';
-                  } else {
                     setSelectedService(selectedService === index ? null : index);
-                  }
-                }}
-                className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
-              >
-                LEARN MORE
-                <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
-              </button>
+                  }}
+                  className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
+                >
+                  LEARN MORE
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </button>
+              )}
 
-              {selectedService === index && index !== 1 && (
+              {!service.link && selectedService === index && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
