@@ -1,7 +1,7 @@
 ---
 title: "What Is an AI Consultant's Salary? Pricing Models & ROI Guide"
-date: "2026-01-08"
-updatedAt: "2026-01-08"
+date: "2026-01-10"
+updatedAt: "2026-01-10"
 excerpt: "AI consultant salaries range from $150-$500+ per hour depending on experience, skills, and location. Understand pricing models and what you should expect to pay."
 author: "AI Essentials Team"
 tags: ["ai consulting", "business costs", "ai services", "consulting"]
