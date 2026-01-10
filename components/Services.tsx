@@ -10,9 +10,9 @@ const Services = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: '24/7 Pipeline Engine',
-      description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and routes warm replies.',
-      bullets: ['Prospecting', 'Research', 'Personalization', 'Sequencing', 'CRM Handover'],
+      title: '24/7 Pipeline Engine - LeadGen Systems',
+      description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and appoints new meetings.',
+      bullets: ['List Building', 'Enrichment', '24/7 Leadflow', 'Sequencing', 'CRM Integration'],
       microProof: 'Typical: +25–45% reply lift.',
       link: '/24-7-pipeline-engine',
       details: [
@@ -25,9 +25,24 @@ const Services = () => {
       ]
     },
     {
+      icon: Brain,
+      title: 'Free AI Revenue + Savings Plan',
+      description: 'In 30 minutes, you’ll know the top 3 AI opportunities that will save you  or make you money — plus a 1-page ROI plan.',
+      bullets: ['Free', 'AI opportunity scan', 'Rollout Roadmap','1-Page Plan'],
+      microProof: 'Clear path to adopting AI in your business',
+      details: [
+        'A quick review of your workflows to discover time/money leaks',
+        'Top 3 AI opportunities',
+        'Select the #1 ROI “first build” opportunity',
+        'Recommended tools + what connects to what, and how',
+        'A custom map with milestones',
+        'A custom timeline (what to do first, next, later)'
+      ]
+    },
+       {
       icon: Settings,
       title: 'Ops & Workflow Automation',
-      description: 'Replace repetitive tasks with tailored AI systems, that never forget or make mistakes, so your team can have more time.',
+      description: 'Kill repetitive tasks with AI systems, that never forget or make mistakes, so your team can focus on revenue first tasks.',
       bullets: ['Data Sync', 'Reporting', 'Ticketing', 'Slack Ops', 'Approvals'],
       microProof: 'Typical: −30–60% handling time.',
       details: [
@@ -37,21 +52,6 @@ const Services = () => {
         'Slack-integrated ops center with intelligent notifications',
         'Automated approval chains with compliance tracking',
         'Legacy system integrations and data migration'
-      ]
-    },
-    {
-      icon: Brain,
-      title: 'AI Systems & Advisory',
-      description: 'Architecture, models, prompts, guardrails, training, and ongoing monitoring.',
-      bullets: ['RAG', 'Agents', 'Evaluation', 'Security', 'Governance'],
-      microProof: 'Typical: faster decisions, fewer errors.',
-      details: [
-        'Production-ready RAG systems with vector search',
-        'Multi-agent workflows for complex decision making',
-        'Continuous evaluation and performance monitoring',
-        'Enterprise security with role-based access controls',
-        'AI governance frameworks and ethical guidelines',
-        'Team training and ongoing advisory support'
       ]
     }
   ];
@@ -91,7 +91,11 @@ const Services = () => {
                 y: -2,
                 transition: { duration: 0.2 }
               }}
-              onClick={service.link ? () => window.location.href = service.link : undefined}
+              onClick={() => {
+                if (index === 1) {
+                  window.location.href = 'https://aiessentials.us/free-ai-revenue-and-savings-plan';
+                }
+              }}
             >
               {/* Iridescent border glow on hover */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
@@ -122,25 +126,22 @@ const Services = () => {
                 <p className="text-sm text-cyan-400 font-medium">{service.microProof}</p>
               </div>
 
-              {service.link ? (
-                <span className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn">
-                  LEARN MORE
-                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                </span>
-              ) : (
-                <button
-                  onClick={(e) => {
+              <button
+                onClick={(e) => {
+                  if (index === 1) {
                     e.stopPropagation();
+                    window.location.href = 'https://aiessentials.us/free-ai-revenue-and-savings-plan';
+                  } else {
                     setSelectedService(selectedService === index ? null : index);
-                  }}
-                  className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
-                >
-                  LEARN MORE
-                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                </button>
-              )}
+                  }
+                }}
+                className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
+              >
+                LEARN MORE
+                <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
+              </button>
 
-              {!service.link && selectedService === index && (
+              {selectedService === index && index !== 1 && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
