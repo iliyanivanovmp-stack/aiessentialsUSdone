@@ -14,6 +14,7 @@ const Services = () => {
       description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and appoints new meetings.',
       bullets: ['List Building', 'Enrichment', '24/7 Leadflow', 'Sequencing', 'CRM Integration'],
       microProof: 'Typical: +25–45% reply lift.',
+      link: '/24-7-pipeline-engine',
       details: [
         'AI-powered prospect identification with ICP scoring',
         'Multi-source data enrichment and verification',
@@ -85,7 +86,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`bg-black border border-gray-800 rounded-xl p-8 relative overflow-hidden group transition-all duration-300 ${index === 1 ? 'cursor-pointer' : ''}`}
+              className={`bg-black border border-gray-800 rounded-xl p-8 relative overflow-hidden group transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
               whileHover={{
                 y: -2,
                 transition: { duration: 0.2 }
