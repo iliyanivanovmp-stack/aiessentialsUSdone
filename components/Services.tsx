@@ -10,10 +10,11 @@ const Services = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: 'Lead Gen Autopilot',
+      title: '24/7 Pipeline Engine',
       description: '24/7 system that identifies ICP targets, enriches, writes personalized outreach, and routes warm replies.',
       bullets: ['Prospecting', 'Research', 'Personalization', 'Sequencing', 'CRM Handover'],
       microProof: 'Typical: +25–45% reply lift.',
+      link: '/24-7-pipeline-engine',
       details: [
         'AI-powered prospect identification with ICP scoring',
         'Multi-source data enrichment and verification',
@@ -85,29 +86,30 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-black border border-gray-800 rounded-xl p-8 relative overflow-hidden group transition-all duration-300"
-              whileHover={{ 
+              className={`bg-black border border-gray-800 rounded-xl p-8 relative overflow-hidden group transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
+              whileHover={{
                 y: -2,
                 transition: { duration: 0.2 }
               }}
+              onClick={service.link ? () => window.location.href = service.link : undefined}
             >
               {/* Iridescent border glow on hover */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-              
+
               {/* Inner glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-purple-500/5 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              
+
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
                   <service.icon className="w-8 h-8 text-cyan-400 mr-3" />
                   <h3 className="font-headline font-bold text-2xl">{service.title}</h3>
                 </div>
-                
+
               <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
-              
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {service.bullets.map((bullet, bulletIndex) => (
-                  <span 
+                  <span
                     key={bulletIndex}
                     className="text-xs bg-gray-900 text-gray-300 px-3 py-1 rounded-full"
                   >
@@ -115,20 +117,30 @@ const Services = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="mb-6 p-3 bg-gray-950/50 rounded-lg border border-gray-800">
                 <p className="text-sm text-cyan-400 font-medium">{service.microProof}</p>
               </div>
-              
-              <button
-                onClick={() => setSelectedService(selectedService === index ? null : index)}
-                className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
-              >
-                LEARN MORE
-                <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
-              </button>
-              
-              {selectedService === index && (
+
+              {service.link ? (
+                <span className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn">
+                  LEARN MORE
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </span>
+              ) : (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedService(selectedService === index ? null : index);
+                  }}
+                  className="text-gray-400 hover:text-white text-sm uppercase tracking-wider transition-colors duration-200 flex items-center group/btn"
+                >
+                  LEARN MORE
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </button>
+              )}
+
+              {!service.link && selectedService === index && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
