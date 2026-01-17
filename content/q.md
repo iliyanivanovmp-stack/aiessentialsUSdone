@@ -207,9 +207,9 @@ items:
       - "Why should I prioritize AI implementation over other business improvements?"
       - "How can AI help me analyze financial data and make better business decisions?"
       - "What are the best resources for learning about AI and its application to LLCs?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
+    status: "in_progress"
+    postPath: "content/blog-posts/can-ai-run-your-llc.md"
+    updatedAt: "2026-01-17T00:00:00Z"
     publishedAt: null
     error: null
 
