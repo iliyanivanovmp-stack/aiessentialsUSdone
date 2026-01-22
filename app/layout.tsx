@@ -68,7 +68,7 @@ export default function RootLayout({
       "@type": "Country",
       "name": "United States"
     },
-    "serviceType": ["AI Automation Consulting", "AI Implementation", "Business Process Automation"]
+    "knowsAbout": ["AI Automation", "Business Process Automation", "Lead Generation Systems", "CRM Integration"]
   };
 
   const websiteSchema = {
