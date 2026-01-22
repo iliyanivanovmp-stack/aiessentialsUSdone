@@ -153,7 +153,7 @@ items:
     title: "What Is the 30% Rule in Ai"
     slug: "what-is-the-30-rule-in-ai"
     faq_questions:
-      - "How can the 30% rule help me prioritize AI projects for my small business?"
+      - "How can the 30% rule help me prioritize AI projects for my business?"
       - "What are some common pitfalls to avoid when applying the 30% rule to AI implementation?"
       - "Why is it important to focus on the core 30% of AI value for my business?"
       - "When should I re-evaluate my AI strategy based on the 30% rule?"
@@ -163,10 +163,10 @@ items:
       - "What are some examples of the 30% rule in action for different types of small businesses?"
       - "How can I find AI consultants who understand and apply the 30% rule?"
       - "What are the alternatives to the 30% rule when planning my AI strategy?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-the-30-rule-in-ai.md"
+    updatedAt: "2026-01-14T17:40:00Z"
+    publishedAt: "2026-01-14T17:40:00Z"
     error: null
 
   - id: "kw04-q02"
@@ -185,10 +185,10 @@ items:
       - "What are the common deliverables I should expect from an AI consultant I hire?"
       - "When is the best time to engage an AI consultant for my business needs?"
       - "How can I find affordable AI consulting services for my small business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-an-ai-consultants-salary.md"
+    updatedAt: "2026-01-10T17:06:00Z"
+    publishedAt: "2026-01-10T17:06:00Z"
     error: null
 
   - id: "kw05-q01"
@@ -207,9 +207,9 @@ items:
       - "Why should I prioritize AI implementation over other business improvements?"
       - "How can AI help me analyze financial data and make better business decisions?"
       - "What are the best resources for learning about AI and its application to LLCs?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
+    status: "in_progress"
+    postPath: "content/blog-posts/can-ai-run-your-llc.md"
+    updatedAt: "2026-01-17T00:00:00Z"
     publishedAt: null
     error: null
 
