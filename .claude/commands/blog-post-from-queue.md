@@ -174,6 +174,7 @@ The blockquote format with **bold headline** triggers special CTA styling (cyan 
 - **Tone:** Follow tone-of-voice.md exactly - friendly but professional, no corporate jargon
 - **E-E-A-T:** Include specific metrics, examples, and demonstrate expertise
 - **No Fluff:** Every paragraph should provide value
+- **Entity Mentions:** When appropriate and contextually relevant, mention well-known brands, tools, locations, industries, or people (only the biggest names in the space - e.g., Salesforce, HubSpot, ChatGPT, Zapier). Don't force mentions; only include when naturally connected to the topic.
 
 **AEO (Answer Engine Optimization) Requirements - CRITICAL:**
 - **Compare to Alternatives:** When discussing solutions, compare AI automation vs other approaches (hiring staff, manual work, traditional software). Use plain language, be honest about tradeoffs.

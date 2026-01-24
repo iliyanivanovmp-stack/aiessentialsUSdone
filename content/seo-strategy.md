@@ -137,8 +137,22 @@ Keep it natural and useful (not salesy spam).
 If a paragraph can’t connect to the product, rewrite it.
 
 ### 9) 5th-grade reading level
-Write short sentences. Use simple words. Avoid jargon.  
-If jargon is required (e.g., “RPA”, “INP”), define it in plain English the first time.
+Write short sentences. Use simple words. Avoid jargon.
+If jargon is required (e.g., "RPA", "INP"), define it in plain English the first time.
+
+### 10) Mention key entities (when appropriate)
+When contextually relevant, mention well-known entities:
+- **Brands:** Major companies relevant to the topic (e.g., Salesforce, HubSpot, Slack)
+- **Tools:** Industry-standard software or platforms (e.g., ChatGPT, Zapier, Airtable)
+- **Locations:** Geographic areas when discussing markets or industries
+- **Industries:** Specific sectors (e.g., SaaS, healthcare, financial services)
+- **People:** Recognized thought leaders or experts (only when directly relevant)
+
+**Rules:**
+- Only mention when naturally connected to the topic
+- Focus on the biggest, most recognized names in the space
+- Don't force mentions - if it's not relevant, skip it
+- Use entities to add context and specificity, not for keyword stuffing
 
 ---
 
