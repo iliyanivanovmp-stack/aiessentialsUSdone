@@ -112,7 +112,7 @@ async function getAccessToken() {
  * Call Google Ads Keyword Planner API
  */
 async function getKeywordIdeas(accessToken) {
-  const url = `https://googleads.googleapis.com/v18/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
+  const url = `https://googleads.googleapis.com/v16/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
 
   const requestBody = {
     urlSeed: {
