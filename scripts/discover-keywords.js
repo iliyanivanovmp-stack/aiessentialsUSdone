@@ -14,7 +14,8 @@
  * - GOOGLE_ADS_CLIENT_ID
  * - GOOGLE_ADS_CLIENT_SECRET
  * - GOOGLE_ADS_REFRESH_TOKEN
- * - GOOGLE_ADS_CUSTOMER_ID
+ * - GOOGLE_ADS_CUSTOMER_ID (regular account with Keyword Planner - without dashes)
+ * - GOOGLE_ADS_LOGIN_CUSTOMER_ID (MCC account with API access - without dashes)
  */
 
 require('dotenv').config();
@@ -37,7 +38,8 @@ const DEVELOPER_TOKEN = process.env.GOOGLE_ADS_DEVELOPER_TOKEN;
 const CLIENT_ID = process.env.GOOGLE_ADS_CLIENT_ID;
 const CLIENT_SECRET = process.env.GOOGLE_ADS_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.GOOGLE_ADS_REFRESH_TOKEN;
-const CUSTOMER_ID = process.env.GOOGLE_ADS_CUSTOMER_ID;
+const CUSTOMER_ID = process.env.GOOGLE_ADS_CUSTOMER_ID; // Regular account (with Keyword Planner)
+const LOGIN_CUSTOMER_ID = process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID; // MCC account (with API access)
 
 // Intent classification patterns
 const INTENT_PATTERNS = {
@@ -127,6 +129,7 @@ async function getKeywordIdeas(accessToken) {
     headers: {
       'Authorization': `Bearer ${accessToken}`,
       'developer-token': DEVELOPER_TOKEN,
+      'login-customer-id': LOGIN_CUSTOMER_ID,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(requestBody)
@@ -305,7 +308,8 @@ async function main() {
 
   // Validate environment
   const required = ['GOOGLE_ADS_DEVELOPER_TOKEN', 'GOOGLE_ADS_CLIENT_ID',
-    'GOOGLE_ADS_CLIENT_SECRET', 'GOOGLE_ADS_REFRESH_TOKEN', 'GOOGLE_ADS_CUSTOMER_ID'];
+    'GOOGLE_ADS_CLIENT_SECRET', 'GOOGLE_ADS_REFRESH_TOKEN', 'GOOGLE_ADS_CUSTOMER_ID',
+    'GOOGLE_ADS_LOGIN_CUSTOMER_ID'];
 
   for (const key of required) {
     if (!process.env[key]) {
