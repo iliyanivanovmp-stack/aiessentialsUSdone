@@ -229,10 +229,10 @@ items:
       - "What are the data privacy and security implications of using ChatGPT with customer data?"
       - "How can I use ChatGPT to automate administrative tasks in my business?"
       - "What are some ethical considerations to keep in mind when using ChatGPT for my business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/can-i-use-chatgpt-for-my-business.md"
+    updatedAt: "2026-01-25T00:00:00Z"
+    publishedAt: "2026-01-25T00:00:00Z"
     error: null
 
   - id: "kw06-q01"
