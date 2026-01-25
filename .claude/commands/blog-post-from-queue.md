@@ -189,10 +189,26 @@ The blockquote format with **bold headline** triggers special CTA styling (cyan 
 - Check existing posts in `content/blog-posts/` to find relevant links
 - Example: If discussing "saving time with automation", link to the post about "how AI automation saves 20 hours per week"
 
-**FAQ Section Requirements:**
+**FAQ Section Requirements (CRITICAL for Google Rich Results):**
+- **MUST use exactly `## Frequently Asked Questions` as the H2 heading** - this exact format is required for Google to recognize FAQPage schema
+- **MUST use H3 format (`###`) for each question** - this structure enables automatic FAQ schema generation
 - Use ALL 10 questions from `faq_questions` in the queue item
 - Each answer should be 50-100 words
 - Be direct and helpful - answer the question immediately
+- The blog page automatically extracts FAQ schema from this structure - **if the format is wrong, your post won't get FAQ rich results in Google**
+
+**Correct FAQ format example:**
+```markdown
+## Frequently Asked Questions
+
+### What is the first question?
+
+Direct answer to the first question in 50-100 words.
+
+### What is the second question?
+
+Direct answer to the second question in 50-100 words.
+```
 
 ### Step 4: Save the Blog Post
 
