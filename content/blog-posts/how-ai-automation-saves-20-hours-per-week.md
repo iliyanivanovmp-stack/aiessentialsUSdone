@@ -208,6 +208,48 @@ No pressure, no sales pitch—just an honest assessment of whether automation ma
 
 [Book your free strategy call](https://calendly.com/iliyan-ivanov-mp/discovery-call-with-aiessentials) and let's talk about getting those 20 hours back.
 
+## Frequently Asked Questions
+
+### What types of tasks can AI automation handle for my business?
+
+AI automation excels at repetitive, rule-based tasks like email responses, appointment scheduling, data entry, customer service inquiries, invoice processing, and social media posting. The best candidates are tasks you do the same way every time that don't require your unique expertise or judgment.
+
+### How much does AI automation cost for a small business?
+
+Basic automation tools range from $50-500/month depending on complexity. Simple scheduling and email tools are on the lower end, while comprehensive CRM automation sits higher. The real cost is setup time—either yours or a consultant's. Most businesses see ROI within weeks through time savings.
+
+### Will AI automation replace my employees?
+
+In our experience, automation rarely eliminates jobs—it eliminates the boring parts of jobs. Your team gets to focus on work that's actually interesting and valuable, like building relationships, solving complex problems, and strategic thinking. This typically improves retention and job satisfaction.
+
+### How long does it take to implement AI automation?
+
+Simple automations like scheduling tools take 30 minutes to set up. Email sequences might take a few hours. A comprehensive automation strategy across your business typically takes 4-8 weeks to fully implement. Start with one high-impact automation and expand from there.
+
+### What if AI makes a mistake in my business communications?
+
+AI systems aren't perfect, which is why well-designed automations include human oversight for anything critical. Set up review processes for important communications, use AI for drafting rather than direct sending when appropriate, and always have escalation paths for complex situations.
+
+### Do I need technical skills to set up AI automation?
+
+Many modern AI tools are designed for non-technical users with intuitive interfaces. If you can use email and spreadsheets, you can set up basic automations. More complex integrations between multiple systems might benefit from expert help, but you won't need to write code.
+
+### How do I measure the ROI of AI automation?
+
+Track time before and after automation for specific tasks. If you spent 5 hours weekly on email responses and now spend 1 hour reviewing AI drafts, that's 4 hours saved. Multiply by your hourly rate (or what you could earn with that time) to calculate dollar value.
+
+### What's the biggest mistake businesses make with AI automation?
+
+Over-automating too fast. People get excited, automate everything at once, and create a fragile system that breaks when something unexpected happens. Start small with one process, measure results, refine it, then expand. Slow and steady wins here.
+
+### Can AI automation integrate with my existing software?
+
+Most AI automation tools integrate with popular business software through APIs or connectors like Zapier and Make. Check compatibility before choosing tools—CRM systems, email platforms, calendars, and accounting software typically have robust integration options.
+
+### Is AI automation secure for handling sensitive business data?
+
+Reputable AI tools follow enterprise security standards including encryption, SOC 2 compliance, and GDPR adherence. Always check a tool's security certifications and data handling policies. For highly sensitive data, look for tools that don't use your data to train their models.
+
 ---
 
 *AI Essentials helps small and medium businesses automate their operations using AI. We focus on practical solutions that deliver real time savings without the complexity or cost of enterprise software.*

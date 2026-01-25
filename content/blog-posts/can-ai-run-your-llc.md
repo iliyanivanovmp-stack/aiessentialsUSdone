@@ -261,6 +261,48 @@ AI in business is new enough that regulations are still catching up, but here's 
 
 **Competition:** Using AI tools that competitors use doesn't give you unfair advantage. It just puts you on equal footing. The advantage comes from how you use it, not that you use it.
 
+## Frequently Asked Questions
+
+### Can AI completely replace the owner of an LLC?
+
+No. AI can handle 30-50% of operational tasks like scheduling, email responses, and data entry, but it cannot replace strategic decision-making, relationship building, or your unique expertise. The most successful LLC owners use AI to free up time for high-value work, not to remove themselves entirely.
+
+### What's the first task I should automate in my LLC?
+
+Start with appointment scheduling or email responses to common questions. These are high-volume, repetitive tasks with clear rules that don't directly impact customer relationships. Tools like Calendly for scheduling or AI email assistants can save 5-10 hours per week immediately.
+
+### How much does it cost to implement AI automation in a small LLC?
+
+Basic automation tools cost $50-200/month (scheduling, email, CRM). More advanced custom integrations might run $500-2,000 for setup plus ongoing software costs. Most LLCs see ROI within the first month through time savings alone—if you save 10 hours at $50/hour, that's $500/month in recovered productivity.
+
+### Will customers know they're talking to AI?
+
+It depends on how you set it up. For FAQs and basic inquiries, AI can respond quickly and naturally. For complex issues, a well-designed system routes to a human. Many businesses use a hybrid approach where AI handles initial responses and gathers information before handing off to a person.
+
+### What happens when AI makes a mistake in my business?
+
+You're still responsible. That's why good automation includes human oversight for anything high-stakes. Build in review points for important decisions, set dollar limits for automated approvals, and always have an easy way to escalate to a human. The goal is efficiency, not blind trust.
+
+### Is my business data safe with AI tools?
+
+Check each tool's privacy policy and data handling practices. Reputable AI tools are SOC 2 compliant and don't use your business data to train their models. For sensitive data, look for tools that offer data encryption and compliance with regulations like GDPR or CCPA.
+
+### How long does it take to set up AI automation for an LLC?
+
+Simple automations (scheduling, email sequences) take 1-2 hours to set up. More complex integrations between multiple tools might take a weekend. A full automation audit and implementation across your LLC typically takes 4-6 weeks with professional help, or 2-3 months DIY.
+
+### Can AI help with my LLC's bookkeeping and taxes?
+
+AI can automate invoice creation, payment reminders, expense categorization, and report generation. However, tax decisions and compliance still need human oversight—ideally from a CPA. Tools like QuickBooks and FreshBooks use AI for categorization, but you should review before filing anything.
+
+### What if my business processes change frequently?
+
+Wait until processes stabilize before automating them. If you're changing how you do something weekly, automation will create more problems than it solves. Automate the stable, predictable parts first, and leave the evolving areas flexible until they settle down.
+
+### Do I need technical skills to implement AI in my LLC?
+
+Not for basic tools. Most modern AI automation platforms are designed for non-technical users with drag-and-drop interfaces. For complex custom integrations between multiple systems, you might need technical help—either learning yourself or hiring a consultant.
+
 ## The Real Answer: AI Can Run Your LLC's Operations, Not Your Strategy
 
 Can AI run your LLC?

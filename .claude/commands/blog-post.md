@@ -37,6 +37,24 @@ tags: ["tag1", "tag2", "tag3"]
 - Write in the tone specified in tone-of-voice.md
 - Make it actionable and valuable for business owners
 
+**FAQ Section (CRITICAL for Google Rich Results):**
+Every blog post MUST include a FAQ section using this exact format:
+```markdown
+## Frequently Asked Questions
+
+### First question here?
+
+Direct answer in 50-100 words.
+
+### Second question here?
+
+Direct answer in 50-100 words.
+```
+- The heading MUST be exactly `## Frequently Asked Questions` (enables FAQPage schema)
+- Each question MUST use H3 format (`###`)
+- Include 5-10 relevant questions
+- This structure automatically generates FAQ rich results in Google
+
 ### Step 3: Save the Blog Post
 Save the blog post to: `content/blog-posts/[slug].md`
 
