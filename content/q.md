@@ -251,10 +251,10 @@ items:
       - "How can I assess the AI expertise and experience of an agency?"
       - "Why should a small business invest in AI solutions in the first place?"
       - "What are some examples of successful AI implementations for small businesses in my industry?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/who-are-the-big-4-ai-agents.md"
+    updatedAt: "2026-01-28T00:00:00Z"
+    publishedAt: "2026-01-28T00:00:00Z"
     error: null
 
   - id: "kw06-q02"
