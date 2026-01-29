@@ -33,7 +33,7 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-async function testEndpoint(accessToken, version, endpoint, method = 'GET', body = null) {
+async function testEndpoint(accessToken, version, endpoint, method = 'GET', body = null, debug = false) {
   const url = `https://googleads.googleapis.com/${version}/${endpoint}`;
 
   const headers = {
@@ -42,13 +42,20 @@ async function testEndpoint(accessToken, version, endpoint, method = 'GET', body
     'Content-Type': 'application/json'
   };
 
+  // CRITICAL: Always include login-customer-id when using MCC token
   if (LOGIN_CUSTOMER_ID) {
-    headers['login-customer-id'] = LOGIN_CUSTOMER_ID;
+    headers['login-customer-id'] = String(LOGIN_CUSTOMER_ID);
   }
 
   const options = { method, headers };
   if (body) {
     options.body = JSON.stringify(body);
+  }
+
+  if (debug) {
+    console.log(`\n  DEBUG - URL: ${url}`);
+    console.log(`  DEBUG - Headers:`, JSON.stringify(headers, null, 2));
+    if (body) console.log(`  DEBUG - Body:`, JSON.stringify(body, null, 2));
   }
 
   try {
@@ -97,13 +104,15 @@ async function main() {
   const accessToken = await getAccessToken();
   console.log('✅ Access token obtained\n');
 
-  const versions = ['v18', 'v17', 'v16', 'v15', 'v14'];
+  // Use v19 (v18 appears to be deprecated)
+  const versions = ['v19'];
 
   console.log('Testing API versions with listAccessibleCustomers endpoint...');
   console.log('-'.repeat(70));
 
+  let firstTest = true;
   for (const version of versions) {
-    const result = await testEndpoint(accessToken, version, 'customers:listAccessibleCustomers');
+    const result = await testEndpoint(accessToken, version, 'customers:listAccessibleCustomers', 'GET', null, firstTest);
     const status = result.ok ? '✅' : '❌';
     console.log(`${status} ${version}: Status ${result.status}`);
     if (result.ok) {
@@ -111,6 +120,7 @@ async function main() {
     } else if (result.status !== 404) {
       console.log(`   Error: ${JSON.stringify(result.result).substring(0, 100)}`);
     }
+    firstTest = false;
   }
 
   console.log();
@@ -122,9 +132,10 @@ async function main() {
     query: 'SELECT customer.id, customer.descriptive_name FROM customer LIMIT 1'
   };
 
+  firstTest = true;
   for (const version of versions) {
     const endpoint = `customers/${CUSTOMER_ID}/googleAds:search`;
-    const result = await testEndpoint(accessToken, version, endpoint, 'POST', query);
+    const result = await testEndpoint(accessToken, version, endpoint, 'POST', query, firstTest);
     const status = result.ok ? '✅' : '❌';
     console.log(`${status} ${version}: Status ${result.status}`);
     if (result.ok) {
@@ -132,6 +143,7 @@ async function main() {
     } else if (result.status !== 404) {
       console.log(`   Error: ${JSON.stringify(result.result).substring(0, 150)}`);
     }
+    firstTest = false;
   }
 
   console.log();
@@ -139,15 +151,18 @@ async function main() {
   console.log('-'.repeat(70));
 
   const keywordRequest = {
-    urlSeed: { url: 'https://aiessentials.us' },
+    keywordSeed: {
+      keywords: ['solar panels', 'clean energy']
+    },
     geoTargetConstants: ['geoTargetConstants/2840'],
     language: 'languageConstants/1000',
     keywordPlanNetwork: 'GOOGLE_SEARCH'
   };
 
+  firstTest = true;
   for (const version of versions) {
     const endpoint = `customers/${CUSTOMER_ID}:generateKeywordIdeas`;
-    const result = await testEndpoint(accessToken, version, endpoint, 'POST', keywordRequest);
+    const result = await testEndpoint(accessToken, version, endpoint, 'POST', keywordRequest, firstTest);
     const status = result.ok ? '✅' : '❌';
     console.log(`${status} ${version}: Status ${result.status}`);
     if (result.ok) {
@@ -156,6 +171,7 @@ async function main() {
     } else if (result.status !== 404) {
       console.log(`   Error: ${JSON.stringify(result.result).substring(0, 150)}`);
     }
+    firstTest = false;
   }
 
   console.log();
@@ -163,14 +179,24 @@ async function main() {
   console.log('DIAGNOSIS:');
   console.log('='.repeat(70));
   console.log();
-  console.log('If ALL versions show 404:');
-  console.log('  → The Google Ads API might not be properly enabled');
-  console.log('  → Check: console.cloud.google.com → APIs & Services → Enabled APIs');
-  console.log('  → Make sure "Google Ads API" shows as ENABLED (not just listed)');
+  console.log('Configuration Check:');
+  console.log(`  Developer Token: ${DEVELOPER_TOKEN ? '✓ Set' : '✗ Missing'}`);
+  console.log(`  Client Account ID (Customer): ${CUSTOMER_ID || '✗ Missing'}`);
+  console.log(`  Manager Account ID (Login): ${LOGIN_CUSTOMER_ID || '✗ Missing'}`);
   console.log();
-  console.log('If some versions work but Keyword Planner fails with UNIMPLEMENTED:');
-  console.log('  → Your account needs more ad spend history');
-  console.log('  → Or the account is in Smart Mode (needs Expert Mode)');
+  console.log('If ALL versions show 404:');
+  console.log('  1. Google Ads API might not be properly enabled');
+  console.log('     → Go to console.cloud.google.com');
+  console.log('     → APIs & Services → Enabled APIs');
+  console.log('     → Search for "Google Ads API" and ensure it shows ENABLED');
+  console.log();
+  console.log('  2. The User/Account may not have proper access');
+  console.log('     → Ensure the email has Standard or Admin access to the Manager Account');
+  console.log('     → Make sure the refresh token was generated by the authorized user');
+  console.log();
+  console.log('If Keyword Planner fails with UNIMPLEMENTED:');
+  console.log('  → Account may need more ad spend history');
+  console.log('  → Or account is in Smart Mode (needs to be Expert Mode)');
   console.log();
 }
 
