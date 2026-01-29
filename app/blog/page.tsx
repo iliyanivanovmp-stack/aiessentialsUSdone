@@ -26,10 +26,10 @@ export default function BlogPage() {
         <div className="bg-gradient-to-b from-cyan-950/30 to-black py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold mb-6">
-              AI Automation Insights
+              AI Growth Insights
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-              Expert strategies and insights to help you leverage AI for business growth
+              Expert strategies and insights to help you leverage AI for business growth.
             </p>
           </div>
         </div>
