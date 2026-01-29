@@ -112,7 +112,12 @@ async function getAccessToken() {
  * Call Google Ads Keyword Planner API
  */
 async function getKeywordIdeas(accessToken) {
-  const url = `https://googleads.googleapis.com/v18/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
+  // Use v17 - the stable version
+  const url = `https://googleads.googleapis.com/v17/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
+
+  console.log(`   URL: ${url}`);
+  console.log(`   Customer ID: ${CUSTOMER_ID}`);
+  console.log(`   Login Customer ID: ${LOGIN_CUSTOMER_ID}`);
 
   const requestBody = {
     urlSeed: {
@@ -124,6 +129,8 @@ async function getKeywordIdeas(accessToken) {
     includeAdultKeywords: false
   };
 
+  console.log(`   Request body: ${JSON.stringify(requestBody, null, 2)}`);
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -134,6 +141,8 @@ async function getKeywordIdeas(accessToken) {
     },
     body: JSON.stringify(requestBody)
   });
+
+  console.log(`   Response status: ${response.status}`);
 
   if (!response.ok) {
     const errorText = await response.text();
