@@ -112,8 +112,8 @@ async function getAccessToken() {
  * Call Google Ads Keyword Planner API
  */
 async function getKeywordIdeas(accessToken) {
-  // Use v17 - the stable version
-  const url = `https://googleads.googleapis.com/v17/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
+  // Use v19 - latest stable API version
+  const url = `https://googleads.googleapis.com/v19/customers/${CUSTOMER_ID}:generateKeywordIdeas`;
 
   console.log(`   URL: ${url}`);
   console.log(`   Customer ID: ${CUSTOMER_ID}`);
@@ -136,7 +136,7 @@ async function getKeywordIdeas(accessToken) {
     headers: {
       'Authorization': `Bearer ${accessToken}`,
       'developer-token': DEVELOPER_TOKEN,
-      'login-customer-id': LOGIN_CUSTOMER_ID,
+      'login-customer-id': String(LOGIN_CUSTOMER_ID),
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(requestBody)
