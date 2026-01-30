@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-01-29T05:55:47.918Z",
+  "urlSeed": "https://aiessentials.us",
+  "totalKeywordsFound": 214,
+  "afterFiltering": 213,
+  "selection": {
+    "informational": 5,
+    "commercial": 3,
+    "transactional": 2
+  },
+  "keywords": [
+    {
+      "keyword": "ai and business",
+      "intent": "informational",
+      "monthlySearches": 9900,
+      "competition": "LOW",
+      "topBidLow": 8.20907,
+      "topBidHigh": 34.87,
+      "score": 0.88
+    },
+    {
+      "keyword": "business of ai",
+      "intent": "informational",
+      "monthlySearches": 9900,
+      "competition": "LOW",
+      "topBidLow": 8.20907,
+      "topBidHigh": 34.87,
+      "score": 0.88
+    },
+    {
+      "keyword": "ai company",
+      "intent": "informational",
+      "monthlySearches": 22200,
+      "competition": "LOW",
+      "topBidLow": 2.97,
+      "topBidHigh": 12.21,
+      "score": 0.83
+    },
+    {
+      "keyword": "ai in company",
+      "intent": "informational",
+      "monthlySearches": 22200,
+      "competition": "LOW",
+      "topBidLow": 2.97,
+      "topBidHigh": 12.21,
+      "score": 0.83
+    },
+    {
+      "keyword": "ai tools",
+      "intent": "informational",
+      "monthlySearches": 33100,
+      "competition": "MEDIUM",
+      "topBidLow": 2.029437,
+      "topBidHigh": 9.15,
+      "score": 0.73
+    },
+    {
+      "keyword": "ai for business",
+      "intent": "commercial",
+      "monthlySearches": 9900,
+      "competition": "LOW",
+      "topBidLow": 8.20907,
+      "topBidHigh": 34.87,
+      "score": 0.79
+    },
+    {
+      "keyword": "best ai",
+      "intent": "commercial",
+      "monthlySearches": 27100,
+      "competition": "MEDIUM",
+      "topBidLow": 1.476706,
+      "topBidHigh": 5.93,
+      "score": 0.57
+    },
+    {
+      "keyword": "ai for business processes",
+      "intent": "commercial",
+      "monthlySearches": 50,
+      "competition": "LOW",
+      "topBidLow": 6.57,
+      "topBidHigh": 32.009998,
+      "score": 0.48
+    },
+    {
+      "keyword": "ai cost",
+      "intent": "transactional",
+      "monthlySearches": 880,
+      "competition": "LOW",
+      "topBidLow": 2.25264,
+      "topBidHigh": 12.04,
+      "score": 0.41
+    },
+    {
+      "keyword": "cost ai",
+      "intent": "transactional",
+      "monthlySearches": 30,
+      "competition": "LOW",
+      "topBidLow": 3.04,
+      "topBidHigh": 12.442925,
+      "score": 0.4
+    }
+  ]
+}

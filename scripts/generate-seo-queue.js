@@ -48,7 +48,7 @@ async function getSerperQuestions(keyword) {
       body: JSON.stringify({
         q: keyword,
         gl: 'us',
-        hl: 'en',
+        lr: 'lang_en',  // Language restrict - required for PAA results
         num: 10
       })
     });

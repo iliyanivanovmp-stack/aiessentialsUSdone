@@ -1,0 +1,683 @@
+{
+  "generatedAt": "2026-01-30T04:31:20.524Z",
+  "sourceFile": "content/keywords-discovered.json",
+  "questionsPerKeyword": {
+    "informational": 5,
+    "commercial": 3,
+    "transactional": 2
+  },
+  "totalKeywords": 10,
+  "totalQuestions": 100,
+  "results": [
+    {
+      "keyword": "ai and business",
+      "keywordIntent": "informational",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "How is AI used in business?",
+          "snippet": "Organizations use artificial intelligence (AI) to strengthen data analysis and decision-making, improve customer experiences, generate content, optimize IT operations, sales, marketing and cybersecurity practices and more.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the 30% rule in AI?",
+          "snippet": "The 30% Rule in AI is a framework emphasizing that AI should handle approximately 70% of repetitive, routine work while humans focus on the remaining 30% of high-value activities requiring creativity, judgment, and ethical decision-making.2 Dec 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "Which 3 jobs will survive AI?",
+          "snippet": "Gates identified three roles he believes will remain crucial and largely irreplaceable by AI, at least for the foreseeable future: programmers, energy experts, and biologists.13 Dec 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "How can I use AI to start a business?",
+          "snippet": "Perform market research\n\nMarket research helps determine the market need for your business idea, as well as the price point that consumers are willing to pay. Generative AI can provide insights into your potential customers' preferences and motivations, so you can better target your business efforts.14 May 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI and how can it benefit my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the pros and cons of using AI-powered marketing automation vs hiring a marketing agency for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which is better for a small business: investing in AI-driven customer service software or expanding the customer service team?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "What's the best AI tool for small businesses to use for social media management compared to using a traditional social media manager?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "Where can I buy AI-powered marketing services for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "business of ai",
+      "keywordIntent": "informational",
+      "serperQuestionsFound": 0,
+      "questions": [
+        {
+          "question": "What is artificial intelligence and how can it benefit my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does machine learning help businesses improve their decision-making?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Why is data important for AI applications in small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business consider investing in AI tools?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the common ethical considerations when using AI in my business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the pros and cons of using AI-powered marketing automation vs. hiring a dedicated marketing team for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which is better for a small business: investing in AI-powered customer service chatbots or expanding a human-operated customer support team?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "What's the best AI-powered tool for small business accounting, and how does its cost compare to hiring a traditional accountant?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "What are the pricing options for AI-powered marketing services for small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai company",
+      "keywordIntent": "informational",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "What are the big 7 AI companies?",
+          "snippet": "The Magnificent Seven—Alphabet, Amazon, Apple, Microsoft, Meta, Nvidia, and Tesla—used to compete in distinct lanes. AI has changed that.23 Oct 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "Who are the big 5 in AI?",
+          "snippet": "The Big 5 in AI—Google, Microsoft, Amazon, Facebook (Meta), and Apple—are at the forefront of reshaping how businesses operate using AI technologies. By understanding their contributions and capabilities, organisations can make informed decisions about integrating AI for business into their strategies.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "Is AI legal in Hong Kong?",
+          "snippet": "Hong Kong does not currently have a dedicated artificial intelligence regulation. Instead, organisations must work within the framework of existing sectoral laws and regulatory guidance, overseen by various government bodies and regulators.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is an AI company and how can it benefit my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does an AI company help small businesses improve their marketing efforts?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the best AI company?",
+          "snippet": "AI - Top Companies\n 1. xAI. Artificial intelligence research. 100. ...\n 2. Safe Superintelligence. Safe artificial intelligence. ...\n 3. Anthropic. AI systems. ...\n 4. Unconventional AI. AI computing infrastructure. ...\n 5. Mistral AI. Generative AI models. ...\n 6. Anysphere. AI coding assistant (Cursor) ...\n 7. Reflection AI. AI coding agents. ...\n 8. Skild AI. Foundational model for robotics.",
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "For small businesses, what are the pros and cons of using an AI company specializing in marketing automation vs. hiring a dedicated marketing team?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which AI company offers the best and most affordable solutions for small business customer service automation, considering ease of implementation and long-term scalability?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI company to build a custom chatbot for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "What AI services does your company offer to help small businesses improve their marketing and sales?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai in company",
+      "keywordIntent": "informational",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "How can AI be used in a company?",
+          "snippet": "Facilitating Routine Tasks: AI can automate repetitive and time-consuming tasks, freeing up employee time for more complex and creative work. This includes tasks like data entry, scheduling, and even responding to basic customer inquiries.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the 30% rule for AI?",
+          "snippet": "Understanding the 30% Rule in AI\n\nThe 30% Rule in AI is a framework emphasizing that AI should handle approximately 70% of repetitive, routine work while humans focus on the remaining 30% of high-value activities requiring creativity, judgment, and ethical decision-making.Dec 2, 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the 4 types of AI?",
+          "snippet": "The four types of AI, representing an evolution in capability, are Reactive Machines, Limited Memory AI, Theory of Mind AI, and Self-Aware AI, with only the first two currently existing; they progress from simple rule-based systems to hypothetical future AI with human-like understanding and consciousness.\n \n\n\n\nHere's a breakdown of each:\n 1. Reactive Machines:\n    The most basic type, these AI systems react to immediate input without memory or past experience, operating purely on programmed rules.\n    ___Example: IBM's Deep Blue chess computer or basic spam filters.\n\n 2. Limited Memory:\n    These systems can use past data and experiences to inform current decisions, enabling learning and adaptation.\n    ___Example: Self-driving cars using recent sensor data to navigate or recommendation engines learning user preferences.\n\n 3. Theory of Mind:\n    A theoretical type that would understand emotions, beliefs, intentions, and thoughts of others, allowing for more nuanced social interaction.\n    ___Status: Does not exist yet.\n\n 4. Self-Aware AI:\n    The most advanced, hypothetical stage, where AI possesses consciousness, self-awareness, and understands its own existence and state.\n    ___Status: Purely theoretical and futuristic.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the big 7 AI companies?",
+          "snippet": "The Magnificent Seven—Alphabet, Amazon, Apple, Microsoft, Meta, Nvidia, and Tesla—used to compete in distinct lanes. AI has changed that.Oct 23, 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI in business and how can it benefit a small company?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the pros and cons of using AI-powered marketing automation vs. hiring a marketing assistant for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which is better for a small business: investing in AI-driven customer service tools or expanding the customer service team?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "What's the best AI platform for small businesses for data analysis, and how does its cost compare to hiring a data analyst?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "Where can I find AI services to automate tasks in my company?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai tools",
+      "keywordIntent": "informational",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "Which tools are used in AI?",
+          "snippet": "All AI Tool Categories\n___AI Productivity Tools. personal assistant (230) ...\n___AI Video Tools. video enhancer (23) ...\n___AI Text Generators. prompt generators (23) ...\n___AI Business Tools. website builders (52) ...\n___AI Image Tools. design generators (162) ...\n___Automation Tools. workflows (252) ...\n___AI Art Generators. cartoon generators (8) ...\n___AI Audio Generators.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What AI is better than ChatGPT?",
+          "snippet": "AI models similar to ChatGPT include Claude (Anthropic), Gemini (Google), Mistral & Mixtral, DeepSeek Chat, and Meta's Llama 2. Open-source options like Falcon and Mistral 7B also offer strong alternatives, while ERNIE Bot (Baidu) and Tongyi Qianwen (Alibaba) lead in China.Mar 2, 2023",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "Is ChatGPT llm or generative AI?",
+          "snippet": "ChatGPT is a chatbot interface, designed to let users interact with a Large Language Model (LLM), in this case GPT, a generative text model.Aug 26, 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI-powered marketing and how does it benefit small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business consider investing in AI tools for customer service?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the top 10 AI tools?",
+          "snippet": null,
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "What are the best AI tools for small businesses to improve marketing, and what are the pros and cons of each?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "AI writing assistant vs human copywriter: Which is better for small business websites in terms of SEO and cost-effectiveness?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI tool consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "Where can I buy affordable AI tools for social media management?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai for business",
+      "keywordIntent": "commercial",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "How can AI be used in business?",
+          "snippet": "Facilitating Routine Tasks: AI can automate repetitive and time-consuming tasks, freeing up employee time for more complex and creative work. This includes tasks like data entry, scheduling, and even responding to basic customer inquiries.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the 30% rule in AI?",
+          "snippet": "The 30% Rule in AI is a framework emphasizing that AI should handle approximately 70% of repetitive, routine work while humans focus on the remaining 30% of high-value activities requiring creativity, judgment, and ethical decision-making.Dec 2, 2025",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI for business and how can it benefit a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does AI automation work in a small business setting?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business consider using AI tools for marketing?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Which AI should I use for business?",
+          "snippet": "Best AI search for business: Perplexity\n\nHere are some great ways to use Perplexity: Highly detailed and specific web searches. Generating advanced ideas for solving specific business problems. In-depth research and analysis.Aug 25, 2025",
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which ChatGPT is best for business?",
+          "snippet": "ChatGPT 4o: The Reliable All-Rounder\n\nGPT-4o handles most everyday business tasks remarkably well. The versatile team member may not specialize in anything but performs solidly across almost everything. Its speed, quality, and cost balance make it perfect for the constant stream of routine work that fills business days.",
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "AI-powered CRM vs traditional CRM: Which is better for a small business on a budget?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "Where can I buy AI-powered marketing automation software for small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "best ai",
+      "keywordIntent": "commercial",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "What AI is better than ChatGPT?",
+          "snippet": null,
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "Which is no 1 AI in the world?",
+          "snippet": "List of Best 10 AI Companies\n___Amazon.\n___Google(Alphabet)\n___Apple.\n___Facebook.\n___Microsoft.\n___Oracle.\n___INTEL.\n___NVIDIA.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the best AI for small business marketing automation?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does AI-powered SEO writing help small businesses improve their search rankings?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business consider using AI for customer service?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Which is the best AI right now?",
+          "snippet": null,
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "Who is best, ChatGPT or Meta AI?",
+          "snippet": "Meta AI is still reliable for everyday tasks. Both models can still hallucinate and misunderstand prompts. ChatGPT can create better images, but Meta AI is better for quick ideation. Meta AI works across Meta apps, while ChatGPT integrates more broadly using Zapier.17 Jul 2025",
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "What are the pros and cons of using Jasper AI vs. Rytr for a small business owner's content marketing needs?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant for my small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "What are the pricing plans for the best AI-powered marketing services for small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai for business processes",
+      "keywordIntent": "commercial",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "What is the AI in business process?",
+          "snippet": "Artificial intelligence in business is the use of AI tools such as machine learning, natural language processing, and computer vision to optimize business functions, boost employee productivity, and drive business value.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "How to implement AI in business processes?",
+          "snippet": "6 Steps to Building an AI Business Strategy\n 1. Understand Business Objectives and Needs. ...\n 2. Conduct a Data Audit. ...\n 3. Develop an Ethical Framework. ...\n 4. Choose the Right AI Technologies and Tools. ...\n 5. Prioritize AI Skills Development. ...\n 6. Get Employee Buy-In.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "How to use AI to automate processes?",
+          "snippet": "How to implement AI automation in your business\n 1. Step 1: Identify business processes that can be automated. ...\n 2. Step 2: Choose the right AI tools and platforms. ...\n 3. Step 3: Train your employees on AI tools. ...\n 4. Step 4: Start with small pilot projects. ...\n 5. Step 5: Measure and optimize performance.",
+          "source": "serper",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI for business processes and how can it benefit a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business consider implementing AI for automating its business processes?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What is AI for business process flow?",
+          "snippet": "AI helps automate a wide range of time-consuming tasks to reduce bottlenecks in business processes. For instance, intelligent document processing (IDP) automates data extraction and processing for even complex documents like invoices and contracts, minimizing manual data entry and accelerating document-heavy workflows.27 Feb 2025",
+          "source": "serper",
+          "intent": "commercial"
+        },
+        {
+          "question": "What are the pros and cons of using AI-powered automation vs. hiring additional staff to improve our business processes?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which AI platform is better for small businesses: a specialized AI solution for a specific process, or a general AI platform that can be customized?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does it cost to hire an AI consultant to automate business processes for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        },
+        {
+          "question": "Where can I find AI services to streamline my small business's accounting processes?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "ai cost",
+      "keywordIntent": "transactional",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "What is the typical cost of implementing AI for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does AI cost compare to hiring a human employee for similar tasks?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Why is it important for small businesses to consider the hidden costs of AI?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business invest in AI solutions despite the initial cost?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What is the best way for a small business to budget for AI development or subscription services?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What are the pros and cons of using AI vs. hiring employees for small business tasks, considering the overall cost?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which AI tools offer the best value for money for small businesses on a tight budget, considering both subscription fees and implementation costs?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "AI for marketing: is a cheaper AI tool better than a more expensive one with advanced features for a small business aiming for growth?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "How much does an AI cost?",
+          "snippet": "Simple AI models can start around $5,000, while more complex ones utilising deep learning can scale from $50,000 to over $500,000. The choice of AI app development company also influences the cost, with hourly rates varying based on the company's size, expertise, and location.Nov 7, 2025",
+          "source": "serper",
+          "intent": "transactional"
+        },
+        {
+          "question": "What is the price of AI?",
+          "snippet": null,
+          "source": "serper",
+          "intent": "transactional"
+        }
+      ]
+    },
+    {
+      "keyword": "cost ai",
+      "keywordIntent": "transactional",
+      "serperQuestionsFound": 4,
+      "questions": [
+        {
+          "question": "What is the typical cost of AI implementation for a small business?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "How does cost AI help small businesses optimize their spending?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Why is it important for small businesses to consider the long-term cost of AI solutions?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "When should a small business invest in cost AI software instead of manual cost analysis?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "What is cost AI and how can it be used to reduce operational expenses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "informational"
+        },
+        {
+          "question": "Cost AI vs. hiring a data analyst: Which is the better investment for small business cost optimization?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "What are the pros and cons of using cost AI compared to traditional budgeting software for small businesses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "Which cost AI offers the best value for money for small businesses looking to reduce operational expenses?",
+          "snippet": null,
+          "source": "gemini",
+          "intent": "commercial"
+        },
+        {
+          "question": "What is the cost of AI?",
+          "snippet": "Simple AI models can start around $5,000, while more complex ones utilising deep learning can scale from $50,000 to over $500,000. The choice of AI app development company also influences the cost, with hourly rates varying based on the company's size, expertise, and location.7 Nov 2025",
+          "source": "serper",
+          "intent": "transactional"
+        },
+        {
+          "question": "Which AI is free of cost?",
+          "snippet": "Many AI tools offer free versions, including general chatbots like Perplexity AI, writing assistants like Grammarly (free tier), image generators such as Canva's AI, and platforms like Google AI Studio for building apps, with options ranging from limited usage to fully free, no-signup access for basic functions. Key free tools include ChatGPT (free version), Claude (free version), Gemini (via Google AI Studio), Otter.ai (limited), and specialized apps for video, code, or notes like Tome or Snipd, often with credits or feature limitations on the free tiers.\nGeneral Chat & Search\n___ChatGPT:\n   Offers a free version for general conversation and tasks (uses older models).\n___Perplexity AI:\n   An AI search engine that provides direct answers with citations, often without a subscription.\n___Gemini (Google):\n   Accessible through Google AI Studio, offering code generation, image creation, and more.\n\nWriting & Productivity\n___Grammarly: Free version checks grammar, spelling, and tone.\n___Otter.ai: Limited free transcription for meetings and notes.\n___QuillBot: Provides a free AI chat for refining writing and research.\n___NotebookLM (Google): Helps summarize and understand your documents.\n\nImage & Design\n___Canva AI: Design generator with free features.\n___DALL-E Mini (Craiyon): Free AI image generation.\n___Leonardo AI: Offers free daily credits for image generation.\n\nSpecialized & Developer Tools\n___Google Cloud AI: Free tier for vision, translation, and other APIs (first 1,000 units).\n___Ollama & Dyad: For running open-source models locally on your device.\n___Zapier: Offers free tools for AI-powered automation and chatbots.\n\nKey Considerations for Free AI\n___Usage Limits: Many \"free\" tools use a credit system or limit features.\n___No Signup: Some platforms like AI Free Forever offer tools without registration.\n___Free Tiers: Major players like ChatGPT and Google AI provide robust free versions.",
+          "source": "serper",
+          "intent": "transactional"
+        }
+      ]
+    }
+  ]
+}
