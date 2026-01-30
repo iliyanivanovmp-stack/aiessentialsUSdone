@@ -31,29 +31,25 @@ function sleep(ms) {
 }
 
 /**
- * Generate fan-out questions using Gemini API
+ * Generate fan-out questions using Gemini API with Google Search Grounding
  */
 async function getGeminiFanOut(question, keyword) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-  const prompt = `You are an SEO expert. Given this main question about "${keyword}":
+  // Prompt designed to encourage multiple distinct searches
+  const prompt = `Research "${question}" about ${keyword} in detail for small business owners.
 
-"${question}"
+Perform multiple distinct searches to cover:
+- Different perspectives and approaches
+- Technical specifications and implementation details
+- Cost considerations and ROI
+- Best practices and common mistakes
+- Recent trends and industry news
+- Comparison with alternatives
+- Step-by-step guides and tutorials
+- Real-world examples and case studies
 
-Generate exactly 10 related follow-up questions that someone might also want answered. These will be used for an FAQ section.
-
-Requirements:
-- Questions should be specific and actionable
-- Mix of "how", "what", "why", "when", "how much" questions
-- Relevant to small business owners interested in AI
-- Each question should be on a new line
-- Do NOT number the questions
-- Do NOT add any other text, just the 10 questions
-
-Example format:
-How much does X cost per month?
-What tools are needed for X?
-Can I do X without coding?`;
+Provide a comprehensive answer that addresses all these aspects.`;
 
   try {
     const response = await fetch(url, {
@@ -65,9 +61,12 @@ Can I do X without coding?`;
         contents: [{
           parts: [{ text: prompt }]
         }],
+        tools: [{
+          google_search: {}
+        }],
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 1024
+          maxOutputTokens: 2048
         }
       })
     });
@@ -79,15 +78,22 @@ Can I do X without coding?`;
 
     const data = await response.json();
 
-    // Extract text from response
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    // Extract fan-out queries from grounding metadata
+    const webSearchQueries = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
 
-    // Split into questions and clean up
-    const fanOutQuestions = text
-      .split('\n')
-      .map(q => q.trim())
-      .filter(q => q.length > 0 && q.endsWith('?'))
+    // Convert search queries to question format if needed
+    const fanOutQuestions = webSearchQueries
+      .map(q => {
+        // If already a question, return as-is
+        if (q.endsWith('?')) return q;
+        // Otherwise, convert to question format
+        return q;
+      })
       .slice(0, 10);
+
+    if (fanOutQuestions.length > 0) {
+      console.log(`    → Generated ${fanOutQuestions.length} search-grounded queries`);
+    }
 
     return fanOutQuestions;
   } catch (error) {
