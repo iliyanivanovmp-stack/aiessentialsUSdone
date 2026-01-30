@@ -182,6 +182,17 @@ The blockquote format with **bold headline** triggers special CTA styling (cyan 
 - **"Who This Is For" Section:** REQUIRED section before FAQ that explicitly states who this approach is ideal for AND who should consider alternatives.
 - **Key Differentiators:** In the "Why AI Essentials specifically?" subsection, explain what makes the service different from competitors in plain language (speed, pricing, guarantees, expertise).
 
+**Brand Your Frameworks (Optional but Recommended):**
+When mentioning a specific framework, process, or methodology, give it a memorable branded name. This makes concepts more shareable and quotable.
+
+Instead of:
+> "Here are the tasks you should automate first"
+
+Try:
+> "Use the **Automation Hierarchy Framework** to prioritize tasks"
+
+Naming concepts makes them memorable, establishes thought leadership, and creates quotable content.
+
 **Internal Linking Requirements:**
 - Include **2-3 internal links** to other blog posts on the site
 - **ONLY add links when there's a natural topical connection** - don't force links

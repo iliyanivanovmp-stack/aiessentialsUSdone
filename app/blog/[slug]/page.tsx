@@ -7,6 +7,7 @@ import AuthorBox from '@/components/AuthorBox';
 import RelatedPosts from '@/components/RelatedPosts';
 import Footer from '@/components/Footer';
 import BlogHeader from '@/components/BlogHeader';
+import SummarizeWithAI from '@/components/SummarizeWithAI';
 
 const SITE_URL = 'https://aiessentials.us';
 
@@ -250,8 +251,9 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const rawContent = await getPostContent(params.slug);
-  // Don't inject mobile TOC - the blog posts already have a TOC in the markdown content
-  const content = rawContent;
+  // Remove the first H2 (which often duplicates the title) and replace with SummarizeWithAI component
+  const content = rawContent.replace(/<h2[^>]*>[\s\S]*?<\/h2>/, '');
+  const blogUrl = `${SITE_URL}/blog/${params.slug}`;
 
   // Get related posts (matching tags, excluding current post)
   const allPosts = getAllPosts();
@@ -347,6 +349,9 @@ export default async function BlogPostPage({ params }: Props) {
                 <span className="text-cyan-400">]</span>
               </div>
             </header>
+
+            {/* Summarize with AI buttons */}
+            <SummarizeWithAI blogUrl={blogUrl} />
 
             <div
               className="prose prose-invert prose-lg max-w-none
