@@ -81,15 +81,30 @@ Every blog post must display an author bio section after the main content.
 **Placement:** After the article content, before the footer CTA
 
 **Content:**
-- Author photo: `/images/iliyan-ivanov.webp`
+- Author photo: `/images/iliyan-ivanov.png`
 - Author name: "Iliyan Ivanov"
 - Bio: "Founder of AIessentials"
+- Social links: X (@IliyanIvanov_AI) and LinkedIn
 
 **Design:**
 - Compact horizontal layout with photo and text
+- Social media icons (X and LinkedIn) as subtle circular buttons to the right
 - Subtle styling that matches site design
 - Professional appearance that builds trust
 - Mobile-responsive layout
+
+## 3.1) Blog Post Header (Author Attribution)
+
+Every blog post header displays author information with social links.
+
+**Format:** `[Date] • Iliyan Ivanov • [X, LinkedIn]`
+
+**Design:**
+- Date first, then author name, then social links
+- Social links wrapped in cyan-colored brackets
+- X and LinkedIn icons are clickable, open in new tabs
+- X links to: https://x.com/IliyanIvanov_AI
+- LinkedIn links to: https://www.linkedin.com/in/iliyan-ivanov-50299b215/
 
 ---
 
