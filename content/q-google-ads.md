@@ -31,10 +31,10 @@ items:
       - "AI case studies small business success"
       - "cost of AI solutions for small business"
       - "benefits of AI for small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-is-ai-used-in-business.md"
+    updatedAt: "2026-02-02T13:50:00.000Z"
+    publishedAt: "2026-02-02T13:50:00.000Z"
     error: null
 
   - id: "gads-002"
