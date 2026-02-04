@@ -53,10 +53,10 @@ items:
       - "What is the cost of ai and business?"
       - "How long does ai and business take to implement?"
       - "What are the benefits of ai and business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-the-30-rule-in-ai.md"
+    updatedAt: "2026-02-03T00:00:00.000Z"
+    publishedAt: "2026-02-03T00:00:00.000Z"
     error: null
 
   - id: "gads-003"
@@ -75,10 +75,10 @@ items:
       - "small business AI case studies"
       - "What is the cost of ai and business?"
       - "How long does ai and business take to implement?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/which-3-jobs-will-survive-ai.md"
+    updatedAt: "2026-02-03T12:00:00.000Z"
+    publishedAt: "2026-02-03T12:00:00.000Z"
     error: null
 
   - id: "gads-004"
