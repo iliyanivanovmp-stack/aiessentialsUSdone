@@ -97,10 +97,10 @@ items:
       - "AI data analysis for small business"
       - "AI and machine learning for business"
       - "Best AI platforms for small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-can-i-use-ai-to-start-a-business.md"
+    updatedAt: "2026-02-07T12:00:00.000Z"
+    publishedAt: "2026-02-07T12:00:00.000Z"
     error: null
 
   - id: "gads-005"
