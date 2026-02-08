@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function AuthorBox() {
   const [imageError, setImageError] = useState(false);
@@ -11,17 +12,19 @@ export default function AuthorBox() {
         {/* Author Photo */}
         <div className="flex-shrink-0">
           {!imageError ? (
-            <img
+            <Image
               src="/images/iliyan-ivanov.png"
               alt="Iliyan Ivanov"
-              width={64}
-              height={64}
-              className="w-16 h-16 rounded-full object-cover"
-              style={{ imageRendering: 'crisp-edges', objectPosition: 'center 55%' }}
+              width={80}
+              height={80}
+              quality={100}
+              className="w-20 h-20 rounded-full object-cover"
+              style={{ objectPosition: 'center 55%' }}
               onError={() => setImageError(true)}
+              priority
             />
           ) : (
-            <div className="w-16 h-16 rounded-full bg-cyan-400/20 flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-cyan-400/20 flex items-center justify-center">
               <span className="text-cyan-400 text-xl font-bold">II</span>
             </div>
           )}
