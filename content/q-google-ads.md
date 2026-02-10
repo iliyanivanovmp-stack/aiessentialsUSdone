@@ -119,10 +119,10 @@ items:
       - "AI vs alternatives for small business"
       - "AI step by step guide for small business"
       - "AI case studies small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-ai-and-how-can-it-benefit-my-small-business.md"
+    updatedAt: "2026-02-10T12:00:00.000Z"
+    publishedAt: "2026-02-10T12:00:00.000Z"
     error: null
 
   - id: "gads-006"
