@@ -1,0 +1,7 @@
+{
+  "antigravity.agent.terminal.autoExecutionPolicy": "always",
+  "antigravity.agent.terminal.confirmCommands": false,
+  "antigravity.agent.terminal.allowedCommands": ["*"],
+  "antigravity.terminal.autoRun": true,
+  "security.workspace.trust.enabled": false
+}
