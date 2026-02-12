@@ -369,12 +369,12 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="p-6 bg-black">
                 {/* Main Headline */}
                 <h3 className="text-white text-lg font-bold mb-3 leading-tight italic">
-                  99% sure you don't know where exactly AI can help you
+                  99% sure you are not seeing all the spots, AI can help you in your business.
                 </h3>
 
                 {/* Supporting Text */}
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                  Are your workflows optimized with the most up to date tech or they are costing you and your team wasted hours and errors? See how you can optimize them.
+                  Are your workflows optimized with the most up to date solution, or they are costing you and your team time and money?
                 </p>
 
                 {/* CTA Button */}
