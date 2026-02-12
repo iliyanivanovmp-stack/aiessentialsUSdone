@@ -222,6 +222,9 @@ Direct answer to the first question in 50-100 words.
 Direct answer to the second question in 50-100 words.
 ```
 
+**Sticky Workflow Audit CTA (Automatic):**
+Every blog post automatically includes a sticky "Workflow Audit" CTA box on the right side (desktop) and after the opening section (mobile). No manual configuration needed - this is built into the blog post template. The CTA promotes the free workflow audit and links to the audit booking page.
+
 ### Step 4: Save the Blog Post
 
 Save to: `content/blog-posts/[slug].md`

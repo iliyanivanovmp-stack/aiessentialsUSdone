@@ -55,6 +55,9 @@ Direct answer in 50-100 words.
 - Include 5-10 relevant questions
 - This structure automatically generates FAQ rich results in Google
 
+**Sticky Workflow Audit CTA (Automatic):**
+Every blog post automatically includes a sticky "Workflow Audit" CTA box on the right side (desktop) and after the opening section (mobile). No manual configuration needed - this is built into the blog post template.
+
 ### Step 3: Save the Blog Post
 Save the blog post to: `content/blog-posts/[slug].md`
 

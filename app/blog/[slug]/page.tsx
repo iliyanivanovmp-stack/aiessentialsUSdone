@@ -8,6 +8,7 @@ import RelatedPosts from '@/components/RelatedPosts';
 import Footer from '@/components/Footer';
 import BlogHeader from '@/components/BlogHeader';
 import SummarizeWithAI from '@/components/SummarizeWithAI';
+import StickyWorkflowAuditCTA from '@/components/StickyWorkflowAuditCTA';
 
 const SITE_URL = 'https://aiessentials.us';
 
@@ -287,7 +288,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       ))}
       <div className="max-w-7xl mx-auto px-4 py-24 relative">
-        <div className="xl:grid xl:grid-cols-[280px_1fr] xl:gap-8">
+        <div className="xl:grid xl:grid-cols-[280px_1fr_320px] xl:gap-8">
           {/* Table of Contents - Desktop Sticky Sidebar */}
           <aside className="hidden xl:block">
             <TableOfContents content={rawContent} />
@@ -353,6 +354,37 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Summarize with AI buttons */}
             <SummarizeWithAI blogUrl={blogUrl} />
 
+            {/* Mobile Workflow Audit CTA - Shows after opening section on mobile/tablet */}
+            <div className="xl:hidden my-8 border border-gray-800 rounded-lg overflow-hidden bg-gradient-to-br from-purple-900/20 via-gray-900/50 to-cyan-900/20">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-cyan-600 to-purple-600 px-4 py-3">
+                <p className="text-white text-sm font-bold tracking-wider uppercase text-center">
+                  Workflow Audit
+                </p>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Main Headline */}
+                <h3 className="text-white text-xl font-bold mb-4 leading-tight">
+                  99% sure you don't know where exactly AI can help you
+                </h3>
+
+                {/* Supporting Text */}
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                  Are your workflows optimized with the most up to date tech or they are costing you and your team wasted hours and errors? See how you can optimize them.
+                </p>
+
+                {/* CTA Button */}
+                <a
+                  href="https://aiessentials.us/free-ai-revenue-and-savings-plan"
+                  className="block w-full bg-cyan-400 text-black text-center font-semibold px-6 py-3 rounded-lg hover:bg-cyan-300 transition-all duration-200 shadow-lg hover:shadow-cyan-400/20"
+                >
+                  Get Free Audit
+                </a>
+              </div>
+            </div>
+
             <div
               className="prose prose-invert prose-lg max-w-none
                 prose-headings:font-headline prose-headings:text-white
@@ -390,6 +422,9 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </footer>
           </article>
+
+          {/* Sticky Workflow Audit CTA - Desktop Only */}
+          <StickyWorkflowAuditCTA />
         </div>
 
         {/* CTA Section */}
