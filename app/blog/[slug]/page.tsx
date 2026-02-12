@@ -355,32 +355,34 @@ export default async function BlogPostPage({ params }: Props) {
             <SummarizeWithAI blogUrl={blogUrl} />
 
             {/* Mobile Workflow Audit CTA - Shows after opening section on mobile/tablet */}
-            <div className="xl:hidden my-8 border border-gray-800/50 rounded-xl overflow-hidden bg-gradient-to-br from-gray-900/40 via-gray-900/60 to-gray-900/40 backdrop-blur-sm shadow-xl">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-cyan-500/80 to-purple-500/80 px-4 py-2.5">
-                <p className="text-white text-xs font-semibold tracking-widest uppercase text-center">
+            <div className="xl:hidden my-8 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              {/* Header with brackets - matching reference image */}
+              <div className="bg-cyan-400 px-4 py-3 flex items-center justify-center gap-2">
+                <span className="text-black text-lg font-bold">[</span>
+                <p className="text-black text-xs font-bold tracking-wider uppercase">
                   Workflow Audit
                 </p>
+                <span className="text-black text-lg font-bold">]</span>
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="p-6 bg-white">
                 {/* Main Headline */}
-                <h3 className="text-white text-lg font-semibold mb-3 leading-snug">
+                <h3 className="text-black text-lg font-bold mb-3 leading-tight italic">
                   99% sure you don't know where exactly AI can help you
                 </h3>
 
                 {/* Supporting Text */}
-                <p className="text-gray-400 text-xs mb-5 leading-relaxed">
+                <p className="text-gray-700 text-sm mb-6 leading-relaxed">
                   Are your workflows optimized with the most up to date tech or they are costing you and your team wasted hours and errors? See how you can optimize them.
                 </p>
 
                 {/* CTA Button */}
                 <a
                   href="https://aiessentials.us/free-ai-revenue-and-savings-plan"
-                  className="block w-full bg-gradient-to-r from-cyan-400 to-cyan-500 text-black text-center font-semibold text-sm px-5 py-2.5 rounded-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-400/30"
+                  className="block w-full bg-cyan-400 text-black text-center font-bold text-sm px-6 py-3 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all duration-150"
                 >
-                  Get Free Audit
+                  GET FREE AUDIT
                 </a>
               </div>
             </div>
