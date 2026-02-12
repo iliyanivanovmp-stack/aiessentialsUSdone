@@ -355,7 +355,7 @@ export default async function BlogPostPage({ params }: Props) {
             <SummarizeWithAI blogUrl={blogUrl} />
 
             {/* Mobile Workflow Audit CTA - Shows after opening section on mobile/tablet */}
-            <div className="xl:hidden my-8 border-2 border-white bg-black shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+            <div className="xl:hidden my-8 border-2 border-white bg-black">
               {/* Header with brackets - matching reference image */}
               <div className="bg-cyan-400 px-4 py-3 flex items-center justify-center gap-2">
                 <span className="text-black text-lg font-bold">[</span>
@@ -380,7 +380,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* CTA Button */}
                 <a
                   href="https://aiessentials.us/free-ai-revenue-and-savings-plan"
-                  className="block w-full bg-cyan-400 text-black text-center font-bold text-sm px-6 py-3 border-2 border-white shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(255,255,255,1)] transition-all duration-150"
+                  className="block w-full bg-cyan-400 text-black text-center font-bold text-sm px-6 py-3 border-2 border-black hover:bg-cyan-300 transition-all duration-200"
                 >
                   GET FREE AUDIT
                 </a>
