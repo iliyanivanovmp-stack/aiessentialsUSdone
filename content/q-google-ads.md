@@ -141,10 +141,10 @@ items:
       - "AI marketing automation best practices small business"
       - "common mistakes AI marketing automation small business"
       - "recent trends AI marketing automation"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-are-the-pros-and-cons-of-using-ai-powered-marketing-aut.md"
+    updatedAt: "2026-02-13T00:00:00.000Z"
+    publishedAt: "2026-02-13T00:00:00.000Z"
     error: null
 
   - id: "gads-007"
