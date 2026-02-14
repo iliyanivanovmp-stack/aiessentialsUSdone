@@ -69,7 +69,7 @@ AI marketing automation excels at repetitive tasks that follow clear rules and n
 ### The Core Strengths
 
 **Email marketing at scale**
-AI tools send personalized emails to thousands of contacts based on behavior triggers. Someone downloads your guide? They get a follow-up sequence automatically. Someone abandons their cart? They get a reminder email within an hour. According to [McKinsey research](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying), personalization can deliver 5-8 times the ROI on marketing spend.
+AI tools send personalized emails to thousands of contacts based on behavior triggers. Someone downloads your guide? They get a follow-up sequence automatically. Someone abandons their cart? They get a reminder email within an hour. According to [McKinsey research](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-personalization-and-how-to-get-ready-for-it), personalization can deliver 5-8 times the ROI on marketing spend.
 
 **Lead scoring and segmentation**
 The software watches how people interact with your content and assigns scores. High-score leads get routed to sales immediately. Low-score leads get nurtured with more educational content. This happens 24/7 without anyone clicking buttons.
@@ -109,7 +109,7 @@ Agencies bring capabilities that AI tools simply don't have yet.
 An agency analyzes your market, studies your competitors, and builds a comprehensive marketing strategy. They know which channels work for your industry because they've run campaigns in it before. AI tools can't do competitive research or understand market positioning.
 
 **Creative execution**
-Good agencies have designers, copywriters, and video producers who create scroll-stopping content. AI can generate decent copy, but it doesn't produce breakthrough creative ideas. According to [Gartner research](https://www.gartner.com/en/marketing/topics/marketing-automation), 61% of marketers still cite creative quality as a key differentiator between in-house and agency work.
+Good agencies have designers, copywriters, and video producers who create scroll-stopping content. AI can generate decent copy, but it doesn't produce breakthrough creative ideas. Research shows that most marketers still cite creative quality as a key differentiator between in-house and agency work.
 
 **Brand development**
 Agencies help you figure out what your brand actually stands for, how you're different from competitors, and how to communicate that consistently. This requires human judgment and strategic thinking.
@@ -354,4 +354,4 @@ The biggest mistakes: over-automating too fast without testing workflows first, 
 
 ### Recent trends AI marketing automation
 
-According to [Harvard Business Review research](https://hbr.org/2021/07/ai-is-changing-sales), AI-driven marketing automation is shifting toward predictive analytics that forecast which leads will convert, hyper-personalization that customizes messaging in real-time based on behavior, and conversational AI that handles complex customer interactions via chatbot. Tools like ChatGPT are now being integrated into marketing platforms, making it easier for small businesses to generate on-brand content at scale without hiring copywriters.
+According to [Harvard Business Review research](https://hbr.org/2023/03/how-generative-ai-will-change-sales), AI-driven marketing automation is shifting toward predictive analytics that forecast which leads will convert, hyper-personalization that customizes messaging in real-time based on behavior, and conversational AI that handles complex customer interactions via chatbot. Tools like ChatGPT are now being integrated into marketing platforms, making it easier for small businesses to generate on-brand content at scale without hiring copywriters.
