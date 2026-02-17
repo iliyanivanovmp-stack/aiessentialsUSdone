@@ -19,6 +19,18 @@ const KIE_MODEL = 'nano-banana-pro';
 
 const NO_TEXT_SUFFIX = ' The image must not contain any text, words, letters, numbers, labels, captions, watermarks, signatures, or any form of writing whatsoever.';
 
+async function retryWithBackoff(fn, maxRetries = 3, baseDelay = 3000) {
+  for (let i = 0; i <= maxRetries; i++) {
+    try { return await fn(); }
+    catch (e) {
+      if (i === maxRetries || !e.message.includes('429')) throw e;
+      const delay = baseDelay * Math.pow(2, i);
+      console.log(`  Rate limited, retrying in ${delay/1000}s...`);
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}
+
 async function generateImagePrompt(sectionContent, imageNumber, blogTitle) {
   const promptText = `You are an expert at creating image generation prompts. Based on the blog section content, create a detailed image prompt.
 Blog Title: "${blogTitle}"
@@ -61,7 +73,7 @@ async function createKieTask(prompt) {
   return data.data.taskId;
 }
 
-async function pollKieTask(taskId, maxAttempts = 60) {
+async function pollKieTask(taskId, maxAttempts = 90) {
   console.log('  Task ID:', taskId);
   for (let i = 0; i < maxAttempts; i++) {
     await new Promise(r => setTimeout(r, 2000));
@@ -121,14 +133,19 @@ async function main() {
 
   for (const s of sections) {
     const suffix = s.imageNumber === 1 ? 'hero' : String(s.imageNumber - 1);
+    const webpPath = path.join(IMAGES_DIR, slug + '-' + suffix + '.webp');
     const outPath = path.join(IMAGES_DIR, slug + '-' + suffix + '.png');
     console.log('\nImage ' + s.imageNumber + '/4:');
+    if (fs.existsSync(webpPath)) {
+      console.log('  Already exists, skipping:', webpPath);
+      continue;
+    }
+    if (s.imageNumber > 1) await new Promise(r => setTimeout(r, 2000));
     try {
-      const prompt = await generateImagePrompt(s.content, s.imageNumber, blogTitle);
+      const prompt = await retryWithBackoff(() => generateImagePrompt(s.content, s.imageNumber, blogTitle));
       console.log('  Prompt:', prompt.substring(0, 100) + '...');
       await generateImageWithKie(prompt, outPath);
       results.push({ imageNumber: s.imageNumber, path: '/images/blog/' + slug + '-' + suffix + '.webp', prompt });
-      if (s.imageNumber < sections.length) await new Promise(r => setTimeout(r, 1000));
     } catch (e) { console.error('  Error:', e.message); }
   }
   console.log('\n--- Generated Images ---');
