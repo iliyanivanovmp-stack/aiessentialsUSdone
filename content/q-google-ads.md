@@ -163,10 +163,10 @@ items:
       - "small business customer service case studies AI vs human"
       - "step-by-step guide AI customer service implementation small business"
       - "common mistakes implementing AI customer service small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/which-is-better-for-a-small-business-investing-in-ai-driven.md"
+    updatedAt: "2026-02-17T00:00:00.000Z"
+    publishedAt: "2026-02-17T00:00:00.000Z"
     error: null
 
   - id: "gads-008"
