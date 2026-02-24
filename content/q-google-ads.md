@@ -185,10 +185,10 @@ items:
       - "how to implement AI social media management small business"
       - "case studies AI social media management small business"
       - "What is the cost of ai and business?"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/whats-the-best-ai-tool-for-small-businesses-to-use-for-socia.md"
+    updatedAt: "2026-02-24T00:00:00.000Z"
+    publishedAt: "2026-02-24T00:00:00.000Z"
     error: null
 
   - id: "gads-009"
