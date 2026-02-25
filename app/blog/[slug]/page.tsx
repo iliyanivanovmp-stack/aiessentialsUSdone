@@ -58,12 +58,19 @@ function generateStructuredData(post: {
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
+      '@id': canonicalUrl,
       headline: post.title,
       description: post.excerpt,
       author: {
-        '@type': 'Organization',
-        name: 'AI Essentials',
-        url: SITE_URL,
+        '@type': 'Person',
+        name: 'Iliyan Ivanov',
+        url: 'https://www.linkedin.com/in/iliyan-ivanov-50299b215/',
+        jobTitle: 'AI Agency Founder',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'AI Essentials',
+          url: 'https://aiessentials.us/',
+        },
       },
       publisher: {
         '@type': 'Organization',
@@ -76,7 +83,12 @@ function generateStructuredData(post: {
       },
       datePublished: post.date,
       dateModified: post.updatedAt || post.date,
-      image: imageUrl,
+      image: {
+        '@type': 'ImageObject',
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+      },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': canonicalUrl,
