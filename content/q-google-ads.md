@@ -207,10 +207,10 @@ items:
       - "alternatives to AI consulting for small business"
       - "AI trends for small business"
       - "AI consulting case studies small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-much-does-it-cost-to-hire-an-ai-consultant-for-my-small.md"
+    updatedAt: "2026-02-28T00:00:00.000Z"
+    publishedAt: "2026-02-28T00:00:00.000Z"
     error: null
 
   - id: "gads-010"
