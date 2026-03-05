@@ -229,10 +229,10 @@ items:
       - "AI marketing trends small business"
       - "AI marketing vs traditional marketing small business"
       - "AI marketing step by step guide small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/where-can-i-buy-ai-powered-marketing-services-for-my-small-b.md"
+    updatedAt: "2026-03-05T23:33:00.000Z"
+    publishedAt: "2026-03-05T23:33:00.000Z"
     error: null
 
   - id: "gads-011"
