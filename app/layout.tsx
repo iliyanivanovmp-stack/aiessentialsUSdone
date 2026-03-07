@@ -75,6 +75,7 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://aiessentials.us/#website",
     "name": "AIessentials",
     "url": "https://aiessentials.us",
     "description": "We design, deploy, and maintain automated AI systems that grow pipeline and remove busywork.",
