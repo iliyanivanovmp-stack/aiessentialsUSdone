@@ -23,7 +23,7 @@ export default function FreeAIPlanLayout({
     "name": "Free AI Revenue + Savings Plan",
     "description": "A 30-minute consultation to identify the top 3 AI opportunities that will save or make money for your business, followed by a custom 1-page AI Revenue + Savings Plan delivered within 48 hours.",
     "provider": {
-      "@id": "https://aiessentials.us/#organization"
+      "@id": "https://aiessentials.us/#service"
     },
     "serviceType": "AI Consulting",
     "areaServed": {
@@ -65,13 +65,13 @@ export default function FreeAIPlanLayout({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://aiessentials.us/free-ai-revenue-and-savings-plan/#webpage",
     "name": "Free AI Revenue + Savings Plan",
     "description": "Get a custom AI Revenue + Savings Plan in 30 minutes. Discover the top 3 AI opportunities to save or make money for your business.",
     "url": "https://aiessentials.us/free-ai-revenue-and-savings-plan",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://aiessentials.us"
-    },
+    "inLanguage": "en-US",
+    "isPartOf": { "@id": "https://aiessentials.us/#website" },
+    "publisher": { "@id": "https://aiessentials.us/#organization" },
     "about": {
       "@id": "https://aiessentials.us/free-ai-revenue-and-savings-plan/#service"
     },
