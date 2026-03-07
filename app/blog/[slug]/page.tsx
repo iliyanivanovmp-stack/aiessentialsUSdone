@@ -57,7 +57,7 @@ function generateStructuredData(post: {
     // Article Schema
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
       '@id': canonicalUrl,
       headline: post.title,
       description: post.excerpt,

@@ -15,11 +15,24 @@ export const metadata: Metadata = {
   },
 };
 
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://aiessentials.us/blog/#blog',
+  name: 'AI Growth Insights',
+  description: 'Expert strategies and insights to help you leverage AI for business growth.',
+  url: 'https://aiessentials.us/blog/',
+  inLanguage: 'en-US',
+  publisher: { '@id': 'https://aiessentials.us/#organization' },
+  isPartOf: { '@id': 'https://aiessentials.us/#website' },
+};
+
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       <BlogHeader />
       <main className="min-h-screen bg-black text-white pt-16">
         {/* Hero Section */}
