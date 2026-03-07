@@ -25,22 +25,13 @@ const webPageSchema = {
 
 const professionalServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Service",
   "@id": "https://aiessentials.us/#service",
   "name": "AI Essentials",
-  "legalName": "IvanovIV LLC",
   "url": "https://aiessentials.us/",
   "description": "AI automation consulting for B2B businesses. We build custom AI automation systems in 14-30 days that pay for themselves within 60 days.",
   "serviceType": "AI Automation Consulting",
   "areaServed": { "@type": "Country", "name": "United States" },
-  "priceRange": "$2,500 – Custom",
-  "founder": {
-    "@type": "Person",
-    "name": "Iliyan Ivanov",
-    "jobTitle": "AI Agency Founder",
-    "url": "https://www.linkedin.com/in/iliyan-ivanov-50299b215/",
-    "worksFor": { "@id": "https://aiessentials.us/#organization" }
-  },
   "provider": { "@id": "https://aiessentials.us/#organization" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",

@@ -50,17 +50,14 @@ export default function RootLayout({
     },
     "description": "AI automation consulting firm helping small and medium businesses automate operations, save 20+ hours per week, and grow without hiring.",
     "foundingDate": "2025",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "30 N Gould St Ste N",
-      "addressLocality": "Sheridan",
-      "addressRegion": "WY",
-      "postalCode": "82801",
-      "addressCountry": "US"
+    "founder": {
+      "@type": "Person",
+      "name": "Iliyan Ivanov",
+      "jobTitle": "AI Agency Founder",
+      "url": "https://www.linkedin.com/in/iliyan-ivanov-50299b215/"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-213-397-1263",
       "contactType": "sales",
       "email": "info@aiessentials.us",
       "availableLanguage": "English"
