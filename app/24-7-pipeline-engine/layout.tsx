@@ -23,7 +23,7 @@ export default function PipelineEngineLayout({
     "name": "24/7 Pipeline Engine",
     "description": "A CRM-integrated outbound system that generates a minimum of 5 qualified meetings per month without hiring SDRs, relying on referrals, or doing daily manual outreach.",
     "provider": {
-      "@id": "https://aiessentials.us/#organization"
+      "@id": "https://aiessentials.us/#service"
     },
     "serviceType": "AI-Powered Lead Generation",
     "areaServed": {
@@ -82,13 +82,13 @@ export default function PipelineEngineLayout({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://aiessentials.us/24-7-pipeline-engine/#webpage",
     "name": "24/7 Pipeline Engine - AI-Powered Lead Generation",
     "description": "A CRM-integrated outbound system that generates 5+ qualified meetings per month without hiring SDRs or doing daily manual outreach.",
     "url": "https://aiessentials.us/24-7-pipeline-engine",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://aiessentials.us"
-    },
+    "inLanguage": "en-US",
+    "isPartOf": { "@id": "https://aiessentials.us/#website" },
+    "publisher": { "@id": "https://aiessentials.us/#organization" },
     "about": {
       "@id": "https://aiessentials.us/24-7-pipeline-engine/#service"
     },
