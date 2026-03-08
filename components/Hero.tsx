@@ -10,8 +10,8 @@ const Hero = () => {
   
   const headlines = [
     {
-      line1: "AIESSENTIALS SYSTEMS",
-      line2: "FOR EFFICIENT GROWTH"
+      line1: "AI AUTOMATIONS,
+      line2: "CUT COST AND GROWN REVENUE"
     },
     {
       line1: "MAKE MORE. SPEND LESS.",
@@ -86,7 +86,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            We audit your processes end-to-end, then design and deploy custom AI automations that either save money or make money—without adding headcount.
+            We audit your processes end-to-end, then design and deploy custom AI automations that either save money or make money.
           </motion.p>
           
           <motion.div
