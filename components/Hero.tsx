@@ -11,7 +11,7 @@ const Hero = () => {
   const headlines = [
     {
       line1: "AI AUTOMATIONS.",
-      line2: "CUT COST AND GROW REVENUE."
+      line2: "TO CUT COST AND GROW REVENUE."
     },
     {
       line1: "MAKE MORE. SPEND LESS.",
