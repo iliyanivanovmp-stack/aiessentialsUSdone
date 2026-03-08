@@ -251,10 +251,10 @@ items:
       - "AI trends for small business"
       - "AI alternatives for small business"
       - "AI step-by-step guide for small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/what-is-artificial-intelligence-and-how-can-it-benefit-my-sm.md"
+    updatedAt: "2026-03-08T15:53:00.000Z"
+    publishedAt: "2026-03-08T15:53:00.000Z"
     error: null
 
   - id: "gads-012"
