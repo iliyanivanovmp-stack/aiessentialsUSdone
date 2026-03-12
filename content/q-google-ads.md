@@ -273,10 +273,10 @@ items:
       - "machine learning vs traditional analytics decision making small business"
       - "machine learning decision making tutorial small business"
       - "machine learning decision making case studies small business"
-    status: "queued"
-    postPath: null
-    updatedAt: null
-    publishedAt: null
+    status: "published"
+    postPath: "content/blog-posts/how-does-machine-learning-help-businesses-improve-their-deci.md"
+    updatedAt: "2026-03-12T08:38:00.000Z"
+    publishedAt: "2026-03-12T08:38:00.000Z"
     error: null
 
   - id: "gads-013"
