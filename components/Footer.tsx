@@ -110,7 +110,7 @@ const Footer = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">6) Data protection</h4>
-                <p>We handle personal data per our Privacy Policy and, where applicable, a Data Processing Addendum (DPA) if we process personal data on your behalf. If needed, email support@aiessentials.us to request our DPA.</p>
+                <p>We handle personal data per our Privacy Policy and, where applicable, a Data Processing Addendum (DPA) if we process personal data on your behalf. If needed, email ilyan.i@aiessentials.us to request our DPA.</p>
               </div>
 
               <div>
@@ -139,7 +139,7 @@ const Footer = () => {
               </div>
 
               <div className="pt-4 border-t border-gray-800">
-                <p className="text-gray-400">Company contact: info@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
+                <p className="text-gray-400">Company contact: iliyan.i@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
               </div>
             </div>
           </motion.div>
@@ -170,7 +170,7 @@ const Footer = () => {
                 <p className="text-gray-400">Website: aiessentials.us</p>
                 <p className="text-gray-400">Operator: IvanovIv LLC (owner/operator of aiessentials.us), 30 N Gould St Ste N, Sheridan, WY 82801</p>
                 <p className="text-gray-400 mt-2">Effective date: October 31, 2025</p>
-                <p className="text-gray-400 mt-2">Contact: info@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
+                <p className="text-gray-400 mt-2">Contact: iliyan.i@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
               </div>
 
               <div>
@@ -208,7 +208,7 @@ const Footer = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">California privacy (CCPA/CPRA)</h4>
-                <p>If these laws apply to us, California residents can know/access, correct, delete, and opt‑out of sale or sharing. We honor valid browser‑based opt‑out signals such as the Global Privacy Control (GPC) where applicable. To submit a request, email info@aiessentials.us.</p>
+                <p>If these laws apply to us, California residents can know/access, correct, delete, and opt‑out of sale or sharing. We honor valid browser‑based opt‑out signals such as the Global Privacy Control (GPC) where applicable. To submit a request, email iliyan.i@aiessentials.us.</p>
               </div>
 
               <div>
@@ -244,7 +244,7 @@ const Footer = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">Contact</h4>
-                <p>Email: info@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
+                <p>Email: iliyan.i@aiessentials.us  |  Address: 30 N Gould St Ste N, Sheridan, WY 82801</p>
               </div>
 
               <div>
